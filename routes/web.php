@@ -11,6 +11,11 @@
 |
 */
 
+
+Auth::routes();
+
+Route::get('/calendar', 'CalendarController@index')->name('calendar');
+
 Route::get('/', function () {
     return view('welcome');
 });
