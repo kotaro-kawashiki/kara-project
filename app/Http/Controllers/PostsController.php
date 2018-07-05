@@ -31,6 +31,7 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'friends' => 'required|max:191',
             'went_at' => 'required',
+            
             ]);
             
         $request->user()->posts()->create([
@@ -38,9 +39,10 @@ class PostsController extends Controller
             'cost' => $request->cost,
             'friends' => $request->friends,
             'went_at' => $request->went_at,
+            'comments' => $request->comments,
         ]);
         
-        return redirect('/');
+        return redirect('/calendar');
     }
 
 // post.show as detail
@@ -52,13 +54,31 @@ class PostsController extends Controller
 // post.edit
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        
+        return view('post.edit',['post' => $post]);
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'restaurant' => 'required|max:191',
+            'cost' => 'required|max:7',
+            'friends' => 'required|max:191',
+            'went_at' => 'required',
+            
+            ]);
+            
+            $post = Post::find($id);
+            $post->restaurant = $request->restaurant;
+            $post->cost= $request->cost;
+            $post->friends = $request->friends;
+            $post->went_at = $request->went_at;
+            $post->comments = $request->comments;
+            $post->save();
+            
+            return redirect('/calendar');
     }
 
 
@@ -66,7 +86,7 @@ class PostsController extends Controller
     {
         $post = \App\Post::find($id);
 
-        if (\Auth::id() === $post->userid) {
+        if (\Auth::id() === $post->user_id) {
             $post->delete();
         }
 
