@@ -18,7 +18,9 @@ class PostsController extends Controller
 //   post.post
     public function create()
     {
-        //
+        $post=new Post;
+        return view('post.post',['post' => $post]);
+        
     }
 
 // when you create some posts you can set this route
@@ -38,7 +40,7 @@ class PostsController extends Controller
             'went_at' => $request->went_at,
         ]);
         
-        return redirect()->back();
+        return redirect('/');
     }
 
 // post.show as detail

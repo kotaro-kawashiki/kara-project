@@ -22,4 +22,16 @@
         </div>
     </div>
 </div>
+
+@foreach ($posts as $post)
+                <tr>
+                         <td>{{ $post->restaurant }}</td>
+                         <td>{{ $post->cost }}</td>
+                         <td>{{ $post->friends }}</td>
+                         <td>{{ $post->went_at }}</td>
+                         <td>{{ $post->comments }}</td></tr>
+        
+            @endforeach
+
+{!! link_to_route('posts.create', '投稿' ,null, ['class' => 'btn btn-warning']) !!}
 @endsection

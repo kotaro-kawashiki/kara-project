@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class CalendarController extends Controller
 {
     /**
@@ -23,6 +25,10 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        return view('calendar');
+        
+        $posts =Post::all();
+        
+        return view('calendar',['posts'=>$posts]);
+        
     }
 }
