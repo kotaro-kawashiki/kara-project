@@ -17,6 +17,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'password','userid',
     ];
+    
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

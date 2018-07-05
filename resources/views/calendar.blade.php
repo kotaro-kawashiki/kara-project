@@ -1,3 +1,5 @@
+        <!--Once you log in, you will be this page-->
+
 @extends('layouts.app')
 
 @section('content')

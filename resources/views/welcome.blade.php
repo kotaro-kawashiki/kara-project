@@ -1,3 +1,7 @@
+            <!--you haven't logged in yet, you will see hare-->
+
+
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -69,7 +73,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/calendar') }}">Home</a>
+                        <a href="{{ url('/calendar') }}">Calendar</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -79,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Kara-Project
                 </div>
 
                 <div class="links">

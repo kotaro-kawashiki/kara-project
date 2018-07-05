@@ -14,15 +14,13 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('userid')->unique()->after('email');
+            $table->string('userid')->unique();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
+     
+     
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
