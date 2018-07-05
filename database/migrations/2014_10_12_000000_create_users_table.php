@@ -16,8 +16,8 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
             $table->string('password');
+            
             $table->rememberToken();
             $table->timestamps();
         });
@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return voidphp artisan make:migration update_users_table --table=users
      */
     public function down()
     {
