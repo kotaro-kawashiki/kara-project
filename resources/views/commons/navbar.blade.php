@@ -9,9 +9,15 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Branding Image -->
+                    @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Kara-Project') }}
                     </a>
+                    @else
+                    <a class="navbar-brand" href="{{ url('/calendar') }}">
+                        Kara-Project
+                    </a>
+                    @endguest
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->

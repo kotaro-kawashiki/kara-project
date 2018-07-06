@@ -23,6 +23,7 @@
 <body>
     <div id="app">
         @include('commons.navbar')
+        @include('commons.error_messages')
         <!--this leads each view pages-->
         @yield('content')
     </div>

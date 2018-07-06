@@ -22,8 +22,7 @@ class PostsController extends Controller
         return view('post.post',['post' => $post]);
         
     }
-
-// when you create some posts you can set this route
+    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -31,7 +30,6 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'friends' => 'required|max:191',
             'went_at' => 'required',
-            'end_at' => 'required',
             
             ]);
             
@@ -40,7 +38,7 @@ class PostsController extends Controller
             'cost' => $request->cost,
             'friends' => $request->friends,
             'went_at' => $request->went_at,
-            'end_at' => $request->end_at,
+            'end_at' => $request->went_at,
             'comments' => $request->comments,
         ]);
         
