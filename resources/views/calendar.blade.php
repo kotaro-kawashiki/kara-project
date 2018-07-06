@@ -8,6 +8,8 @@
       外食履歴<h3>今月の使用額合計は{{$total}}円です！</h3>
       </div>
   <div class="panel-body" >
+      
+      <!--©2018 FullCalendar LLC-->
       {!! $calendar_details->calendar() !!}
 </div>
 
