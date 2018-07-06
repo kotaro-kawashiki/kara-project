@@ -18,8 +18,12 @@
         {!! Form::text('friends', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-        {!! Form::label('went_at', '日にち:') !!}
+        {!! Form::label('went_at', '始まり:') !!}
         {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+        {!! Form::label('end_at', 'おわり:') !!}
+        {!! Form::date('end_at', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
         {!! Form::label('comments', 'コメント:') !!}

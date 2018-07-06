@@ -31,6 +31,7 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'friends' => 'required|max:191',
             'went_at' => 'required',
+            'end_at' => 'required',
             
             ]);
             
@@ -39,6 +40,7 @@ class PostsController extends Controller
             'cost' => $request->cost,
             'friends' => $request->friends,
             'went_at' => $request->went_at,
+            'end_at' => $request->end_at,
             'comments' => $request->comments,
         ]);
         

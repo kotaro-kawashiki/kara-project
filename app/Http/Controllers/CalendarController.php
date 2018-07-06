@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use Calendar;
 
 class CalendarController extends Controller
 {
@@ -25,10 +26,25 @@ class CalendarController extends Controller
      */
     public function index()
     {
+        // this is the calendar function
+    	$events = Post::get();
+    	$event_list = [];
+    	foreach ($events as $key => $event) {
+    		$event_list[] = Calendar::event(
+                $event->restaurant,
+                true,
+                new \DateTime($event->went_at),
+                new \DateTime($event->end_at.' +1 day')
+            );
+    	}
+    	$calendar_details = Calendar::addEvents($event_list); 
+ 
+        //return view('events', compact('calendar_details') );
         
-        $posts =Post::all();
         
-        return view('calendar',['posts'=>$posts]);
+        
+        
+        return view('calendar',['calendar_details'=>$calendar_details]);
         
     }
 }

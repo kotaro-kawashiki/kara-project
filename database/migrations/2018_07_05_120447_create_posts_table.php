@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->integer('cost');
             $table->string('friends');
             $table->date('went_at');
+            $table->date('end_at');
             $table->string('comments')->nullable();
             $table->integer('favo')->nullable();
             $table->string('pic_url')->nullable();
