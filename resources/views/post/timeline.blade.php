@@ -3,8 +3,7 @@
 @section('content')
 
     @foreach ($posts as $post)
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-6 col-md-4 col-xs-offset-2 col-xs-8">
             <div class="thumbnail" id="{{$post->id}}">
               <img src="/image/penguin.jpg" alt="/image/penguin.jpg">
               <div class="caption">
@@ -20,7 +19,6 @@
               </div>
             </div>
           </div>
-        </div>
     @endforeach
 
 
