@@ -35,12 +35,15 @@ class CalendarController extends Controller
     	}
     	$calendar_details = Calendar::addEvents($event_list); 
  
-        //return view('events', compact('calendar_details') );
+        $user = \Auth::user();
+        $month = date("m");
+        $posts = $user->posts()->whereMonth('went_at','=',$month)->paginate(10000);
+        $total = 0;
+                    foreach($posts as $post){
+                    $total += $post->cost;
+                    }
         
-        
-        
-        
-        return view('calendar',['calendar_details'=>$calendar_details]);
+        return view('calendar',['calendar_details'=>$calendar_details,'total'=>$total]);
         
     }
 }

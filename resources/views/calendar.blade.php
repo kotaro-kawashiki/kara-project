@@ -3,19 +3,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-xs-12 col-sm-12 col-md-12">
-      @if (Session::has('success'))
-         <div class="alert alert-success">{{ Session::get('success') }}</div>
-      @endif
-    
-</div>
 <div class="panel panel-primary">
-  <div class="panel-heading">外食履歴</div>
+  <div class="panel-heading">
+      外食履歴<h3>今月の使用額合計は{{$total}}円です！</h3>
+      </div>
   <div class="panel-body" >
       {!! $calendar_details->calendar() !!}
-  </div>
 </div>
-
 
 
 <!--these link scripts are loading js file through http -->
