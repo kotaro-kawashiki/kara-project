@@ -25,8 +25,9 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        
-        $posts =Post::all();
+        $user = \Auth::user();
+        $month = date("m");
+        $posts = $user->posts()->whereMonth('went_at','=',$month)->paginate(10000);
         
         return view('calendar',['posts'=>$posts]);
         

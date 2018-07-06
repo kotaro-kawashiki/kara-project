@@ -15,8 +15,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <h3>今月の使用額合計は...
+                    <?php
+                    $total = 0;
+                    foreach($posts as $post){
+                    $total += $post->cost;
+                    }
+                    echo $total
+                    ?>円です!</h3>
+                    
                 </div>
             </div>
         </div>
