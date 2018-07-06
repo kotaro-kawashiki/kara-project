@@ -23,17 +23,23 @@ class CalendarController extends Controller
     public function index()
     {
         // this is the calendar function
-    	$events = Post::get();
-    	$event_list = [];
-    	foreach ($events as $key => $event) {
-    		$event_list[] = Calendar::event(
-                $event->restaurant,
+    	$posts = Post::get();
+    	$post_list = [];
+    	foreach ($posts as $key => $post) {
+    		$post_list[] = Calendar::event(
+                $post->restaurant,
                 true,
-                new \DateTime($event->went_at),
-                new \DateTime($event->end_at.' +1 day')
+                new \DateTime($post->went_at),
+                new \DateTime($post->end_at.' +1 day'),
+                null,
+                            // Add color and link on event
+                         [
+                             'color' => '#ff0000',
+                             'url' => route('posts.show',$post->id),
+                         ]
             );
     	}
-    	$calendar_details = Calendar::addEvents($event_list); 
+    	$calendar_details = Calendar::addEvents($post_list); 
  
         $user = \Auth::user();
         $month = date("m");

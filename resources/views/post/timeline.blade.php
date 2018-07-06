@@ -3,19 +3,24 @@
 @section('content')
 
     @foreach ($posts as $post)
-        <tr>
-            <td>お店：{{ $post->restaurant }}</td>
-            <td>お値段：{{ $post->cost }}</td>
-            <td>行った人{{ $post->friends }}</td>
-            <td>行った日{{ $post->went_at }}</td>
-            <td>コメント{{ $post->comments }}</td>
-            {!! link_to_route('posts.edit', '編集',['id' => $post->id], ['class' => 'btn btn-warning']) !!}
-            {!! Form::model($post, ['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
-                {!! Form::submit('削除') !!}
-            {!! Form::close() !!}
-            </tr>
-            <br>
-        
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" id="{{$post->id}}">
+              <img src="/image/penguin.jpg" alt="/image/penguin.jpg">
+              <div class="caption">
+                <h3>{{$post->restaurant}}</h3>
+                <p>{{$post->cost}}円</p>
+                <p>
+                    {!! link_to_route('posts.show','detail',['id'=> $post->id]) !!}
+                    {!! link_to_route('posts.edit', '編集',['id' => $post->id], ['class' => 'btn btn-warning']) !!}
+                    {!! Form::model($post, ['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
+                        {!! Form::submit('削除',['class'=>'btn btn-success']) !!}
+                    {!! Form::close() !!}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     @endforeach
 
 

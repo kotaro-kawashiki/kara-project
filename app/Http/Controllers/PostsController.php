@@ -48,7 +48,9 @@ class PostsController extends Controller
 // post.show as detail
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        
+        return view('post.detail',['post'=>$post]);
     }
 
 // post.edit
