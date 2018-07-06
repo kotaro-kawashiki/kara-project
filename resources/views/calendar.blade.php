@@ -10,7 +10,7 @@
     
 </div>
 <div class="panel panel-primary">
-  <div class="panel-heading">MY Event Details</div>
+  <div class="panel-heading">外食履歴</div>
   <div class="panel-body" >
       {!! $calendar_details->calendar() !!}
   </div>
