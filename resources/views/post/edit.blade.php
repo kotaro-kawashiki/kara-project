@@ -14,10 +14,6 @@
         {!! Form::text('cost', null, ['class' => 'form-control']) !!}
          </div>
         <div class="form-group">
-        {!! Form::label('friends', '同行者:') !!}
-        {!! Form::text('friends', null, ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
         {!! Form::label('went_at', '日にち:') !!}
         {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
         </div>

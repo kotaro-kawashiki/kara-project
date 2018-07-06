@@ -13,10 +13,7 @@
         {!! Form::label('cost', '値段:') !!}
         {!! Form::text('cost', null, ['class' => 'form-control']) !!}
          </div>
-        <div class="form-group">
-        {!! Form::label('friends', '同行者:') !!}
-        {!! Form::text('friends', null, ['class' => 'form-control']) !!}
-        </div>
+        
         <div class="form-group">
         {!! Form::label('went_at', '日にち:') !!}
         {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
@@ -25,6 +22,13 @@
         {!! Form::label('comments', 'コメント:') !!}
         {!! Form::text('comments', null, ['class' => 'form-control']) !!}
         </div>
+        
+        <div class="form-group">
+        {!! Form::label('people_name', '同行者:') !!}
+        {!! Form::text('people_name', null, ['class' => 'form-control']) !!}
+        </div>
+        
+        
 
         {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
 
