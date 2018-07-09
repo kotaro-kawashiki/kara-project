@@ -24,10 +24,19 @@
         {!! Form::text('comments', null, ['class' => 'form-control']) !!}
         </div>
         
-        <div class="form-group">
-        {!! Form::label('people_name', '同行者:') !!}
-        {!! Form::text('people_name', null, ['class' => 'form-control']) !!}
-        </div>
+        
+         <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">入力欄追加</button>
+    <br>
+    <br>
+        <div class="parent">
+              <div class="field" style="padding-bottom:8px; border-bottom:1px solid #ccc;margin-bottom:20px;">
+                {!! Form::label('people_name', '同行者:') !!}
+                {!! Form::text('people_name[]',null, ['class' => 'form-control']) !!}
+                <button type="button" class="btn trash_btn ml10" value="" name="">
+                        削除
+                </button>
+              </div>
+         </div>
         
         
 

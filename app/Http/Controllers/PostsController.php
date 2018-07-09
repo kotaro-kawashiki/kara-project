@@ -44,9 +44,12 @@ class PostsController extends Controller
         ]);
         
         //こんな感じでいけるかも？
+        
+        foreach($request->people_name as $value){
         $post->people()->create([
-             'people_name' => $request->people_name,
+             'people_name' => $value,
         ]);
+        }
         // $request->user()->posts()->people()->create([
         //     'people_name' => $request->people_name,
         // ]);
@@ -58,16 +61,16 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        $people=People::all();
-        return view('post.detail',['post'=>$post, 'people'=>$people]);
+        $peoples=People::all();
+        return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
     }
 
 // post.edit
     public function edit($id)
     {
         $post = Post::find($id);
-        
-        return view('post.edit',['post' => $post]);
+        $people=People::all();
+        return view('post.edit',['post' => $post,'people'=>$people]);
     }
 
 
