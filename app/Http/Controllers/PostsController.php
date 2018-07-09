@@ -36,18 +36,21 @@ class PostsController extends Controller
             
             ]);
             
-        $request->user()->posts()->create([
+        $post = $request->user()->posts()->create([
             'restaurant' => $request->restaurant,
             'cost' => $request->cost,
             'went_at' => $request->went_at,
             'comments' => $request->comments,
         ]);
         
+        //こんな感じでいけるかも？
+        $post->people()->create([
+             'people_name' => $request->people_name,
+        ]);
         // $request->user()->posts()->people()->create([
         //     'people_name' => $request->people_name,
         // ]);
-        var_dump( $request->user()->posts());
-        exit;
+
         return redirect('/calendar');
     }
 
