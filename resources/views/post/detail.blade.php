@@ -6,7 +6,13 @@
 <div>{{$post->restaurant}}
      {{$post->cost}}円
      {{$post->went_at}}
-     {{$post->friends}}
-     {{$post->comments}}</div>
+     @foreach($peoples as $people)
+          @if($people->post_id==$post->id)
+               {{$people->people_name}}
+          @endif
+     @endforeach
+     {{$post->comments}}
+     
+     </div>
 
 @endsection
