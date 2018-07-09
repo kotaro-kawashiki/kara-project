@@ -7,10 +7,18 @@ use App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    
 //   post.timeline
     public function index()
     {
-        $posts = Post::all();
+        
+        $user = Auth::user();
+        $posts = $user->posts()->paginate(50);
         
         return view('post.timeline',['posts' => $posts]);
     }
