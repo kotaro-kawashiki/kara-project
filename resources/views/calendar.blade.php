@@ -3,34 +3,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <h3>今月の使用額合計は...
-                    <?php
-                    $total = 0;
-                    foreach($posts as $post){
-                    $total += $post->cost;
-                    }
-                    echo $total
-                    ?>円です!</h3>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      外食履歴<h3>今月の使用額合計は{{$total}}円です！</h3>
+      </div>
+  <div class="panel-body" >
+      
+      <!--©2018 FullCalendar LLC-->
+      {!! $calendar_details->calendar() !!}
 </div>
 
 
-
-{!! link_to_route('posts.create', '投稿' ,null, ['class' => 'btn btn-warning']) !!}
+<!--these link scripts are loading js file through http -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+<!-- Scripts -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+ 
+{!! $calendar_details->script() !!}
+ 
 @endsection

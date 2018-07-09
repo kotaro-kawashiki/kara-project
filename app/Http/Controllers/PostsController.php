@@ -24,8 +24,7 @@ class PostsController extends Controller
         return view('post.post',['post' => $post,'people'=>$people]);
         
     }
-
-// when you create some posts you can set this route
+    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -40,6 +39,7 @@ class PostsController extends Controller
             'restaurant' => $request->restaurant,
             'cost' => $request->cost,
             'went_at' => $request->went_at,
+            'end_at' => $request->went_at,
             'comments' => $request->comments,
         ]);
         
@@ -57,7 +57,9 @@ class PostsController extends Controller
 // post.show as detail
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        $people=People::all();
+        return view('post.detail',['post'=>$post, 'people'=>$people]);
     }
 
 // post.edit

@@ -18,6 +18,7 @@
         {!! Form::label('went_at', '日にち:') !!}
         {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
         </div>
+        
         <div class="form-group">
         {!! Form::label('comments', 'コメント:') !!}
         {!! Form::text('comments', null, ['class' => 'form-control']) !!}
