@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -26,7 +27,7 @@ class PostsController extends Controller
 //   post.post
     public function create()
     {
-        $post=new Post;
+        $post = new Post;
         return view('post.post',['post' => $post]);
         
     }
@@ -66,7 +67,11 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         
+        if(\Auth::user()->id == $post->user_id){
         return view('post.edit',['post' => $post]);
+        }else{
+            return redirect('/');
+        }
     }
 
 

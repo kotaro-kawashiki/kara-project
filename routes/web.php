@@ -13,18 +13,9 @@
 
 
 Auth::routes();
-
-
-
-
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('posts', 'PostsController');
     Route::get('/calendar', 'CalendarController@index')->name('calendar');
 });
+Route::get('/', 'WelcomeController@index');
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-//Route::get('events', 'EventController@index');
