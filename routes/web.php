@@ -19,6 +19,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('posts', 'PostsController');
     Route::get('/calendar', 'CalendarController@index')->name('calendar');
+    
 });
 
 
@@ -27,3 +28,5 @@ Route::get('/', function () {
 });
 
 //Route::get('events', 'EventController@index');
+
+Route::resource('posts','PeopleController');

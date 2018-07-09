@@ -11,6 +11,13 @@ class PeopleController extends Controller
     
     public function index()
     {
+        $key='people_name';
+        $peoples = array(People::all());
+        
+        
+        $peoples2 = array_unique($peoples);
+        
+        return view('post.friends',[$key,'peoples2' => $peoples2]);
         
     }
     

@@ -52,6 +52,9 @@
                                     <li>
                                         {!! link_to_route('posts.create', '投稿') !!}
                                     </li>
+                                    <li>
+                                        {!! link_to_route('posts.index','人') !!}
+                                    </li>    
                                 </ul>
                             </li>
                         @endguest
