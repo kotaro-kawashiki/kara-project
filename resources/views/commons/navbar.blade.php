@@ -52,6 +52,9 @@
                                     <li>
                                         {!! link_to_route('posts.create', '投稿') !!}
                                     </li>
+                                    <li>
+                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
+                                    </li>
                                 </ul>
                             </li>
                         @endguest

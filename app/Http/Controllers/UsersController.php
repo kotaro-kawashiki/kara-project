@@ -16,11 +16,11 @@ class UsersController extends Controller
 
         $data = [
             'user' => $user,
-            'users' => $favos,
+            'posts' => $favos,
         ];
 
         $data += $this->counts($user);
 
-        return view('users.favos', $data);
+        return view('post.favolist  ', $data);
     }
 }
