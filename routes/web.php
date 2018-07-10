@@ -14,14 +14,25 @@
 
 Auth::routes();
 
+
 Route::get('/', 'WelcomeController@index');
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('users', 'UsersController');
+    Route::resource('posts', 'PostsController');
+    Route::get('/calendar', 'CalendarController@index')->name('calendar');
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('favo', 'UserFavoController@store')->name('user.favo');
         Route::delete('unfavo', 'UserFavoController@destroy')->name('user.unfavo');
         Route::get('favos', 'UsersController@favos')->name('users.favos');
     });
-    Route::get('/calendar', 'CalendarController@index')->name('calendar');
+
     Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 });
+
