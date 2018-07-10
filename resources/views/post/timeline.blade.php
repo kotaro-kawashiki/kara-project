@@ -15,11 +15,18 @@
                     {!! Form::model($post, ['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                         {!! Form::submit('削除',['class'=>'btn btn-success']) !!}
                     {!! Form::close() !!}
+                    
                 </p>
               </div>
             </div>
           </div>
-    @endforeach
+          
+          
+@include('user_favo.favo_button', ['post' => $post])
+
+@endforeach
+
+
 
 
 

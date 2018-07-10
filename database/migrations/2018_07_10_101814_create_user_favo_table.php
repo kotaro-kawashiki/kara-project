@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTable extends Migration
+class CreateUserFavoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('user_favo', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('favo_id')->unsigned()->index();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('favo_id')->references('id')->on('posts');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('user_favo');
     }
 }

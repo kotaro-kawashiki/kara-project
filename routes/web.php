@@ -27,4 +27,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('favo', 'UserFavoController@store')->name('user.favo');
+        Route::delete('unfavo', 'UserFavoController@destroy')->name('user.unfavo');
+        Route::get('favos', 'UsersController@followings')->name('users.favos');
+    });
+
+    Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+});
+
 //Route::get('events', 'EventController@index');
