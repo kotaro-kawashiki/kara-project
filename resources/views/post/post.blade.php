@@ -3,6 +3,10 @@
 @section('content')
 
     <div class="col-xs-12 col-lg-6 ">
+        <div class="alert alert-warning" role="alert">
+          <strong>Warning!</strong> 製品版では画像投稿が可能です。こうご期待！
+        </div>
+        
         {!! Form::model($post, ['route' => 'posts.store']) !!}
         
         <div class="form-group">

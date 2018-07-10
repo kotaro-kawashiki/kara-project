@@ -3,6 +3,10 @@
 @section('content')
 
 <div class="col-xs-12" >
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning!</strong> 製品版では画像投稿が可能です。こうご期待！
+  </div>
+  
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
     <div class="form-group">
     {!! Form::label('restaurant', '店名:') !!}

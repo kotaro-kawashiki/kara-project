@@ -7,7 +7,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>'
+                    </button>
                     <!-- Branding Image -->
                     @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -19,6 +19,8 @@
                     </a>
                     @endguest
                 </div>
+                
+                
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -39,6 +41,9 @@
                                     
                                     <li>
                                         <a href="{{route('posts.index')}}">Timeline</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">友達リスト</a>
                                     </li>
                                     <li>
                                         <a href="{{route('posts.create')}}">記録をつける</a>
