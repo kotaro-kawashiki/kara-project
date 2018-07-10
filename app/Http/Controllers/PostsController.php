@@ -5,15 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\People;
+use Auth;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    
 //   post.timeline
     public function index()
     {
-        $posts = Post::all();
-        $peoples=People::all();
-        return view('post.timeline',['posts' => $posts,'peoples' => $peoples]);
+        
+        $user = Auth::user();
+        $posts = $user->posts()->paginate(50);
+        
+        return view('post.timeline',['posts' => $posts]);
     }
 
 //   post.post
@@ -69,8 +78,12 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $people=People::all();
-        return view('post.edit',['post' => $post,'people'=>$people]);
+        
+        if(\Auth::user()->id == $post->user_id){
+        return view('post.edit',['post' => $post]);
+        }else{
+            return redirect('/');
+        }
     }
 
 
