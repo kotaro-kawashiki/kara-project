@@ -14,13 +14,12 @@
 
 Auth::routes();
 
-
-
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('posts', 'PostsController');
     Route::get('/calendar', 'CalendarController@index')->name('calendar');
     
 });
+Route::get('/', 'WelcomeController@index');
 
 
 Route::get('/', function () {
@@ -29,4 +28,5 @@ Route::get('/', function () {
 
 //Route::get('events', 'EventController@index');
 
-Route::resource('posts','PeopleController');
+//friendslistでPeoplecontrollerのindex funcをつかってます
+Route::resource('people','PeopleController');

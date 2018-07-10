@@ -8,16 +8,19 @@ use App\People;
 
 class PeopleController extends Controller
 {
-    
+    //めしに行った人を重複なしで表示
     public function index()
     {
-        $key='people_name';
-        $peoples = array(People::all());
         
+        $peoples = People::all();
+        $array_people=array();
+        foreach($peoples as $people){
+            array_push($array_people,$people->people_name);
+        }
         
-        $peoples2 = array_unique($peoples);
+        $unique=array_unique($array_people);
         
-        return view('post.friends',[$key,'peoples2' => $peoples2]);
+        return view('post.friends',['unique' => $unique]);
         
     }
     
@@ -34,16 +37,7 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'people_name' => 'required|max:191',
-            
-            ]);
         
-        $request->post()->people()->create([
-            'people_name' => $request->people_name,
-        ]);
-        
-        return redirect('/calendar');
     }
 
     /**
@@ -77,16 +71,7 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'people_name' => 'required|max:191',
-            ]);
-            
-            $people = People::find($id);
-            $people->people_name = $request->people_name;
-            
-            $post->save();
-            
-            return redirect('/calendar');
+        
     }
 
     /**

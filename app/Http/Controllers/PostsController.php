@@ -8,6 +8,12 @@ use App\People;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    
 //   post.timeline
     public function index()
     {
@@ -70,7 +76,13 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $people=People::all();
+        
+        if(\Auth::user()->id == $post->user_id){
         return view('post.edit',['post' => $post,'people'=>$people]);
+        }else{
+            return redirect('/');
+        }
+        
     }
 
 

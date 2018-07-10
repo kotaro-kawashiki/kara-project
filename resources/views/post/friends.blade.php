@@ -3,9 +3,9 @@
 @section('content')
 
 
-@foreach($peoples2 as $key=>$people)
+@foreach($unique as $value)
 <br>
-{{$people}}
+{{$value}}
 <br>
 @endforeach
 

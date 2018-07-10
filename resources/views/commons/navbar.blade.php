@@ -11,7 +11,7 @@
                     <!-- Branding Image -->
                     @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Kara-Project') }}
+                        Kara-Project
                     </a>
                     @else
                     <a class="navbar-brand" href="{{ url('/calendar') }}">
@@ -36,6 +36,17 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
+                                    
+                                    <li>
+                                        {!! link_to_route('posts.index', 'Timeline') !!}
+                                    </li>
+                                    <li>
+                                        {!! link_to_route('posts.create', '投稿') !!}
+                                    </li>
+                                    <li>
+                                        {!! link_to_route('people.index','人') !!}
+                                    </li>
+                                    <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -46,15 +57,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                    <li>
-                                        {!! link_to_route('posts.index', 'Timeline') !!}
-                                    </li>
-                                    <li>
-                                        {!! link_to_route('posts.create', '投稿') !!}
-                                    </li>
-                                    <li>
-                                        {!! link_to_route('posts.index','人') !!}
-                                    </li>    
+                                     
                                 </ul>
                             </li>
                         @endguest
