@@ -18,8 +18,6 @@
     </div>
   </div>
   @endforeach
-@include('user_favo.favo_button', ['post' => $post])
 
-@endforeach
 
 @endsection
