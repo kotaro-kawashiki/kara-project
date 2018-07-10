@@ -80,7 +80,9 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+        $people = People::find($id);
         if(\Auth::user()->id == $post->user_id){
+            
         return view('post.edit',['post' => $post,'people'=>$people]);
         }else{
             return redirect('/');

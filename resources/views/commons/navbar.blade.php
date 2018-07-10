@@ -7,7 +7,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </button>'
                     <!-- Branding Image -->
                     @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -38,17 +38,17 @@
                                 <ul class="dropdown-menu">
                                     
                                     <li>
-                                        {!! link_to_route('posts.index', 'Timeline') !!}
+                                        <a href="{{route('posts.index')}}">Timeline</a>
                                     </li>
                                     <li>
-                                        {!! link_to_route('posts.create', '投稿') !!}
+                                        <a href="{{route('posts.create')}}">記録をつける</a>
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <span class="glyphicon glyphicon-log-out"></span> Logout
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
