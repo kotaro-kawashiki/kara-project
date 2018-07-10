@@ -46,6 +46,9 @@
                                         <a href="#">友達リスト</a>
                                     </li>
                                     <li>
+                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
+                                    </li>
+                                    <li>
                                         <a href="{{route('posts.create')}}">記録をつける</a>
                                     </li>
                                     <li role="separator" class="divider"></li>
