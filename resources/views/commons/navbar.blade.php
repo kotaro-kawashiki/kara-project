@@ -11,7 +11,7 @@
                     <!-- Branding Image -->
                     @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Kara-Project') }}
+                        Kara-Project
                     </a>
                     @else
                     <a class="navbar-brand" href="{{ url('/calendar') }}">
@@ -19,6 +19,8 @@
                     </a>
                     @endguest
                 </div>
+                
+                
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -36,24 +38,31 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
+                                    
+                                    <li>
+                                        <a href="{{route('posts.index')}}">Timeline</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">友達リスト</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('posts.create')}}">記録をつける</a>
+                                    </li>
+                                    
+                                    <li>
+                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
+                                    </li>
+                                    
+                                    <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <span class="glyphicon glyphicon-log-out"></span> Logout
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
-                                    <li>
-                                        {!! link_to_route('posts.index', 'Timeline') !!}
-                                    </li>
-                                    <li>
-                                        {!! link_to_route('posts.create', '投稿') !!}
-                                    </li>
-                                    <li>
-                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
                                     </li>
                                 </ul>
                             </li>

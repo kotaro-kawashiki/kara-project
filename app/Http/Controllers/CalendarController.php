@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use Calendar;
+use Auth;
 
 class CalendarController extends Controller
 {
@@ -23,7 +24,8 @@ class CalendarController extends Controller
     public function index()
     {
         // this is the calendar function
-    	$posts = Post::get();
+    	$user = Auth::user();
+        $posts = $user->posts()->paginate(50);
     	$post_list = [];
     	foreach ($posts as $key => $post) {
     		$post_list[] = Calendar::event(
@@ -40,8 +42,7 @@ class CalendarController extends Controller
             );
     	}
     	$calendar_details = Calendar::addEvents($post_list); 
- 
-        $user = \Auth::user();
+        // this shows the total amount of each month
         $month = date("m");
         $posts = $user->posts()->whereMonth('went_at','=',$month)->paginate(10000);
         $total = 0;

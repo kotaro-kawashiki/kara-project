@@ -13,4 +13,9 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+    public function people()
+    {
+        return $this->hasMany(People::class);
+    }
 }

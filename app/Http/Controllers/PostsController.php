@@ -4,22 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
+use App\People;
+
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    
 //   post.timeline
     public function index()
     {
-        $posts = Post::all();
         
-        return view('post.timeline',['posts' => $posts]);
+        $user = Auth::user();
+        $posts = $user->posts()->paginate(50);
+        $peoples=People::all();
+        return view('post.timeline',['posts' => $posts,'peoples' => $peoples]);
     }
 
 //   post.post
     public function create()
     {
+
         $post=new Post;
-        return view('post.post',['post' => $post]);
+        $people=new People;
+        return view('post.post',['post' => $post,'people'=>$people]);
         
     }
     
@@ -28,20 +41,30 @@ class PostsController extends Controller
         $this->validate($request,[
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
-            'friends' => 'required|max:191',
             'went_at' => 'required',
+            'people_name' => 'required|max:191',
             
             ]);
             
-        $request->user()->posts()->create([
+        $post = $request->user()->posts()->create([
             'restaurant' => $request->restaurant,
             'cost' => $request->cost,
-            'friends' => $request->friends,
             'went_at' => $request->went_at,
             'end_at' => $request->went_at,
             'comments' => $request->comments,
         ]);
         
+        //こんな感じでいけるかも？
+        
+        foreach($request->people_name as $value){
+        $post->people()->create([
+             'people_name' => $value,
+        ]);
+        }
+        // $request->user()->posts()->people()->create([
+        //     'people_name' => $request->people_name,
+        // ]);
+
         return redirect('/calendar');
     }
 
@@ -49,16 +72,21 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        
-        return view('post.detail',['post'=>$post]);
+        $peoples=People::all();
+        return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
     }
 
 // post.edit
     public function edit($id)
     {
         $post = Post::find($id);
-        
-        return view('post.edit',['post' => $post]);
+        $people = People::find($id);
+        if(\Auth::user()->id == $post->user_id){
+            
+        return view('post.edit',['post' => $post,'people'=>$people]);
+        }else{
+            return redirect('/');
+        }
     }
 
 
@@ -67,18 +95,21 @@ class PostsController extends Controller
         $this->validate($request,[
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
-            'friends' => 'required|max:191',
             'went_at' => 'required',
+            'peoplr_name' => 'required|max:191',
             
             ]);
             
             $post = Post::find($id);
             $post->restaurant = $request->restaurant;
             $post->cost= $request->cost;
-            $post->friends = $request->friends;
             $post->went_at = $request->went_at;
             $post->comments = $request->comments;
             $post->save();
+            
+            $people = People::find($id);
+            $people->people_name = $request->people_name;
+            $people->save();
             
             return redirect('/calendar');
     }
