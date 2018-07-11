@@ -26,7 +26,7 @@ class PostsController extends Controller
         $posts = $user->posts()->get();
         
         if(!empty($query)){
-            $data = $posts->where('restaurant',$query);//->orWhere('cost',$query);
+            $data = $posts->where('restaurant','like',$query);//->orWhere('cost',$query);
         }else{
         $data = $posts = $user->posts()->get();
         }

@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="col-xs-12" >
-  <div class="alert alert-warning" role="alert">
-    <strong>Warning!</strong> 製品版では画像投稿が可能です。こうご期待！
+  <div class="alert alert-success" role="alert">
+    <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
   </div>
   
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
@@ -24,7 +24,7 @@
     {!! Form::label('comments', 'コメント:') !!}
     {!! Form::text('comments', null, ['class' => 'form-control']) !!}
     </div>
-    <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">入力欄追加</button>
+    <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
     <br>
     <br>
     <div class="parent">
