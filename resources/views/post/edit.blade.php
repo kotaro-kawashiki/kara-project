@@ -9,15 +9,15 @@
   
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
     <div class="form-group">
-    {!! Form::label('restaurant', '店名:') !!}
+    {!! Form::label('restaurant', '店名*:') !!}
     {!! Form::text('restaurant', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">        
-    {!! Form::label('cost', '値段:') !!}
-    {!! Form::text('cost', null, ['class' => 'form-control']) !!}
+    {!! Form::label('cost', '値段*:') !!}
+    {!! Form::number('cost', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-    {!! Form::label('went_at', '日にち:') !!}
+    {!! Form::label('went_at', '日にち*:') !!}
     {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
@@ -35,9 +35,9 @@
                 削除
         </button>
       </div>
-     </div>
-{!! Form::submit('編集', ['class' => 'btn btn-primary']) !!}
-{!! Form::close() !!}
+    </div>
+        {!! Form::submit('編集', ['class' => 'btn btn-primary']) !!}
+        {!! Form::close() !!}
 </div>
 
 @endsection

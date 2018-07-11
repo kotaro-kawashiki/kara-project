@@ -10,18 +10,18 @@
         {!! Form::model($post, ['route' => 'posts.store']) !!}
         
         <div class="form-group">
-        {!! Form::label('restaurant', '店名:') !!}
-        {!! Form::text('restaurant', null, ['class' => 'form-control']) !!}
+        {!! Form::label('restaurant', '店名*:') !!}
+        {!! Form::text('restaurant', null, ['class' => 'form-control','placeholder'=>'必須項目']) !!}
         </div>
          
         <div class="form-group">        
-        {!! Form::label('cost', '値段:') !!}
-        {!! Form::text('cost', null, ['class' => 'form-control']) !!}
+        {!! Form::label('cost', '値段*:') !!}
+        {!! Form::number('cost', null, ['class' => 'form-control','placeholder'=>'必須項目']) !!}
         </div>
         
         <div class="form-group">
-        {!! Form::label('went_at', '日にち:') !!}
-        {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
+        {!! Form::label('went_at', '日にち*:') !!}
+        {!! Form::date('went_at', null, ['class' => 'form-control','placeholder'=>'必須項目']) !!}
         </div>
         
         <div class="form-group">

@@ -22,7 +22,9 @@
     <body>
         <div id="app">
             @include('commons.navbar')
-            @include('commons.error_messages')
+            @auth
+                @include('commons.error_messages')
+            @endauth
             <!--this leads each view pages-->
             @yield('content')
         </div>
