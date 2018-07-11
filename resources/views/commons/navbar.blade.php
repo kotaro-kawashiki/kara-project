@@ -19,6 +19,8 @@
                     </a>
                     @endguest
                 </div>
+                
+                
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -38,17 +40,23 @@
                                 <ul class="dropdown-menu">
                                     
                                     <li>
-                                        {!! link_to_route('posts.index', 'Timeline') !!}
+                                        <a href="{{route('posts.index')}}">Timeline</a>
                                     </li>
                                     <li>
-                                        {!! link_to_route('posts.create', '投稿') !!}
+                                        <a href="#">友達リスト</a>
+                                    </li>
+                                    <li>
+                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
+                                    </li>
+                                    <li>
+                                        <a href="{{route('posts.create')}}">記録をつける</a>
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <span class="glyphicon glyphicon-log-out"></span> Logout
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}

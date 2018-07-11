@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use App\People;
 use Auth;
+use App\People;
+
 
 class PostsController extends Controller
 {
@@ -21,13 +22,14 @@ class PostsController extends Controller
         
         $user = Auth::user();
         $posts = $user->posts()->paginate(50);
-        
-        return view('post.timeline',['posts' => $posts]);
+        $peoples=People::all();
+        return view('post.timeline',['posts' => $posts,'peoples' => $peoples]);
     }
 
 //   post.post
     public function create()
     {
+
         $post=new Post;
         $people=new People;
         return view('post.post',['post' => $post,'people'=>$people]);
@@ -78,9 +80,10 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        
+        $people = People::find($id);
         if(\Auth::user()->id == $post->user_id){
-        return view('post.edit',['post' => $post]);
+            
+        return view('post.edit',['post' => $post,'people'=>$people]);
         }else{
             return redirect('/');
         }
@@ -120,6 +123,8 @@ class PostsController extends Controller
             $post->delete();
         }
 
-        return redirect()->back();
+        return redirect('/calendar');
     }
+    
+    
 }

@@ -15,7 +15,7 @@ class CreatePeopleTable extends Migration
             $table->string('people_name');
             $table->timestamps();
             
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
