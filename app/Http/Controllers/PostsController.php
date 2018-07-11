@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Query\Builder;
 use App\Post;
 use Auth;
 use App\People;
@@ -20,10 +21,16 @@ class PostsController extends Controller
     public function index()
     {
         
+        $query = request()->s;
         $user = Auth::user();
-        $posts = $user->posts()->paginate(50);
-        $peoples=People::all();
-        return view('post.timeline',['posts' => $posts,'peoples' => $peoples]);
+        $posts = $user->posts()->get();
+        
+        if(!empty($query)){
+            $data = $posts->where('restaurant',$query);//->orWhere('cost',$query);
+        }else{
+        $data = $posts = $user->posts()->get();
+        }
+        return view('post.timeline',['data' => $data,'query' => $query]);
     }
 
 //   post.post
@@ -35,7 +42,6 @@ class PostsController extends Controller
         return view('post.post',['post' => $post,'people'=>$people]);
         
     }
-    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -52,7 +58,7 @@ class PostsController extends Controller
             'went_at' => $request->went_at,
             'end_at' => $request->went_at,
             'comments' => $request->comments,
-        ]);
+            ]);
         
         //こんな感じでいけるかも？
         

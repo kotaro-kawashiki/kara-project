@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-  @foreach ($posts as $post)
+{!! Form::open(['method' => 'GET']) !!}
+  {!! Form::text('s',null) !!}
+  {!! Form::submit('検索') !!}
+{!! Form::close() !!}
+  @foreach ($data as $post)
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="thumbnail" id="{{$post->went_at}}">
