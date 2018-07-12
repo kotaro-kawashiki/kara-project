@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-     <img src="/image/penguin.jpg" class="img-responsive" alt="/image/penguin.jpg">
+     <img src="/image/gohan.jpg" class="img-responsive" alt="/image/gohan.jpg">
      <caption>
           <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
           <a href="#"><span class="glyphicon glyphicon-heart"></span></a>

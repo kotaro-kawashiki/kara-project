@@ -6,7 +6,7 @@
     
           <div class="col-sm-6 col-md-4 col-xs-offset-2 col-xs-8">
             <div class="thumbnail" id="{{$post->id}}">
-              <img src="/image/penguin.jpg" alt="/image/penguin.jpg">
+              <img src="/image/gohan.jpg" alt="/image/gohan.jpg">
               <div class="caption">
                 <h3>{{$post->restaurant}}</h3>
                 <p>{{$post->cost}}円</p>
