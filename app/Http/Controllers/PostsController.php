@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Query\Builder;
+use DB;
 use App\Post;
 use Auth;
 use App\People;
@@ -20,15 +21,23 @@ class PostsController extends Controller
 //   post.timeline
     public function index()
     {
+        //検索ボックスに入力された値
+        $query = request()->s;  
         
-        $query = request()->s;
         $user = Auth::user();
-        $posts = $user->posts()->get();
+        //postsテーブルからwhereでログインした人の分だけ抽出
+        $posts = DB::table('posts')->where('user_id','=',"$user->id"); 
+                    
+                    
         
         if(!empty($query)){
-            $data = $posts->where('restaurant','like',$query);//->orWhere('cost',$query);
+            $data = $posts->where('restaurant',$query)
+                          ->orWhere('cost',$query)
+                          ->get();
+            // var_dump($data);
+            // exit;
         }else{
-        $data = $posts = $user->posts()->get();
+        $data = $posts->get();
         }
         return view('post.timeline',['data' => $data,'query' => $query]);
     }
