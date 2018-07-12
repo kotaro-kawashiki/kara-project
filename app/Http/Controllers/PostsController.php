@@ -26,7 +26,9 @@ class PostsController extends Controller
         $posts = $user->posts()->get();
         
         if(!empty($query)){
+
             $data = $posts->where('restaurant',$query);//->orWhere('cost',$query);
+
         }else{
         $data = $posts = $user->posts()->get();
         }
@@ -102,7 +104,7 @@ class PostsController extends Controller
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
             'went_at' => 'required',
-            'peoplr_name' => 'required|max:191',
+            'people_name' => 'required|max:191',
             
             ]);
             
@@ -110,12 +112,22 @@ class PostsController extends Controller
             $post->restaurant = $request->restaurant;
             $post->cost= $request->cost;
             $post->went_at = $request->went_at;
+            $post->end_at = $request->went_at;
             $post->comments = $request->comments;
             $post->save();
             
-            $people = People::find($id);
-            $people->people_name = $request->people_name;
-            $people->save();
+            $post->people()->delete();
+            
+            foreach($request->people_name as $value){
+            $post->people()->create([
+                 'people_name' => $value,
+            ]);
+            }
+            
+            
+            // $people = People::find($id);
+            // $people->people_name = $request->people_name;
+            // $people->save();
             
             return redirect('/calendar');
     }

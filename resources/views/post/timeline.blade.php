@@ -16,6 +16,7 @@
           <h4><span class="glyphicon glyphicon-credit-card"></span>:{{$post->cost}}円</h4>
             <a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
             <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+            @include('user_favo.favo_button')
             <a href="#"><span class="glyphicon glyphicon-heart"></span></a>
             @include('user_favo.favo_button')
         </div>

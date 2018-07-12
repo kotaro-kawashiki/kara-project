@@ -12,7 +12,7 @@ class CreatePeopleTable extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('post_id')->unsigned()->index();
-            $table->string('people_name');
+            $table->string('people_name')->nullable();
             $table->timestamps();
             
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
