@@ -28,13 +28,11 @@
   {!! Form::label('comments', 'コメント:') !!}
   {!! Form::text('comments', null, ['class' => 'form-control']) !!}
   </div>
-
-
   <div class="parent">
         <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
             <div class="form-group">
-              {!! Form::label('people_name', '同行者:',['class']) !!}
-              {!! Form::text('people_name[]',null, ['class' => 'form-control']) !!}
+              {!! Form::label('friends', '同行者:') !!}
+              {!! Form::text('friends',null, ['class' => 'form-control']) !!}
               <button type="button" class="btn trash_btn ml10" value="" name="">
                       削除
               </button>

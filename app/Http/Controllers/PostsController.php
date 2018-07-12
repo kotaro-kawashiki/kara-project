@@ -23,20 +23,29 @@ class PostsController extends Controller
     {
         //検索ボックスに入力された値
         $query = request()->s;  
+        $query2 = request()->h;
         
         $user = Auth::user();
         //postsテーブルからwhereでログインした人の分だけ抽出
-        $posts = DB::table('posts')->where('user_id','=',"$user->id"); 
+        $posts = DB::table('posts')->where('user_id',"$user->id"); 
                     
                     
-        
+        //検索ボックスから値が送られた場合
         if(!empty($query)){
             $data = $posts->where('restaurant',$query)
                           ->orWhere('cost',$query)
+                          ->orWhere('went_at',$query)
                           ->get();
             // var_dump($data);
             // exit;
-        }else{
+            
+        }
+        // elseif(!empty($query2)){
+            // $data = $posts->join('people','posts.id','=','people.post_id');
+            // var_dump($data);
+            // exit;
+        // }
+        else{
         $data = $posts->get();
         }
         return view('post.timeline',['data' => $data,'query' => $query]);
@@ -57,8 +66,8 @@ class PostsController extends Controller
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
             'went_at' => 'required',
-            'people_name' => 'required|max:191',
-            
+            // 'people_name' => 'required|max:191',
+            'friends' => 'required'
             ]);
             
         $post = $request->user()->posts()->create([
@@ -67,15 +76,17 @@ class PostsController extends Controller
             'went_at' => $request->went_at,
             'end_at' => $request->went_at,
             'comments' => $request->comments,
+            'friends' => $request->friends,
             ]);
         
         //こんな感じでいけるかも？
         
-        foreach($request->people_name as $value){
-        $post->people()->create([
-             'people_name' => $value,
-        ]);
-        }
+        // foreach($request->friends as $value){
+        // $request->user()->posts()->create([
+            //  'friends' => $value,
+        // ]);
+        // }
+        
         // $request->user()->posts()->people()->create([
         //     'people_name' => $request->people_name,
         // ]);

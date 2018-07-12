@@ -13,13 +13,7 @@
      <ul class="list-group list-group-flush">
        <li class="list-group-item"><h2>{{$post->restaurant}}</h2></li>
        <li class="list-group-item"><h3>{{$post->cost}}円</h3></li>
-       <li class="list-group-item"><ul style="padding-left:0px;">
-          @foreach($peoples as $people)
-               @if($people->post_id==$post->id)
-                    <li style="display:inline-block;">{{$people->people_name}},</li>
-               @endif
-          @endforeach
-          </ul></li>
+       <li class="list-group-item">{{$post->friends}},</li>
        <li class="list-group-item">{{$post->went_at}}</li>
        <li class="list-group-item">{{$post->comments}}</li>
      </ul>
@@ -29,5 +23,5 @@
         {!! Form::close() !!}
      @endif
 </div>
-
+<?php var_dump($post) ?>
 @endsection
