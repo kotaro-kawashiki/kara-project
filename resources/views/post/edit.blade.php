@@ -13,7 +13,7 @@
     {!! Form::text('restaurant', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">        
-    {!! Form::label('cost', '値段:') !!}
+    <h3 style="color:red;">*{!! Form::label('cost', '値段') !!}:</h3>
     {!! Form::text('cost', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
