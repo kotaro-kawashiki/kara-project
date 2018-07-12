@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#timeline {
+    margin-left: 25%;
+    margin-right: 30%;
+}
+
+#kensaku {
+    background-color: #CCFFFF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
