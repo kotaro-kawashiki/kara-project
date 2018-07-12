@@ -7,7 +7,7 @@
       <div class="input-group">
         <input type="text" class="form-control" name="s" placeholder="レストランや費用で検索">
         <span class="input-group-btn">
-      		<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+      		<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
       	</span>
       </div>
     </form>
@@ -19,7 +19,7 @@
       <div class="thumbnail" id="{{$post->went_at}}">
         <caption style="text-align:right;">{{$post->went_at}}</caption>
         <img src="/image/penguin.jpg" alt="/image/penguin.jpg">
-        <div class="caption">
+        <div class="caption"> 
           <h3><span class="glyphicon glyphicon-cutlery"></span>:{{$post->restaurant}}</h3>
           <h4><span class="glyphicon glyphicon-credit-card"></span>:{{$post->cost}}円</h4>
             <a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
