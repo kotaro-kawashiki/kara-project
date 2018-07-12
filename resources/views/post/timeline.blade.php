@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <!--<div class="input-group">-->
-  	<!--<input type="text" class="form-control" name="s" placeholder="レストランや費用で検索">-->
-  	<!--<span class="input-group-btn">-->
-  		<!--<button type="button" class="btn btn-default">ボタン</button>-->
-  	<!--</span>-->
-  <!--</div>-->
+  <!--search form-->
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px;">
     <form method="GET" class="">
       <div class="input-group">
@@ -17,6 +12,7 @@
       </div>
     </form>
   </div>
+  <!--posts-->
   @foreach ($data as $post)
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
