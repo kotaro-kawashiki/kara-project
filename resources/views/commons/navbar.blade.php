@@ -45,7 +45,7 @@
                                     </li>
                                     <li>
 
-                                        <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-list-alt"></span> 投稿一覧 & 検索</a>
+                                        <a href="{{route('posts.index')}}"><span class="glyphicon glyphicon-list-alt"></span> 投稿一覧 & 検索</a>
 
                                     </li>
                                     
@@ -54,7 +54,7 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="#"><span class="glyphicon glyphicon-user"></span> 同行者リスト</a>
+                                        <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 同行者リスト</a>
                                         
                                     </li>
                                     
