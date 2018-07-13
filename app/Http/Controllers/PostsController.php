@@ -34,9 +34,8 @@ class PostsController extends Controller
         if(!empty($query)){
             $data = $posts->where('restaurant',$query)
                           ->orWhere('cost',$query)
-                        //   ->orWhere('went_at',$query)
                           ->orderBy('went_at','desc')
-                          ->pagenate();
+                          ->paginate(10);
             // var_dump($data);
             // exit;
         }
@@ -45,14 +44,14 @@ class PostsController extends Controller
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
-                                       ->get();
+                                       ->pginate(10);
                                     
                                     // var_dump($data);
                                     // exit;
         }
         else{
             
-        $data = $posts->orderBy('went_at','desc')->get();
+        $data = $posts->orderBy('went_at','desc')->paginate(20);
         }
         return view('post.timeline',['data' => $data,'query' => $query,'query2'=>$query2]);
     }

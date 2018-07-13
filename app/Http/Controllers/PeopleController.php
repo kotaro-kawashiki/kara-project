@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Auth;
 
 use App\People;
 
@@ -11,20 +13,36 @@ class PeopleController extends Controller
     
     public function index()
     {
+        $user = Auth::user()->id;
+        $people = DB::table('people')->select('post_id','people_name')
+                                     ->join('posts','post_id','=','posts.id')
+                                     ->where('user_id',$user)
+                                     ->get();
+        $names = [];
+        foreach($people as $person){
+            if(!is_null($person->people_name)){
+                array_push($names,$person->people_name);
+            }
+        }
+            
+                                     
+        // var_dump($names);
+        // exit;
+                                     
+        $count = array_count_values($names);
+        // var_dump($count);
+        // exit;
         
+        $names = array_unique($names);
+        
+        return view('post.friendslist',['names'=>$names,'count'=>$count]);
     }
     
     public function create()
     {
-        //
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request,[
