@@ -44,7 +44,9 @@
                                         <a href="{{url('/calendar')}}"><span class="glyphicon glyphicon-calendar"></span> カレンダー</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('posts.index')}}"><span class="glyphicon glyphicon-list-alt"></span> 投稿一覧 & 検索</a>
+
+                                        <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-list-alt"></span> 投稿一覧 & 検索</a>
+
                                     </li>
                                     
                                     <li>

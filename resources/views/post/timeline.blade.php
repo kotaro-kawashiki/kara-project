@@ -1,20 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-
-<!--検索ボタンのコーナー-->
-<div id="kensaku" class="row">
-      <div class="text-center">
-          {!! Form::open(['method' => 'get', 'class' => 'form-inline']) !!}
-          <div class="form-group">
-          {!! Form::text('s',null, ['class' => 'form-control input-lg']) !!}
-          </div>
-          {!! Form::submit('検索', ['class' => 'btn btn-success btn-lg']) !!}
-          {!! Form::close() !!}
+  <!--search form-->
+<form method="GET" class="form-inline">
+  <div class="form-group">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px;">
+      <div class="input-group">
+        <input type="text" class="form-control" name="s" placeholder="レストランや費用で検索">
+        <span class="input-group-btn">
+      		<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
+      	</span>
       </div>
-</div>
-
-<!--タイムラインのカード-->
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px;">
+      <div class="input-group">
+        <input type="text" class="form-control" name="h" placeholder="一緒に行った人で検索">
+          <span class="input-group-btn">
+        		<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
+        	</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+  <!--posts-->
   @foreach ($data as $post)
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4"><!--card-->
