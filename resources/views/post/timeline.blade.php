@@ -16,8 +16,8 @@
 
 <!--タイムラインのカード-->
   @foreach ($data as $post)
-  <div id="timeline" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4"><!--card-->
       <div class="thumbnail" id="{{$post->went_at}}">
         <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
         

@@ -4,7 +4,7 @@
 
     @foreach ($posts as $post)
     
-          <div class="col-sm-6 col-md-4 col-xs-offset-2 col-xs-8">
+          <div class="col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-offset" >
             <div class="thumbnail" id="{{$post->id}}">
               <img src="/image/gohan.jpg" alt="/image/gohan.jpg">
               <div class="caption">
