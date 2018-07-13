@@ -56,12 +56,12 @@ class PeopleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
         
         
         $user_id = Auth::user()->id;
-        $person_infos = DB::table('people')->where('people_name',$id)
+        $person_infos = DB::table('people')->where('people_name',$name)
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
                                      ->select('people.people_name','posts.restaurant')
