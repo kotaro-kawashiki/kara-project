@@ -12,6 +12,17 @@
       </div>
     </form>
   </div>
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px;">
+    <form method="GET" class="">
+      <div class="input-group">
+        <input type="text" class="form-control" name="h" placeholder="人">
+        <span class="input-group-btn">
+      		<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
+      	</span>
+      </div>
+    </form>
+  </div>
   <!--posts-->
   @foreach ($data as $post)
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">

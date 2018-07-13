@@ -23,6 +23,7 @@ class PostsController extends Controller
     {
         //検索ボックスに入力された値
         $query = request()->s;  
+        $query2 = request()->h;
         
         $user = Auth::user();
         //postsテーブルからwhereでログインした人の分だけ抽出
@@ -37,7 +38,18 @@ class PostsController extends Controller
                           ->get();
             // var_dump($data);
             // exit;
-        }else{
+        }
+        elseif(!empty($query2)){
+            $data = DB::table('people')->where('people_name',$query2)
+                                       ->join('posts','people.post_id','=','posts.id')
+                                       ->where('posts.user_id',"$user->id")
+                                       ->get();
+                                    
+                                    // var_dump($data);
+                                    // exit;
+        }
+        else{
+            
         $data = $posts->get();
         }
         return view('post.timeline',['data' => $data,'query' => $query]);
