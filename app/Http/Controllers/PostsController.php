@@ -26,13 +26,14 @@ class PostsController extends Controller
         
         $user = Auth::user();
         //postsテーブルからwhereでログインした人の分だけ抽出
-        $posts = DB::table('posts')->where('user_id','=',"$user->id"); 
+        $posts = DB::table('posts')->where('user_id',$user->id); 
                     
                     
         
         if(!empty($query)){
             $data = $posts->where('restaurant',$query)
                           ->orWhere('cost',$query)
+                          ->orWhere('went_at',$query)
                           ->get();
             // var_dump($data);
             // exit;
