@@ -34,7 +34,7 @@ class PostsController extends Controller
         if(!empty($query)){
             $data = $posts->where('restaurant',$query)
                           ->orWhere('cost',$query)
-                          ->orWhere('went_at',$query)
+                        //   ->orWhere('went_at',$query)
                           ->get();
             // var_dump($data);
             // exit;
@@ -52,7 +52,7 @@ class PostsController extends Controller
             
         $data = $posts->get();
         }
-        return view('post.timeline',['data' => $data,'query' => $query]);
+        return view('post.timeline',['data' => $data,'query' => $query,'query2'=>$query2]);
     }
 
 //   post.post
