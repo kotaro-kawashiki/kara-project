@@ -26,6 +26,7 @@ class PostsController extends Controller
         $query2 = request()->h;
         
         $user = Auth::user();
+
         //postsテーブルからwhereでログインした人の分だけ抽出
         $posts = DB::table('posts')->where('user_id',$user->id); 
                     

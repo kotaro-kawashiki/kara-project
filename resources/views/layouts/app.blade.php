@@ -21,6 +21,7 @@
         
     　　<!--CSS-->
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        
     </head>
     <body>
         <div id="app">
@@ -29,6 +30,9 @@
                 @include('commons.error_messages')
             @endauth
             <!--this leads each view pages-->
+            <br>
+            <br>
+            <br>
             @yield('content')
         </div>
         
