@@ -23,13 +23,14 @@ class PostsController extends Controller
         
         $query = request()->s;
         $user = Auth::user();
-        $posts = $user->posts()->get();
+        $posts = $user->posts()->orderBy('went_at','desc')->get();
         
         if(!empty($query)){
-            $data = $posts->where('restaurant','like',$query);//->orWhere('cost',$query);
+
+            $data = $posts->where('restaurant',$query);//->orWhere('cost',$query);
+
         }else{
-        $data = $posts = $user->posts()->get();
-        
+        $data = $posts = $user->posts()->orderBy('went_at','desc')->get();
         }
         return view('post.timeline',['data' => $data,'query' => $query]);
     }
