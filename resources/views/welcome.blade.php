@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    めし日記
+                    kara-project
                 </div>
 
                 
