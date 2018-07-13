@@ -1,14 +1,17 @@
 @extends('layouts.app')
 @section('content')
 
-    @foreach($names as $name)
+   <center> @foreach($names as $name)
     
-    <a href="{{route('people.show',['id'=>$name])}}">
-    {{$name}}
+   <h3>
+    ・<a href="{{route('people.show',['id'=>$name])}}">
+   {{$name}}
     </a>
     と{{$count["$name"]}}回<br>
+    </h3>
 
     @endforeach
+    </center>
 
 
 @endsection
