@@ -38,27 +38,30 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
+                                    
                                     <li>
-                                        <a href="{{url('/calendar')}}">カレンダー</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('posts.index')}}">タイムライン</a>
+                                        <a href="{{route('posts.index')}}">Timeline</a>
                                     </li>
                                     <li>
                                         <a href="#">友達リスト</a>
                                     </li>
                                     <li>
-                                        {!! link_to_route('users.favos', 'お気に入り', ['id' => Auth::user()->id]) !!}
+                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
                                     </li>
                                     <li>
                                         <a href="{{route('posts.create')}}">記録をつける</a>
                                     </li>
+                                    
+                                    <li>
+                                        {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
+                                    </li>
+                                    
                                     <li role="separator" class="divider"></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <span class="glyphicon glyphicon-log-out"></span> ログアウト
+                                            <span class="glyphicon glyphicon-log-out"></span> Logout
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}

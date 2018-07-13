@@ -29,6 +29,7 @@ class PostsController extends Controller
             $data = $posts->where('restaurant','like',$query);//->orWhere('cost',$query);
         }else{
         $data = $posts = $user->posts()->get();
+        
         }
         return view('post.timeline',['data' => $data,'query' => $query]);
     }
