@@ -45,7 +45,7 @@
               </div>
          </div>
          <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br><br>
-        {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('投稿', ['class' => 'btn btn-info']) !!}
         {!! Form::close() !!}
   </div>
   

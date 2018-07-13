@@ -7,3 +7,18 @@
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
+
+#favotitle {
+    margin-bottom: 50px;
+}
+.fc-sun {
+    color: red;
+    background-color: #fff0f0;
+}
+.fc-sat {
+    color: blue;
+    background-color: #f0f0ff;
+}
+#calendarpage {
+    margin:5% 10% 10% 10%;
+}

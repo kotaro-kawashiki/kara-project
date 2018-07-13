@@ -5,9 +5,10 @@
 @section('content')
 <div class="panel panel-primary">
   
-      
+      <div id="calendarpage">
       <!--©2018 FullCalendar LLC-->
       {!! $calendar_details->calendar() !!}
+      </div>
 </div>
 
 
@@ -17,7 +18,8 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
- 
+<script src='locale/ja.js'></script>
+
 {!! $calendar_details->script() !!}
  
 @endsection
