@@ -19,7 +19,7 @@ Route::get('/', 'WelcomeController@index');
 Route::group(['middleware' => 'auth'], function () {
     
     Route::resource('users', 'UsersController');
-    Route::get('people','PeopleController@index')->name('people.index');
+    Route::resource('people','PeopleController');
     
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('favo', 'UserFavoController@store')->name('user.favo');

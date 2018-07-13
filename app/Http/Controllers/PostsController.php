@@ -44,7 +44,7 @@ class PostsController extends Controller
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
-                                       ->pginate(10);
+                                       ->paginate(10);
                                     
                                     // var_dump($data);
                                     // exit;

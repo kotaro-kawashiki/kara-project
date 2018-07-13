@@ -13,11 +13,13 @@ class PeopleController extends Controller
     
     public function index()
     {
-        $user = Auth::user()->id;
+        $user_id = Auth::user()->id;
         $people = DB::table('people')->select('post_id','people_name')
-                                     ->join('posts','post_id','=','posts.id')
-                                     ->where('user_id',$user)
+                                     ->join('posts','people.post_id','=','posts.id')
+                                     ->where('posts.user_id',$user_id)
                                      ->get();
+                    // var_dump($people);
+                    // exit;
         $names = [];
         foreach($people as $person){
             if(!is_null($person->people_name)){
@@ -35,7 +37,7 @@ class PeopleController extends Controller
         
         $names = array_unique($names);
         
-        return view('post.friendslist',['names'=>$names,'count'=>$count]);
+        return view('people.friendslist',['names'=>$names,'count'=>$count]);
     }
     
     public function create()
@@ -45,16 +47,7 @@ class PeopleController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'people_name' => 'required|max:191',
-            
-            ]);
         
-        $request->post()->people()->create([
-            'people_name' => $request->people_name,
-        ]);
-        
-        return redirect('/calendar');
     }
 
     /**
@@ -65,7 +58,38 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        
+        $user_id = Auth::user()->id;
+        $person_infos = DB::table('people')->where('people_name',$id)
+                                     ->join('posts','people.post_id','=','posts.id')
+                                     ->where('posts.user_id',$user_id)
+                                     ->select('people.people_name','posts.restaurant')
+                                     ->get();
+                                     
+        // var_dump($person_infos);
+        // exit;
+        
+        $name = [];
+        foreach($person_infos as $person_info){
+            array_push($name,$person_info->people_name);
+        }
+        
+        
+        $restaurants = [];
+        foreach($person_infos as $person_info){
+            array_push($restaurants,$person_info->restaurant);
+        }        
+        
+        // var_dump($info);
+        // exit;
+        
+        $data = [
+            'restaurants' => $restaurants,
+            'name' => $name
+            ];
+                                     
+        return view('people.people',$data);
     }
 
     /**
