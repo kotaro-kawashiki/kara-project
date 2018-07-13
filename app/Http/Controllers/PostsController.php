@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Query\Builder;
+use DB;
 use App\Post;
 use Auth;
 use App\People;
@@ -20,19 +21,39 @@ class PostsController extends Controller
 //   post.timeline
     public function index()
     {
+        //検索ボックスに入力された値
+        $query = request()->s;  
+        $query2 = request()->h;
         
-        $query = request()->s;
         $user = Auth::user();
-        $posts = $user->posts()->orderBy('went_at','desc')->get();
+        //postsテーブルからwhereでログインした人の分だけ抽出
+        $posts = DB::table('posts')->where('user_id',$user->id); 
+                    
+                    
         
         if(!empty($query)){
-
-            $data = $posts->where('restaurant',$query);//->orWhere('cost',$query);
-
-        }else{
-        $data = $posts = $user->posts()->orderBy('went_at','desc')->get();
+            $data = $posts->where('restaurant',$query)
+                          ->orWhere('cost',$query)
+                          ->orderBy('went_at','desc')
+                          ->paginate(10);
+            // var_dump($data);
+            // exit;
         }
-        return view('post.timeline',['data' => $data,'query' => $query]);
+        elseif(!empty($query2)){
+            $data = DB::table('people')->where('people_name',$query2)
+                                       ->join('posts','people.post_id','=','posts.id')
+                                       ->where('posts.user_id',"$user->id")
+                                       ->orderBy('posts.went_at','desc')
+                                       ->paginate(10);
+                                    
+                                    // var_dump($data);
+                                    // exit;
+        }
+        else{
+            
+        $data = $posts->orderBy('went_at','desc')->paginate(20);
+        }
+        return view('post.timeline',['data' => $data,'query' => $query,'query2'=>$query2]);
     }
 
 //   post.post

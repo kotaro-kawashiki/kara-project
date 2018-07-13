@@ -40,10 +40,14 @@
                                 <ul class="dropdown-menu">
                                     
                                     <li>
-                                        <a href="{{route('posts.index')}}">Timeline</a>
+                                        <a href="{{url('/calendar')}}">カレンダー</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="{{route('posts.index')}}">タイムライン</a>
                                     </li>
                                     <li>
-                                        <a href="#">友達リスト</a>
+                                        <a href="{{route('people.index')}}">友達リスト</a>
                                     </li>
                                     <li>
                                         {!! link_to_route('users.favos', 'Favorites', ['id' => Auth::user()->id]) !!}
