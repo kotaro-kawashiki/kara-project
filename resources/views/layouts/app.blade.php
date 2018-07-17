@@ -43,6 +43,8 @@
             	var $content = $( '.field:last-child' );
             	$( '.add_btn' ).on( 'click', function() {
             		$content.clone( true ).appendTo( '.parent' );
+            		$('#people').val("");
+    
             	} );
             	$( '.parent' ).on( 'click', '.trash_btn', function() {
             		$( this ).parents( '.field' ).remove();
