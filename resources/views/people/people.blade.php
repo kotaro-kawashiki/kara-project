@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <center><h1>{{ $person_infos[0]->people_name }}</h1></center>
+    <h1>{{ $person_infos[0]->people_name }}</h1>
         
     @foreach ($person_infos as $info)
       <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><!--全体-->
@@ -22,7 +22,6 @@
                 @if (Auth::user()->is_favoriting($info->id))
                     {!! Form::open(['route' => ['user.unfavo', $info->id], 'method' => 'delete']) !!}
                         {!! Form::submit('お気に入りをやめる',['class' => 'btn btn-warning btn-lg']) !!}
-                        
                     {!! Form::close() !!}
                 @else
                     {!! Form::open(['route' => ['user.favo', $info->id]]) !!}

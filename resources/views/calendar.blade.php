@@ -12,7 +12,7 @@
       
       
       
-              <div class="panel-heading">
+              <div class="panel-footer">
                   <h4>今月の使用額合計:{{$total}}円</h4>
               </div>
       </div>
