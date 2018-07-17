@@ -102,9 +102,14 @@ class PostsController extends Controller
 // post.show as detail
     public function show($id)
     {
-        $post = Post::find($id);
-        $peoples=People::all();
-        return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+        if(Post::find($id)){
+            $post = Post::find($id);
+            $peoples=People::all();
+            return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+        }else{
+            return redirect('post.timeline');
+        }
+        
     }
 
 // post.edit
