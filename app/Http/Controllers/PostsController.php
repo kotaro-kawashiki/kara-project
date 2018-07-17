@@ -66,6 +66,7 @@ class PostsController extends Controller
         return view('post.post',['post' => $post,'people'=>$people]);
         
     }
+    
     public function store(Request $request)
     {
         $this->validate($request,[

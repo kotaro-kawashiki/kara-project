@@ -39,14 +39,16 @@ class PeopleController extends Controller
                     
             foreach($people as $person)
                 if($person_info['name'] == $person->people_name){
+                    
                     $restaurants[] = $person->restaurant;
                 }
-                
                 
             $count = count($restaurants);
             
             $person_info += ['restaurants' => $restaurants,
-                   'count' => $count];
+                             'count' => $count,
+                             ];
+                   
             $people_info[] = $person_info;
         }
         // var_dump($people_info);
@@ -72,9 +74,8 @@ class PeopleController extends Controller
         $person_infos = DB::table('people')->where('people_name',$name)
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
-                                     ->select('people.people_name','posts.restaurant')
+                                     ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id')
                                      ->get();
-                                     
         // var_dump($person_infos);
         // exit;
         
@@ -94,7 +95,8 @@ class PeopleController extends Controller
         
         $data = [
             'restaurants' => $restaurants,
-            'name' => $name
+            'name' => $name,
+            'person_infos' => $person_infos,
             ];
             
         // var_dump($data);
