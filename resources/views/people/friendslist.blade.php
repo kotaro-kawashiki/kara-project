@@ -3,15 +3,21 @@
 
     @foreach($people_info as $person)
     
-    <a href="{{ route( 'people.show',[ 'name'=>$person['name'] ] ) }}">
-    {{ $person['name'] }}
-    </a>
-    と{{ $person['count'] }} 回、
-        @foreach($person['restaurants'] as $restaurant)
-        {{ $restaurant }}
-        @endforeach
-    に行ったことがあります
-    <br>
+    <div class="panel panel-default">
+    	<div class="panel-heading">
+            <a href="{{ route( 'people.show',[ 'name'=>$person['name'] ] ) }}">
+                {{ $person['name'] }}
+            </a>
+            と{{ $person['count'] }} 回食事に行ったことがあります
+    	</div>
+    	<div class="panel-body">
+    	    行ったことのあるお店：
+    		@foreach($person['restaurants'] as $restaurant)
+                {{ $restaurant }}
+            @endforeach
+    	</div>
+    </div>
+    
     @endforeach
     
 @endsection
