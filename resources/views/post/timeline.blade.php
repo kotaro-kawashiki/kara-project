@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-3 col-lg-6">
+
+<div class = "grade">
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-3 col-lg-6"4169e1>
 <h1>投稿一覧</h1>
 </div>
+
 
   <!--search form-->
 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-3 col-lg-6">
@@ -55,6 +58,7 @@
     </div>
   </div>
   @endforeach
-
-
+  
+</div>
 @endsection
+

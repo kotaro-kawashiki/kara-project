@@ -22,3 +22,9 @@
 #calendarpage {
     margin:5% 10% 10% 10%;
 }
+
+.grade {
+background: -moz-linear-gradient(left,#afeeee, #f0f8ff 50%, #afeeee);
+background: -webkit-linear-gradient(left, #afeeee, #f0f8ff 50%, #afeeee);
+background: linear-gradient(to right, #afeeee, #f0f8ff 50%, #afeeee);
+}
