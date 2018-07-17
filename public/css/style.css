@@ -9,7 +9,7 @@
 }
 
 #favotitle {
-    margin-bottom: 49px;
+    margin-bottom: 50px;
 }
 .fc-sun {
     color: red;
@@ -21,4 +21,9 @@
 }
 #calendarpage {
     margin:5% 10% 10% 10%;
+}
+
+img { 
+    max-width: 100%; 
+    height:auto;
 }
