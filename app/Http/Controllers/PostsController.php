@@ -66,6 +66,7 @@ class PostsController extends Controller
         return view('post.post',['post' => $post,'people'=>$people]);
         
     }
+    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -140,18 +141,13 @@ class PostsController extends Controller
             $post->comments = $request->comments;
             $post->save();
             
-            $post->people()->delete();
             
+            $post->people()->delete();
             foreach($request->people_name as $value){
             $post->people()->create([
                  'people_name' => $value,
             ]);
             }
-            
-            
-            // $people = People::find($id);
-            // $people->people_name = $request->people_name;
-            // $people->save();
             
             return redirect('/calendar');
     }
