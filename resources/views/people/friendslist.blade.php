@@ -1,14 +1,17 @@
 @extends('layouts.app')
 @section('content')
 
-    @foreach($names as $name)
+    @foreach($people_info as $person)
     
-    <a href="{{route('people.show',['name'=>$name])}}">
-    {{$name}}
+    <a href="{{ route( 'people.show',[ 'name'=>$person['name'] ] ) }}">
+    {{ $person['name'] }}
     </a>
-    と{{$count["$name"]}}回<br>
-
+    と{{ $person['count'] }} 回、
+        @foreach($person['restaurants'] as $restaurant)
+        {{ $restaurant }}
+        @endforeach
+    に行ったことがあります
+    <br>
     @endforeach
-
-
+    
 @endsection

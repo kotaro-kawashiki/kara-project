@@ -21,6 +21,7 @@ class PeopleController extends Controller
                                      ->get();
                     // var_dump($people);
                     // exit;
+                    
         $names = [];
         foreach($people as $person){
             if(!is_null($person->people_name)){
@@ -29,16 +30,29 @@ class PeopleController extends Controller
         }
         // var_dump($names);
         // exit;
-                                     
-        $count = array_count_values($names);
-        // var_dump($count);
-        // exit;
         
         $names = array_unique($names);
-        // var_dump($names);
+        
+        foreach($names as $name){
+            $restaurants = [];
+            $person_info = [ 'name' => $name,];
+                    
+            foreach($people as $person)
+                if($person_info['name'] == $person->people_name){
+                    $restaurants[] = $person->restaurant;
+                }
+                
+                
+            $count = count($restaurants);
+            
+            $person_info += ['restaurants' => $restaurants,
+                   'count' => $count];
+            $people_info[] = $person_info;
+        }
+        // var_dump($people_info);
         // exit;
         
-        return view('people.friendslist',['names'=>$names,'count'=>$count]);
+        return view('people.friendslist',['people_info' => $people_info]);
     }
     
     public function create()
@@ -51,15 +65,8 @@ class PeopleController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($name)
     {
-        
         
         $user_id = Auth::user()->id;
         $person_infos = DB::table('people')->where('people_name',$name)
@@ -82,13 +89,16 @@ class PeopleController extends Controller
             array_push($restaurants,$person_info->restaurant);
         }        
         
-        // var_dump($info);
+        // var_dump($name);
         // exit;
         
         $data = [
             'restaurants' => $restaurants,
             'name' => $name
             ];
+            
+        // var_dump($data);
+        // exit;
                                      
         return view('people.people',$data);
     }
