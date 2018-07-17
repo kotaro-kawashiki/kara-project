@@ -22,3 +22,7 @@
 #calendarpage {
     margin:5% 10% 10% 10%;
 }
+
+.panel-heading{
+    text-align:right;
+}
