@@ -13,8 +13,10 @@
     {!! Form::text('restaurant', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">        
+
     {!! Form::label('cost', '値段*:') !!}
     {!! Form::number('cost', null, ['class' => 'form-control']) !!}
+
     </div>
     <div class="form-group">
     {!! Form::label('went_at', '日にち*:') !!}
