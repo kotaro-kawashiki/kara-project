@@ -14,9 +14,10 @@ class PeopleController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $people = DB::table('people')->select('post_id','people_name')
+        $people = DB::table('people')->select('people.post_id','people.people_name')
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
+                                     ->select('people.post_id','people.people_name','posts.restaurant')
                                      ->get();
                     // var_dump($people);
                     // exit;
@@ -26,8 +27,6 @@ class PeopleController extends Controller
                 array_push($names,$person->people_name);
             }
         }
-            
-                                     
         // var_dump($names);
         // exit;
                                      
@@ -36,6 +35,8 @@ class PeopleController extends Controller
         // exit;
         
         $names = array_unique($names);
+        // var_dump($names);
+        // exit;
         
         return view('people.friendslist',['names'=>$names,'count'=>$count]);
     }
@@ -56,12 +57,12 @@ class PeopleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
         
         
         $user_id = Auth::user()->id;
-        $person_infos = DB::table('people')->where('people_name',$id)
+        $person_infos = DB::table('people')->where('people_name',$name)
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
                                      ->select('people.people_name','posts.restaurant')

@@ -3,9 +3,8 @@
 
    <center> @foreach($names as $name)
     
-   <h3>
-    ・<a href="{{route('people.show',['id'=>$name])}}">
-   {{$name}}
+    <a href="{{route('people.show',['name'=>$name])}}">
+    {{$name}}
     </a>
     と{{$count["$name"]}}回<br>
     </h3>
