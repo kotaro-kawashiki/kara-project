@@ -46,7 +46,7 @@
         <br>
         <div class="form-group">
         {!! Form::label('pic_url', '写真:') !!}
-        {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ'], ['class' => 'form-control']) !!}
+        {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
         </div>
         <h5>※実際にはここで自分で撮った写真を投稿できる予定です;)</h5>
 
