@@ -72,7 +72,7 @@
             @if (Route::has('login'))
                 <div class="top-right">
                     @auth
-                        <a href="{{ url('/calendar') }}">Calendar</a>
+                        <a href="{{ url('/calendar') }}">{{Form::image('image/buton3.png')}}</a>
                     @else
                         <br><br><h1><a href="{{ route('login') }}">{{Form::image('image/buton.png')}}</a></h1>
                         <h1><a href="{{ route('register') }}">{{Form::image('image/buton2.png')}}</a></h1>
