@@ -27,7 +27,7 @@ return [
         'array'   => ':attributeは:min〜:max個までにしてください。',
     ],
     'boolean'              => ':attributeはtrueかfalseにしてください。',
-    'confirmed'            => ':attributeは確認用項目と一致していません。',
+    'confirmed'            => ':attributeが一致していません。',
     'date'                 => ':attributeは正しい日付ではありません。',
     'date_format'          => ':attributeは":format"書式と一致していません。',
     'different'            => ':attributeは:otherと違うものにしてください。',
@@ -35,7 +35,8 @@ return [
     'digits_between'       => ':attributeは:min〜:max桁にしてください。',
     'dimensions'           => ':attributeは無効な画像サイズです。',
     'distinct'             => ':attributeは値が重複しています。',
-    'email'                => ':attributeを正しいメールアドレスにしてください。',
+    'email'                => 'この:attributeはすでに存在しています。',
+    'userid'               => ':attributeは既に存在します。',
     'exists'               => '選択された:attributeは正しくありません。',
     'file'                 => ':attributeはファイルにしてください。',
     'filled'               => ':attributeは必須です。',
@@ -83,6 +84,7 @@ return [
     'timezone'             => ':attributeは正しいタイムゾーンをしていしてください。',
     'unique'               => ':attributeは既に存在します。',
     'uploaded'             => ':attributeはアップロードできませんでした。',
+    
     'url'                  => ':attributeを正しい書式にしてください。',
     /*
     |--------------------------------------------------------------------------
@@ -109,5 +111,7 @@ return [
     | of "email". This simply helps us make messages a little cleaner.
     |
     */
-    'attributes' => [],
+    'attributes' => [
+        'userid'=>'ユーザーID',
+        'password'=>'パスワード',],
 ];
