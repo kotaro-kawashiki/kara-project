@@ -66,6 +66,7 @@ class PostsController extends Controller
         return view('post.post',['post' => $post,'people'=>$people]);
         
     }
+    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -103,19 +104,26 @@ class PostsController extends Controller
 // post.show as detail
     public function show($id)
     {
-        $post = Post::find($id);
-        $peoples=People::all();
-        return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+        if(Post::find($id)){
+            $post = Post::find($id);
+            $peoples=People::all();
+            return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+        }else{
+            return redirect('post.timeline');
+        }
+        
     }
 
 // post.edit
     public function edit($id)
     {
         $post = Post::find($id);
-        $people = People::find($id);
+        $peoples = People::all();
+        
+        
         if(\Auth::user()->id == $post->user_id){
             
-        return view('post.edit',['post' => $post,'people'=>$people]);
+        return view('post.edit',['post' => $post,'peoples'=>$peoples]);
         }else{
             return redirect('/');
         }
@@ -142,18 +150,13 @@ class PostsController extends Controller
             $post->pic_url = $request->pic_url;
             $post->save();
             
-            $post->people()->delete();
             
+            $post->people()->delete();
             foreach($request->people_name as $value){
             $post->people()->create([
                  'people_name' => $value,
             ]);
             }
-            
-            
-            // $people = People::find($id);
-            // $people->people_name = $request->people_name;
-            // $people->save();
             
             return redirect('/calendar');
     }

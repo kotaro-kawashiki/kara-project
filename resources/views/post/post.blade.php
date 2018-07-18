@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
         <h1>新規投稿</h1>
       　<br>
@@ -34,7 +33,11 @@
               <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                   <div class="form-group">
                     {!! Form::label('people_name', '同行者:',['class']) !!}
-                    {!! Form::text('people_name[]',null, ['class' => 'form-control','placeholder'=>'例:楽天太郎']) !!}
+                    
+                    <!--{!! Form::text('people_name[]',null, ['class' => 'form-control','placeholder'=>'例:楽天太郎']) !!}-->
+                    
+                    <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control' >
+                    </input>
                     <button type="button" class="btn trash_btn ml10" value="" name="">
                             削除
                     </button>
@@ -54,6 +57,7 @@
         <br>
         {!! Form::submit('投稿', ['class' => 'btn btn-info']) !!}
         {!! Form::close() !!}
+
   </div>
   
 

@@ -23,7 +23,12 @@
     margin:5% 10% 10% 10%;
 }
 
+.panel-footer{
+    text-align:right;
+    text-decoration: underline;
+}
 img { 
     max-width: 100%; 
     height:auto;
 }
+

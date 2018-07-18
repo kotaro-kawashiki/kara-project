@@ -14,30 +14,48 @@ class PeopleController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $people = DB::table('people')->select('post_id','people_name')
+        $people = DB::table('people')->select('people.post_id','people.people_name')
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
+                                     ->select('people.post_id','people.people_name','posts.restaurant')
                                      ->get();
                     // var_dump($people);
                     // exit;
+                    
         $names = [];
         foreach($people as $person){
             if(!is_null($person->people_name)){
                 array_push($names,$person->people_name);
             }
         }
-            
-                                     
         // var_dump($names);
-        // exit;
-                                     
-        $count = array_count_values($names);
-        // var_dump($count);
         // exit;
         
         $names = array_unique($names);
         
-        return view('people.friendslist',['names'=>$names,'count'=>$count]);
+        $people_info = [];
+        foreach($names as $name){
+            $restaurants = [];
+            $person_info = [ 'name' => $name,];
+                    
+            foreach($people as $person)
+                if($person_info['name'] == $person->people_name){
+                    
+                    $restaurants[] = $person->restaurant;
+                }
+                
+            $count = count($restaurants);
+            
+            $person_info += ['restaurants' => $restaurants,
+                             'count' => $count,
+                             ];
+                   
+            $people_info[] = $person_info;
+        }
+        // var_dump($people_info);
+        // exit;
+        
+        return view('people.friendslist',['people_info' => $people_info]);
     }
     
     public function create()
@@ -50,23 +68,15 @@ class PeopleController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($name)
     {
         
-        
         $user_id = Auth::user()->id;
-        $person_infos = DB::table('people')->where('people_name',$id)
+        $person_infos = DB::table('people')->where('people_name',$name)
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
-                                     ->select('people.people_name','posts.restaurant')
+                                     ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id','posts.pic_url')
                                      ->get();
-                                     
         // var_dump($person_infos);
         // exit;
         
@@ -79,15 +89,26 @@ class PeopleController extends Controller
         $restaurants = [];
         foreach($person_infos as $person_info){
             array_push($restaurants,$person_info->restaurant);
-        }        
+        }  
         
-        // var_dump($info);
+        $pic_url = [];
+        foreach($person_infos as $person_info){
+            array_push($pic_url,$person_info->pic_url);
+        }  
+        
+        // var_dump($name);
         // exit;
         
         $data = [
             'restaurants' => $restaurants,
-            'name' => $name
+            'name' => $name,
+            'pic_url' => $pic_url,
+            'person_infos' => $person_infos,
+            
             ];
+            
+        // var_dump($data);
+        // exit;
                                      
         return view('people.people',$data);
     }
