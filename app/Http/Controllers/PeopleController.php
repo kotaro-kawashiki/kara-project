@@ -33,6 +33,7 @@ class PeopleController extends Controller
         
         $names = array_unique($names);
         
+        $people_info = [];
         foreach($names as $name){
             $restaurants = [];
             $person_info = [ 'name' => $name,];
