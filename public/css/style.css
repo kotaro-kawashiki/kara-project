@@ -9,7 +9,7 @@
 }
 
 #favotitle {
-    margin-bottom: 49px;
+    margin-bottom: 50px;
 }
 .fc-sun {
     color: red;
@@ -23,8 +23,11 @@
     margin:5% 10% 10% 10%;
 }
 
-.grade {
-background: -moz-linear-gradient(left,#afeeee, #f0f8ff 50%, #afeeee);
-background: -webkit-linear-gradient(left, #afeeee, #f0f8ff 50%, #afeeee);
-background: linear-gradient(to right, #afeeee, #f0f8ff 50%, #afeeee);
+.panel-footer{
+    text-align:right;
+    text-decoration: underline;
+}
+img { 
+    max-width: 100%; 
+    height:auto;
 }
