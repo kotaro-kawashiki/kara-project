@@ -33,7 +33,7 @@
             <br>
             <br>
             <br>
-            @yield('content')
+             @yield('content')
         </div>
         
         <!--this script is written in js/jquery and this is the function that add columns of friends on the post and edit pages-->
