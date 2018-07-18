@@ -20,7 +20,7 @@ class PeopleController extends Controller
                                      ->select('people.post_id','people.people_name','posts.restaurant')
                                      ->get();
                     // var_dump($people);
-                    // exit;
+                    // exit;    
                     
         $names = [];
         foreach($people as $person){
@@ -33,6 +33,7 @@ class PeopleController extends Controller
         
         $names = array_unique($names);
         
+        $people_info = [];
         foreach($names as $name){
             $restaurants = [];
             $person_info = [ 'name' => $name,];
@@ -51,6 +52,7 @@ class PeopleController extends Controller
                    
             $people_info[] = $person_info;
         }
+        
         // var_dump($people_info);
         // exit;
         
