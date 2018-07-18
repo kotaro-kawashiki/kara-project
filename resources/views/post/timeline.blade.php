@@ -38,7 +38,7 @@
       <div class="thumbnail" id="{{$post->went_at}}">
         <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
         
-        <img class="img-rounded" src="/image/gohan.jpg" alt="/image/gohan.jpg">
+        <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
         
         <div class="caption">
           <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}　  
