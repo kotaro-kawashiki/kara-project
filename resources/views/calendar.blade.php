@@ -9,8 +9,10 @@
       </div>
     </div>
     <div class="col-lg-4">
+        <div class="panel">
               <h4>今月の使用額合計:{{$total}}円</h4>
           </div>
+    </div>
     <!--these link scripts are loading js file through http -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
     
