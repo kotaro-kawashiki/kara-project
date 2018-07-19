@@ -28,14 +28,25 @@ class PostsController extends Controller
         $user = Auth::user();
         if(!empty($query)){
             
+            if(is_string($query))
+            {
             $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
                                       ->where([['restaurant',$query],['user_id',$user->id]])
+                                    //   ->orWhere([['cost',$query],['user_id',$user->id]])
+                                      ->orderBy('went_at','desc')
+                                      ->paginate(10);
+            }                        
+            // var_dumps($data);
+            // exit;
+            if(is_numeric($query))
+            {
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
+                                    //   ->where([['restaurant',$query],['user_id',$user->id]])
                                       ->orWhere([['cost',$query],['user_id',$user->id]])
                                       ->orderBy('went_at','desc')
                                       ->paginate(10);
-                                      
-            // var_dumps($data);
-            // exit;
+            }
+            
         }
         elseif(!empty($query2)){
             $data = DB::table('people')->where('people_name',$query2)
