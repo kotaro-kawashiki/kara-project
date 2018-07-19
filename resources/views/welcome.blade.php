@@ -22,7 +22,7 @@
                 top: 18px;
             }
             img {
-                width: 100%;
+                width: 90%;
             }
             #phonebutton {
                 display: none !important; 
