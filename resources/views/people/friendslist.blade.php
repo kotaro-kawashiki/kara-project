@@ -2,28 +2,24 @@
 @section('content')
 
     @if(!empty($people_info))
-    <ul class="list-unstyled">
-        @foreach($people_info as $person)
-            <li>
-            <div class="col-lg-4">
-                <div class="panel panel-default">
-                	<div class="panel-heading">
-                        <a href="{{ route( 'people.show',[ 'name'=>$person['name'] ] ) }}">
-                            {{ $person['name'] }}
-                        </a>
-                        と{{ $person['count'] }} 回食事に行ったことがあります
-                	</div>
-                	<div class="panel-body">
-                	    行ったことのあるお店：
-                		@foreach($person['restaurants'] as $restaurant)
+            <table class="table table-striped">
+                 @foreach($people_info as $person)
+                <tr>
+                    <td>
+                        {{ $person['name'] }}
+                    </td>
+                    <td>
+                        {{ $person['count'] }}回
+                    </td>
+                    <td>@foreach($person['restaurants'] as $restaurant)
                             {{ $restaurant }}
                         @endforeach
-                	</div>
-                </div>
-            </div>
-            </li>
-        @endforeach
-    </ul>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
+        
+    
     @else
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="alert alert-warning" role="alert">
