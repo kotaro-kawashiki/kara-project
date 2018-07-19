@@ -27,10 +27,15 @@
             #phonebutton {
                 display: none !important; 
             }
+            #phonetitle {
+                display: none !important; 
+            }
             @media only screen and (max-width: 750px) {
                 .top-right { display: none !important; }
                 #button { display: none !important; }
+                #pctitle { display: none !important; }
                 #phonebutton{ display: block !important; }
+                #phonetitle{ display: block !important; }
             }
             
         </style>
@@ -52,12 +57,15 @@
         <center><img class="title" src="/image/title5.png" alt="/image/title5.png"></center>
         </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+        <div id="pctitle" class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
             <center><img class="title" src="/image/setsumei1.png" alt="/image/setsumei1.png"></center>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
             <center><img class="title" src="/image/setsumei2.png" alt="/image/setsumei2.png"></center>
         </div>
+        <div id="phonetitle" class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+            <center><img class="title" src="/image/phonetitle1.png" alt="/image/phonetitle1.png"></center>
+            <center><img class="title" src="/image/phonetitle2.png" alt="/image/phonetitle2.png"></center>
+        </div>
+        
         <div id="button">
         <center><a href="{{ route('register') }}">{{Form::image('image/buton4.png')}}</a></center>
         </div>

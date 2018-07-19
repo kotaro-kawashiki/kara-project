@@ -36,7 +36,7 @@ class CalendarController extends Controller
                 null,
                             // Add color and link on event
                          [
-                             'color' => '#00ffff',
+                             'color' => '#AED6F1',
                              'url' => route('posts.show',$post->id),
                          ]
             );
