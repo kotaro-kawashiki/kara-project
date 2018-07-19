@@ -24,10 +24,7 @@
     text-align:right;
     text-decoration: underline;
 }
-img { 
-    max-width: 100%; 
-    height:auto;
-}
+
 
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {

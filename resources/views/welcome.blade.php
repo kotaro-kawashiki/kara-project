@@ -14,55 +14,21 @@
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
             }
-
-            .content {
-                text-align: center;
+            img {
+                width: 100%;
             }
-
-            .title {
-                font-size: 84px;
+            #phonebutton {
+                display: none !important; 
             }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            @media only screen and (max-width: 750px) {
+                .top-right { display: none !important; }
+                #button { display: none !important; }
+                #phonebutton{ display: block !important; }
             }
         </style>
     </head>
@@ -71,7 +37,7 @@
             @if (Route::has('login'))
                 <div class="top-right">
                     @auth
-                        <a href="{{ url('/calendar') }}">{{Form::image('image/buton3.png')}}</a>
+                        <h1><a href="{{ url('/calendar') }}">{{Form::image('image/buton3.png')}}</a></h1>
                     @else
                         <br><br><h1><a href="{{ route('login') }}">{{Form::image('image/buton.png')}}</a></h1>
                         <h1><a href="{{ route('register') }}">{{Form::image('image/buton2.png')}}</a></h1>
@@ -79,11 +45,22 @@
                 </div>
             @endif
             <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
-                <img class="title img-responsive" src="/image/title4.png" alt="/image/title4.png">
+                <center><img class="title" src="/image/title5.png" alt="/image/title5.png"></center>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
             <center><img class="title" src="/image/setsumei1.png" alt="/image/setsumei1.png"></center>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
             <center><img class="title" src="/image/setsumei2.png" alt="/image/setsumei2.png"></center>
             <h1><center><a href="{{ route('register') }}">{{Form::image('image/buton4.png')}}</a></center></h1>
+        </div>
+        <div id="button">
+            <center><a href="{{ route('register') }}">{{Form::image('image/buton4.png')}}</a></center>
+        </div>
+        <div id="phonebutton">
+            <center><a href="{{ route('register') }}">{{Form::image('image/buton6.png')}}</a></center>
+            <center><a href="{{ route('login') }}">{{Form::image('image/buton7.png')}}</a></center>
         </div>
     </body>
 </html>
