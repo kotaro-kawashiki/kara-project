@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="favotitle" class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4">
-<h1>お気に入り投稿一覧</h1>
+<center><h1>お気に入り投稿一覧</h1></center>
 </div>
 
 

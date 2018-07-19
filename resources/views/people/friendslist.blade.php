@@ -3,6 +3,7 @@
 
     @if(!empty($people_info))
         @foreach($people_info as $person)
+
         <div class="panel panel-default">
         	<div class="panel-heading">
                 <a href="{{ route( 'people.show',[ 'name'=>$person['name'] ] ) }}">
@@ -17,6 +18,7 @@
                 @endforeach
         	</div>
         </div>
+        
         @endforeach
     @else
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
