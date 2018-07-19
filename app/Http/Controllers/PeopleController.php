@@ -46,6 +46,8 @@ class PeopleController extends Controller
                 
             $count = count($restaurants);
             
+            $restaurants = array_unique($restaurants);
+            
             $person_info += ['restaurants' => $restaurants,
                              'count' => $count,
                              ];
