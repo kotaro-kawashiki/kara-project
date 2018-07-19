@@ -115,20 +115,20 @@ border-color: #ffffff;
 background-color: #ffffff;
 }
 /* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
-.navbar-default .navbar-toggle:focus,
-.navbar-default .navbar-toggle:hover {
-background-color: #ffffff;
-}
+/*.navbar-default .navbar-toggle:focus,*/
+/*.navbar-default .navbar-toggle:hover {*/
+/*background-color: #ffffff;*/
+/*}*/
 /* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
-.navbar-default .navbar-toggle:focus,
-.navbar-default .navbar-toggle:hover {
-border-color: #65baad;
-}
+/*.navbar-default .navbar-toggle:focus,*/
+/*.navbar-default .navbar-toggle:hover {*/
+/*border-color: #65baad;*/
+/*}*/
 /* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
-.navbar-default .navbar-toggle:focus > .icon-bar,
-.navbar-default .navbar-toggle:hover > .icon-bar {
-background-color: #65baad;
-}
+/*.navbar-default .navbar-toggle:focus > .icon-bar,*/
+/*.navbar-default .navbar-toggle:hover > .icon-bar {*/
+/*background-color: #65baad;*/
+/*}*/
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
 color: #f8fbf8;

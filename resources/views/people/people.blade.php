@@ -1,16 +1,12 @@
 @extends('layouts.app')
 @section('content')
-
-    <h1>{{ $person_infos[0]->people_name }}</h1>
-        
+    <center><h1>{{ $person_infos[0]->people_name }}</h1></center>
     @foreach ($person_infos as $info)
       <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><!--全体-->
         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-12"><!--card-->
           <div class="thumbnail" id="">
             <center><caption style="text-align:right;"><h2>{{$info->went_at}}</h2></caption></center> <!--いった日付-->
-            
             <img src="{{$info->pic_url}}" class="img-responsive" alt="{{$info->pic_url}}">
-            
             <div class="caption">
               <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$info->restaurant}}　  
                   <span class="glyphicon glyphicon-yen"></span>{{$info->cost}}</center></h2>
