@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="panel">
+    <!--<div class="panel">-->
       <div id="calendarpage">
           <!--©2018 FullCalendar LLC-->
           {!! $calendar_details->calendar() !!}
@@ -10,7 +10,7 @@
               <h4>今月の使用額合計:{{$total}}円</h4>
           </div>
       </div>
-    </div>
+    <!--</div>-->
     
     
     <!--these link scripts are loading js file through http -->

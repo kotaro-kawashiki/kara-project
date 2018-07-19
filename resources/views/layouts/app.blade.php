@@ -18,9 +18,9 @@
         <link href="css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        @include('commons.navbar')
+       
         <div id="app">
-            
+            @include('commons.navbar')
             @auth
                 @include('commons.error_messages')
             @endauth
