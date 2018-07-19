@@ -20,7 +20,8 @@
                 top: 18px;
             }
             img {
-                width: 90%;
+
+                width: 91%;
             }
             #phonebutton {
                 display: none !important; 

@@ -31,7 +31,7 @@
     </div>
     
     {!! Form::label('peole_name', '同行者:') !!}<br>
-    同行者に尽きましてはもう一度ご入力をお願いします<br>
+    同行者につきましてはもう一度ご入力をお願いします<br>
      現在登録されている人は
           @foreach($peoples as $people)
                @if($people->post_id==$post->id)
