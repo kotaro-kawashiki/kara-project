@@ -2,10 +2,13 @@
 
 @section('content')
 
-<div class="col-xs-12" >
+<div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
+     <h1>投稿の編集</h1>
+     <br>
   <div class="alert alert-success" role="alert">
     <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
   </div>
+  <br>
   
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
     <div class="form-group">

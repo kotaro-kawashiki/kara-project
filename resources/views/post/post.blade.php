@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
-        <h1>新規投稿</h1>
+        <center><h1>新規投稿</h1></center>
       　<br>
         {!! Form::model($post, ['route' => 'posts.store']) !!}
         <div class="form-group">

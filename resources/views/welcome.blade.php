@@ -20,7 +20,7 @@
                 top: 18px;
             }
             img {
-                width: 100%;
+                width: 90%;
             }
             #phonebutton {
                 display: none !important; 
@@ -53,7 +53,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
             <center><img class="title" src="/image/setsumei2.png" alt="/image/setsumei2.png"></center>
-            <h1><center><a href="{{ route('register') }}">{{Form::image('image/buton4.png')}}</a></center></h1>
         </div>
         <div id="button">
             <center><a href="{{ route('register') }}">{{Form::image('image/buton4.png')}}</a></center>
