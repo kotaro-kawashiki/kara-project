@@ -39,14 +39,19 @@
                @endif
           @endforeach
         です
+        <!--editページのイニエスタも消えるようにしました-->
     <div class="parent">
-      <div class="field" style="padding-bottom:4px; margin-bottom:10px;">
-        {!! Form::text('people_name[]',null, ['class' => 'form-control']) !!}
-        <button type="button" class="btn trash_btn ml10" value="" name="">
-                削除
-        </button>
-      </div>
-    </div>
+              <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
+                  <div class="form-group">
+                    {!! Form::label('people_name', '同行者:',['class']) !!}
+                    <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control' >
+                    </input>
+                    <button type="button" class="btn trash_btn ml10" value="" name="">
+                            削除
+                    </button>
+                </div>
+              </div>
+         </div>
     <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
     
     <br>
