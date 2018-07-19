@@ -83,5 +83,12 @@
         <img class="title" src="/image/title4.png" alt="/image/title4.png">
         </div>
         </div>
+        <div>
+            <center><img class="title" src="/image/setsumei1.png" alt="/image/setsumei1.png"></center>
+        </div>
+        <div>
+            <center><img class="title" src="/image/setsumei2.png" alt="/image/setsumei2.png"></center>
+        </div>
+        <h1><center><a href="{{ route('register') }}">{{Form::image('image/buton4.png')}}</a></center></h1>
     </body>
 </html>
