@@ -49,8 +49,13 @@ class CalendarController extends Controller
                     foreach($posts as $post){
                     $total += $post->cost;
                     }
+                    
+        // foreach($posts as $post){
+        // var_dump(substr($post->went_at,8,10));
+        // }
+        // exit;
         
-        return view('calendar',['calendar_details'=>$calendar_details,'total'=>$total]);
+        return view('calendar',['calendar_details'=>$calendar_details,'total'=>$total,'posts' => $posts]);
         
     }
 }

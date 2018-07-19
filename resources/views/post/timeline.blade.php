@@ -52,7 +52,6 @@
         </div>
       </div>
     </div>
-    
     <!--ここからPC表示-->
     <div class="hidden-xs col-sm-5 col-md- col-lg-offset-3 col-lg-6 thumbnail">
       <div  id="{{$post->went_at}}">

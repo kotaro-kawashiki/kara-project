@@ -40,8 +40,7 @@ class PostsController extends Controller
             // exit;
             if(is_numeric($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
-                                    //   ->where([['restaurant',$query],['user_id',$user->id]])
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                                    //   ->where([['restaurant',$query],['user_id',$user->id]])
                                       ->orWhere([['cost',$query],['user_id',$user->id]])
                                       ->orderBy('went_at','desc')
                                       ->paginate(10);
