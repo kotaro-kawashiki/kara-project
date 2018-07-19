@@ -20,13 +20,12 @@
               {{$post->cost}}円
             </div>
             <div class="panel-heading">同行者</div>
-            <div class="panel-body">
-                
-                  @foreach($peoples as $people)
-                        @if($people->post_id==$post->id)
-                            {{$people->people_name}},
-                        @endif
-              　　@endforeach
+               <div class="panel-body">
+               @foreach($peoples as $people)
+                    @if($people->post_id==$post->id)
+                         {{$people->people_name}},
+                    @endif
+               @endforeach
             </div>
             <div class="panel-heading">日付</div>
             <div class="panel-body">
