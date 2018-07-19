@@ -74,6 +74,7 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'went_at' => 'required',
             'people_name' => 'required|max:191',
+            'pic_url' => 'required|max:191',
             
             ]);
             
@@ -83,6 +84,7 @@ class PostsController extends Controller
             'went_at' => $request->went_at,
             'end_at' => $request->went_at,
             'comments' => $request->comments,
+            'pic_url' => $request->pic_url,
             ]);
         
         //こんな感じでいけるかも？
@@ -102,9 +104,14 @@ class PostsController extends Controller
 // post.show as detail
     public function show($id)
     {
-        $post = Post::find($id);
-        $peoples=People::all();
-        return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+        if(Post::find($id)){
+            $post = Post::find($id);
+            $peoples=People::all();
+            return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+        }else{
+            return redirect('post.timeline');
+        }
+        
     }
 
 // post.edit
@@ -130,6 +137,7 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'went_at' => 'required',
             'people_name' => 'required|max:191',
+            'pic_url' => 'required|max:191',
             
             ]);
             
@@ -139,6 +147,7 @@ class PostsController extends Controller
             $post->went_at = $request->went_at;
             $post->end_at = $request->went_at;
             $post->comments = $request->comments;
+            $post->pic_url = $request->pic_url;
             $post->save();
             
             

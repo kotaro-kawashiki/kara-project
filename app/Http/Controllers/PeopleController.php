@@ -33,6 +33,7 @@ class PeopleController extends Controller
         
         $names = array_unique($names);
         
+        $people_info = [];
         foreach($names as $name){
             $restaurants = [];
             $person_info = [ 'name' => $name,];
@@ -74,7 +75,7 @@ class PeopleController extends Controller
         $person_infos = DB::table('people')->where('people_name',$name)
                                      ->join('posts','people.post_id','=','posts.id')
                                      ->where('posts.user_id',$user_id)
-                                     ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id')
+                                     ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id','posts.pic_url')
                                      ->get();
         // var_dump($person_infos);
         // exit;
@@ -88,7 +89,12 @@ class PeopleController extends Controller
         $restaurants = [];
         foreach($person_infos as $person_info){
             array_push($restaurants,$person_info->restaurant);
-        }        
+        }  
+        
+        $pic_url = [];
+        foreach($person_infos as $person_info){
+            array_push($pic_url,$person_info->pic_url);
+        }  
         
         // var_dump($name);
         // exit;
@@ -96,7 +102,9 @@ class PeopleController extends Controller
         $data = [
             'restaurants' => $restaurants,
             'name' => $name,
+            'pic_url' => $pic_url,
             'person_infos' => $person_infos,
+            
             ];
             
         // var_dump($data);

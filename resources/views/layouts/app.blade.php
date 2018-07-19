@@ -10,7 +10,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
     
-        <title>Kara-Project</title>
+        <title>めし日和</title>
     
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -33,7 +33,7 @@
             <br>
             <br>
             <br>
-            @yield('content')
+             @yield('content')
         </div>
         
         <!--this script is written in js/jquery and this is the function that add columns of friends on the post and edit pages-->

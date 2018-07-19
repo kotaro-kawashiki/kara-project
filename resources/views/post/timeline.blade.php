@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-3 col-lg-6">
+
+<div class = "grade">
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-3 col-lg-6"4169e1>
 <h1>投稿一覧</h1>
 </div>
+
 
   <!--search form-->
 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-3 col-lg-6">
@@ -29,16 +32,18 @@
       </div>
     </div>
   </div>
+  
 </form>
+
 </div>
   <!--posts-->
   @foreach ($data as $post)
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
-    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4"><!--card-->
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg"><!--card-->
       <div class="thumbnail" id="{{$post->went_at}}">
         <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
         
-        <img class="img-rounded" src="/image/gohan.jpg" alt="/image/gohan.jpg">
+        <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
         
         <div class="caption">
           <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}　  
@@ -53,8 +58,30 @@
         </div>
       </div>
     </div>
+    
+    <!--ここからPC表示-->
+    <div class="hidden-xs col-sm-5 col-md-5 col-lg-offset-4 col-lg-4">
+      <div class="PC" id="{{$post->went_at}}">
+        <caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption>
+        <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
+        
+          
+          <div class="caption">
+          <h2><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}　  
+              <span class="glyphicon glyphicon-yen"></span>{{$post->cost}}</h2>
+              
+            <h2><a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></a>
+            <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+            
+            @include('user_favo.favo_button')
+           
+          </div>
+      </div>
+    </div>
+  </div>
   </div>
   @endforeach
-
+  
 
 @endsection
+
