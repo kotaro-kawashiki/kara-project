@@ -2,7 +2,18 @@
 @section('content')
 
     @if(!empty($people_info))
-            <table class="table table-striped">
+        <center><h1>同行者リスト</h1></center>
+        <br>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>回数</th>
+                    <th>行ったことあるところ</th>
+                </tr>
+                </thead>
+                <tbody>
                  @foreach($people_info as $person)
                 <tr>
                     <td>
@@ -16,8 +27,10 @@
                         @endforeach
                     </td>
                 </tr>
+                </tbody>
                 @endforeach
             </table>
+            </div>
         
     
     @else
