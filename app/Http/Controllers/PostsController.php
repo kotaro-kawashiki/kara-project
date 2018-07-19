@@ -26,18 +26,15 @@ class PostsController extends Controller
         $query2 = request()->h;
         
         $user = Auth::user();
-
-        //postsテーブルからwhereでログインした人の分だけ抽出
-        $posts = DB::table('posts')->where('user_id',$user->id); 
-                    
-                    
-        
         if(!empty($query)){
-            $data = $posts->where('restaurant',$query)
-                          ->orWhere('cost',$query)
-                          ->orderBy('went_at','desc')
-                          ->paginate(10);
-            // var_dump($data);
+            
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
+                                      ->where([['restaurant','=',$query],['user_id','=',$user->id]])
+                                      ->orWhere([['cost',$query],['user_id',$user->id]])
+                                      ->orderBy('went_at','desc')
+                                      ->paginate(10);
+                                      
+            // var_dumps($data);
             // exit;
         }
         elseif(!empty($query2)){
@@ -46,14 +43,13 @@ class PostsController extends Controller
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
                                        ->paginate(10);
-                                    
                                     // var_dump($data);
                                     // exit;
         }
         else{
-            
-        $data = $posts->orderBy('went_at','desc')->paginate(20);
+            $data = DB::table('posts')->where('user_id',"$user->id")->orderBy('went_at','desc')->paginate(20);
         }
+        
         return view('post.timeline',['data' => $data,'query' => $query,'query2'=>$query2]);
     }
 
@@ -61,8 +57,8 @@ class PostsController extends Controller
     public function create()
     {
 
-        $post=new Post;
-        $people=new People;
+        $post = new Post;
+        $people = new People;
         return view('post.post',['post' => $post,'people'=>$people]);
         
     }

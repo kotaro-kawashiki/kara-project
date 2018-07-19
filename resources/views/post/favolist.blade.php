@@ -2,19 +2,15 @@
 
 @section('content')
 
-<div id="favotitle" class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4">
-<h1>お気に入り投稿一覧</h1>
-</div>
-
-
+  <div id="favotitle" class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4">
+  <h1>お気に入り投稿一覧</h1>
+  </div>
   @foreach ($posts as $post)
     <div id="favolist" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-4 col-lg-4"><!--card-->
       <div class="thumbnail" id="{{$post->went_at}}">
         <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
-        
         <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
-        
         <div class="caption">
           <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}　  
               <span class="glyphicon glyphicon-yen"></span>{{$post->cost}}</center></h2>
