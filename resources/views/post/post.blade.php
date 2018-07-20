@@ -56,8 +56,8 @@
            <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
           <br>
           <div class="form-group">
-          {!! Form::label('pic_url', '写真:') !!}
-          {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
+            {!! Form::label('pic_url', '写真:') !!}
+            {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
           </div>
           <h5>※実際にはここで自分で撮った写真を投稿できる予定です;)</h5>
           <br>
@@ -73,9 +73,7 @@
       	todayHighlight: true,
         autoclose: true,
       }).data('datepicker');
-      api.widget.on('click','td.day',function(){
-      	api.hide();
-      });
+      
   </script>
 </body>
 @endsection

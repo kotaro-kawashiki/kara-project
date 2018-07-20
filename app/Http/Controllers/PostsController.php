@@ -46,7 +46,7 @@ class PostsController extends Controller
             
         }
         elseif(!empty($query2)){
-            $data = DB::table('people')->where('people_name',$query2)
+            $data = DB::table('people')->where('people_name','LIKE',"%$query2%")
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
