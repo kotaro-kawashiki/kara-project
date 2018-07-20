@@ -12,12 +12,13 @@
             -moz-opacity: 0.9;
             opacity: 0.9;
             padding-bottom: 3%;
+            border-radius: 5%;
         }
     </style>
   </head>
   <body>
     <div class="col-xs-offset-1 col-xs-10 col-lg-offset-4 col-lg-4" id="hontai">
-        <center><h1>新規投稿</h1></center>
+        <center><h1>記録をつける</h1></center>
       　<br>
         {!! Form::model($post, ['route' => 'posts.store']) !!}
           <div class="form-group">

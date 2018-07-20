@@ -3,11 +3,19 @@
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/shower.jpg"); }
+        body {background-image: url("/image/flower2.jpg"); }
+        #hontai {
+            background-color: white;
+            filter:alpha(opacity=90);
+            -moz-opacity: 0.9;
+            opacity: 0.9;
+            padding-bottom: 3%;
+            border-radius: 5%;
+        }
         
 </style>
 </head>
-<div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
+<div class="col-xs-12 col-lg-offset-4 col-lg-4" id="hontai">
      <h1>投稿の編集</h1>
      <br>
   <div class="alert alert-success" role="alert">
@@ -19,7 +27,7 @@
      
      <h5><a href="{{ route('posts.store') }}">
      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>投稿一覧へ</a></h5>
-    
+
   <br>
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
         <div class="form-group">
@@ -42,8 +50,7 @@
         <div class="form-group">
             {!! Form::label('comments', 'コメント:') !!}
             {!! Form::text('comments', null, ['class' => 'form-control']) !!}
-        <br>
-        
+        </div>
         <div class="parent">
              @foreach($people as $user_people)
             <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
@@ -60,17 +67,14 @@
               </div>
               @endforeach
          </div>
-    
     <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
-    
-    <br>
-    
         <div class="form-group">
+            <br>
             {!! Form::label('pic_url', '写真:') !!}
             {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
         </div>
         <h5>※写真を変えない場合でももう一度選びなおしてください</h5><br><br>
-        {!! Form::submit('編集', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('編集', ['class' => 'btn btn-info']) !!}
     {!! Form::close() !!}
 </div>
 

@@ -3,7 +3,7 @@
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/shower.jpg"); }
+        body {background-image: url("/image/candy.jpg"); }
         
 </style>
 </head>
