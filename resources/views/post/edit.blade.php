@@ -27,6 +27,10 @@
                 </span>
             </div>
         </div>
+        <div class="form-group">
+            {!! Form::label('restaurant', '店名*:') !!}
+            {!! Form::text('restaurant', null, ['class' => 'form-control','placeholder'=>'例：鳥貴族']) !!}
+        </div>
         <div class="form-group">        
             {!! Form::label('cost', '値段*:') !!}
             {!! Form::number('cost', null, ['class' => 'form-control']) !!}

@@ -94,9 +94,11 @@ class PostsController extends Controller
         //こんな感じでいけるかも？
         
         foreach($request->people_name as $value){
-        $post->people()->create([
-             'people_name' => $value,
-        ]);
+            if(!is_null($value)){
+                $post->people()->create([
+                     'people_name' => $value,
+                ]);
+            }
         }
        
     //   var_dump($post);
