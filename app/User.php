@@ -40,35 +40,35 @@ class User extends Authenticatable
     public function favo($postsId)
     {
     // confirm if already following
-    $exist = $this->is_favoriting($postsId);
-   
-    if ($exist) {
-        // do nothing if already following
-        return false;
-    } else {
-        // follow if not following
-        $this->favos()->attach($postsId);
-        return true;
-    }
+        $exist = $this->is_favoriting($postsId);
+       
+        if ($exist) {
+            // do nothing if already following
+            return false;
+        } else {
+            // follow if not following
+            $this->favos()->attach($postsId);
+            return true;
+        }
     }
     
     public function unfavo($postsId)
     {
-    // confirming if already following
-    $exist = $this->is_favoriting($postsId);
-
-    if ($exist) {
-        // stop following if following
-        $this->favos()->detach($postsId);
-        return true;
-    } else {
-        // do nothing if not following
-        return false;
-    }
-    }
-
-public function is_favoriting($postsId) {
-    return $this->favos()->where('favo_id', $postsId)->exists();
-    }
+        // confirming if already following
+        $exist = $this->is_favoriting($postsId);
     
-}
+        if ($exist) {
+            // stop following if following
+            $this->favos()->detach($postsId);
+            return true;
+        } else {
+            // do nothing if not following
+            return false;
+        }
+    }
+
+    public function is_favoriting($postsId) {
+        return $this->favos()->where('favo_id', $postsId)->exists();
+        }
+        
+    }

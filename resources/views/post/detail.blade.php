@@ -60,24 +60,6 @@
         </div>
     </div>
 </div>
-     
-     
-     <!--<table border="1">-->
-     <!--     <tbody>-->
-     <!--            <tr><td><h4>店名</h4></td><td><h3>{{$post->restaurant}}</h3></td></tr>-->
-     <!--            <tr><td><h4>金額</h4></td><td><h3>{{$post->cost}}円</h3></td></tr>-->
-     <!--            <tr><td><h4>同行者</h4></td>-->
-     <!--            <td><h3>-->
-     <!--               @foreach($peoples as $people)-->
-     <!--                    @if($people->post_id==$post->id)-->
-     <!--                         {{$people->people_name}},-->
-     <!--                    @endif-->
-     <!--               @endforeach-->
-     <!--               </h3></td></tr>-->
-     <!--            <tr><td><h4>日付</h4></td><td><h3>{{$post->went_at}}</h3></td></tr>-->
-     <!--            <tr><td><h4>メモ</h4></td><td><h3>{{$post->comments}}</h3></td></tr>-->
-     <!--     </tbody>-->
-     <!--</table>-->
 
 
 @endsection
