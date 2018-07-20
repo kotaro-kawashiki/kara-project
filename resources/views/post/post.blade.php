@@ -69,7 +69,9 @@
   <script type="text/javascript">
       var api = $('.date').datepicker({
       	format : 'yyyy-mm-dd',
-      	language: 'ja'
+      	language: 'ja',
+      	todayHighlight: true,
+        autoclose: true,
       }).data('datepicker');
       api.widget.on('click','td.day',function(){
       	api.hide();

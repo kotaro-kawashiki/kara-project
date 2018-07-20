@@ -8,10 +8,15 @@
 </style>
 </head>
 <div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
-    <h1>投稿の編集</h1><br>
-    <div class="alert alert-success" role="alert">
-        <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
-    </div><br>
+     <h1>投稿の編集</h1>
+     <br>
+  <div class="alert alert-success" role="alert">
+    <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
+  </div>
+  
+  <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細に戻る</a></h5>
+  <br>
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
         <div class="form-group">
             <label name="went_at">日付*:</label>
@@ -78,6 +83,5 @@
   	api.hide();
   });
 </script>
-
 
 @endsection
