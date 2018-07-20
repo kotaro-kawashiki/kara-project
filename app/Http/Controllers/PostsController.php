@@ -30,24 +30,23 @@ class PostsController extends Controller
             
             if(is_string($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments')
                                       ->where([['restaurant','LIKE',"%$query%"],['user_id',$user->id]])
-                                      ->orderBy('went_at','desc')
+                                      ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->paginate(10);
             }                        
             // var_dumps($data);
             // exit;
             if(is_numeric($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                                    //   ->where([['restaurant',$query],['user_id',$user->id]])
-                                      ->orWhere([['cost',$query],['user_id',$user->id]])
-                                      ->orderBy('went_at','desc')
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                              
+                                      ->orWhere([['cost',$query],['user_id',$user->id]])                      
                                       ->paginate(10);
             }
             
         }
         elseif(!empty($query2)){
-            $data = DB::table('people')->where('people_name','LIKE',"%$query2%")
+            $data = DB::table('people')->where('people_name',$query2)
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
