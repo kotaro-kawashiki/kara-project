@@ -1,14 +1,21 @@
 @extends('layouts.app')
 @section('content')
+<head>
+<style>
+        body {background-image: url("/image/shower.jpg"); }
+        
+</style>
+</head>
     <center><h1>{{ $person_infos[0]->people_name }}</h1></center>
         　 
+    <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <h5><a href="{{ route('people.index') }}">
+    　      <span class = "glyphicon glyphicon-arrow-left" aria-hidden="true"></span>人リストに戻る</a></h5>
+    </div>
+    
          
     @foreach ($person_infos as $info)
       <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><!--全体-->
-      
-       <h5><a href="{{ route('people.index') }}">
-    　      <span class = "glyphicon glyphicon-arrow-left" aria-hidden="true"></span>人リストに戻る</a></h5>
-    
         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-12"><!--card-->
           <div class="thumbnail" id="">
             <center><caption style="text-align:right;"><h2>{{$info->went_at}}</h2></caption></center> <!--いった日付-->

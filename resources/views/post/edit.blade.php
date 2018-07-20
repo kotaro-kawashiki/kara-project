@@ -8,9 +8,13 @@
   <div class="alert alert-success" role="alert">
     <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
   </div>
-  
-  <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
-    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細に戻る</a></h5>
+    
+    <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
+     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細へ</a></h5>
+     
+     <h5><a href="{{ route('posts.store') }}">
+     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>投稿一覧へ</a></h5>
+    
     　
   
   <br>
