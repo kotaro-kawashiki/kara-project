@@ -36,19 +36,19 @@ h1 {
 }
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
-background-color: #f8fbf8;
+background-color: #e0f6ff;
 border-color:　#f8fbf8;
-background-image: url("/image/navbar1.jpg");
+/*background-image: url("/image/navbar1.jpg");*/
 }
 /* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
-color: #f8fbf8;
+color: #0d2d51;
 }
 /* navbar hover,focus時のテキストカラー */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-color: #26534c;
-background-color: transparent;
+color: white;
+background-color: #79a0e0;
 }
 /* navbar active設定時のカラー */
 .navbar-default .navbar-nav>.active>a,
@@ -107,11 +107,11 @@ background-color: #c3ede7;
 
 /* navbar ハンバーガー四角枠 */
 .navbar-default .navbar-toggle {
-border-color: #ffffff;
+border-color: #0d2d51;
 }
 /* navbar ハンバーガー三本線 */
 .navbar-default .navbar-toggle .icon-bar {
-background-color: #ffffff;
+background-color: #0d2d51;
 }
 /* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
 /*.navbar-default .navbar-toggle:focus,*/
@@ -130,7 +130,7 @@ background-color: #ffffff;
 /*}*/
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
-color: #f8fbf8;
+color: #0d2d51;
 }
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {

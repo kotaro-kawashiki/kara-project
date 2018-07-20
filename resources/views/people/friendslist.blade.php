@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<head>
+<style>
+        body {background-image: url("/image/shower.jpg"); }
+        
+</style>
+</head>
 
     @if(!empty($people_info))
         <center><h1>同行者リスト</h1></center>

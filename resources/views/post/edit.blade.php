@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<head>
+<style>
+        body {background-image: url("/image/shower.jpg"); }
+        
+</style>
+</head>
 <div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
      <h1>投稿の編集</h1>
      <br>
