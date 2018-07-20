@@ -30,21 +30,14 @@
     {!! Form::text('comments', null, ['class' => 'form-control']) !!}
     </div>
     
-    {!! Form::label('peole_name', '同行者:') !!}<br>
-    同行者につきましてはもう一度ご入力をお願いします<br>
-     現在登録されている人は
-          @foreach($peoples as $people)
-               @if($people->post_id==$post->id)
-                    <li style="display:inline-block;">{{$people->people_name}}さん </li>
-               @endif
-          @endforeach
-        です
-        <!--editページのイニエスタも消えるようにしました-->
+    
+    <!--editページの複製フォーム内の名前も消えるようにしました-->
+    @foreach($people as $user_people)
     <div class="parent">
               <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                   <div class="form-group">
                     {!! Form::label('people_name', '同行者:',['class']) !!}
-                    <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control' >
+                    <input type="text" id="people" name="people_name[]" value="$user_people->people_name" placeholder='例:楽天太郎' class='form-control' >
                     </input>
                     <button type="button" class="btn trash_btn ml10" value="" name="">
                             削除
@@ -52,6 +45,7 @@
                 </div>
               </div>
          </div>
+    @endforeach
     <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
     
     <br>
