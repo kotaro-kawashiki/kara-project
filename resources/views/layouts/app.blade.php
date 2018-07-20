@@ -20,6 +20,14 @@
     　　<!--CSS-->
         <link href="/css/style.css" rel="stylesheet" type="text/css">
         
+        <style>
+                #calendar {
+                    margin-top: 0px;
+                }
+                #shiyougaku {
+                    margin-top: 5%;
+                }
+        </style>
     </head>
     <body>
        

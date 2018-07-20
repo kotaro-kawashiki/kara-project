@@ -2,19 +2,12 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-<style>
-        /*body {background-image: url("/image/shower.jpg"); }*/
-        #calendar {
-            margin-top: 0px;
-            /*background-color: white;*/
-        }
-        #shiyougaku {
-            margin-top: 5%;
-        }
-</style>
-</head>
     <div class="col-lg-7 col-sm-7 col-md-7 col-xs-12" id="calendar">
+    @if($total==0)
+        <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal">
+        	初めての方はこちら
+        </button>
+    @endif
       <div id="calendarpage">
           <!--©2018 FullCalendar LLC-->
           {!! $calendar_details->calendar() !!}
@@ -41,25 +34,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang/ja.js"></script>
     {!! $calendar_details->script() !!}
 
-
-
-
-
-<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+<!-- モーダル・ダイアログ -->
+<div class="modal fade" id="sampleModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+				<h4 class="modal-title">初めまして！</h4>
+			</div>
+			<div class="modal-body">
+				登録ありがとうございます。記録をつけるをクリックして、先日の食事を記録してみましょう！
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" href="{{route('posts.create')}}">記録をつける</a>
+			</div>
+		</div>
+	</div>
 </div>
 @endsection
