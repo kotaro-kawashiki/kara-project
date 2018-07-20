@@ -31,8 +31,7 @@ class PostsController extends Controller
             if(is_string($query))
             {
             $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
-                                      ->where([['restaurant',$query],['user_id',$user->id]])
-                                    //   ->orWhere([['cost',$query],['user_id',$user->id]])
+                                      ->where([['restaurant','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->orderBy('went_at','desc')
                                       ->paginate(10);
             }                        
@@ -48,7 +47,7 @@ class PostsController extends Controller
             
         }
         elseif(!empty($query2)){
-            $data = DB::table('people')->where('people_name',$query2)
+            $data = DB::table('people')->where('people_name','LIKE',"%$query2%")
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
