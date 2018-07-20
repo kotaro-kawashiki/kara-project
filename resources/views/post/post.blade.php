@@ -23,7 +23,7 @@
           <div class="form-group">
             <label name="went_at">日付*:</label>
             <div class='input-group date'>
-                <input type='text' name="went_at" class="form-control" />
+                <input type='text' name="went_at" value='{{date("Y-m-d")}}' class="form-control" />
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>

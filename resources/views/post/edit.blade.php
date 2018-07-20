@@ -21,7 +21,7 @@
         <div class="form-group">
             <label name="went_at">日付*:</label>
             <div class='input-group date'>
-                <input type='text' name="went_at" class="form-control" />
+                <input type='text' name="went_at" value='{{$post->went_at}}' class="form-control" />
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -30,10 +30,6 @@
         <div class="form-group">        
             {!! Form::label('cost', '値段*:') !!}
             {!! Form::number('cost', null, ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('went_at', '日にち*:') !!}
-            {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('comments', 'コメント:') !!}
@@ -76,12 +72,11 @@
 
   var api = $('.date').datepicker({
   	format : 'yyyy-mm-dd',
-  	language: 'ja'
+  	language: 'ja',
+  	todayHighlight: true,
+  	autoclose: true,
   }).data('datepicker');
   
-  api.widget.on('click','td.day',function(){
-  	api.hide();
-  });
 </script>
 
 @endsection
