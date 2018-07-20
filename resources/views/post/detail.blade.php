@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<head>
+<style>
+        body {background-image: url("/image/shower.jpg"); }
+        
+</style>
+</head>
 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
      <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
      <caption>

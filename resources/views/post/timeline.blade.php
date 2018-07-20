@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
-
+<head>
+<style>
+        body {background-image: url("/image/shower.jpg"); }
+        
+</style>
+</head>
   <div class = "grade">
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-2 col-lg-8"4169e1>
     <center><h1>投稿一覧</h1></center>
@@ -33,6 +38,7 @@
   </div>
 
   <!--posts-->
+  
   @foreach ($data as $post)
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     <div class="col-xs-12 hidden-sm hidden-md hidden-lg"><!--card-->

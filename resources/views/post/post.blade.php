@@ -1,8 +1,22 @@
 @extends('layouts.app') 
 
 @section('content')
-
-    <div class="col-xs-12 col-lg-offset-4 col-lg-4 ">
+  <head>
+    <style>
+        body {
+            background-image: url("/image/flower2.jpg"); 
+        }
+        #hontai {
+            background-color: white;
+            filter:alpha(opacity=90);
+            -moz-opacity: 0.9;
+            opacity: 0.9;
+            padding-bottom: 3%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="col-xs-offset-1 col-xs-10 col-lg-offset-4 col-lg-4" id="hontai">
         <center><h1>新規投稿</h1></center>
       　<br>
         {!! Form::model($post, ['route' => 'posts.store']) !!}
@@ -61,4 +75,5 @@
       	api.hide();
       });
   </script>
+</body>
 @endsection

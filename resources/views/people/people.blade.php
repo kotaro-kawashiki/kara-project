@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<head>
+<style>
+        body {background-image: url("/image/shower.jpg"); }
+        
+</style>
+</head>
     <center><h1>{{ $person_infos[0]->people_name }}</h1></center>
     @foreach ($person_infos as $info)
       <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><!--全体-->
