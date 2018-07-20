@@ -46,7 +46,7 @@
                                 <a href="{{route('users.favos',['id' => Auth::user()->id])}}"><span class="glyphicon glyphicon-star-empty"></span> お気に入り</a>
                             </li>
                             <li>
-                                <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 同行者リスト</a>
+                                <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 人リスト</a>
                             </li>
                                 <li>
                                     <a href="{{ route('logout') }}"

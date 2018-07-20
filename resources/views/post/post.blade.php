@@ -25,7 +25,7 @@
         <div class="parent">
               <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                   <div class="form-group">
-                    {!! Form::label('people_name', '同行者:',['class']) !!}
+                    {!! Form::label('people_name', '行った人:',['class']) !!}
                     <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control' >
                     </input>
                     <button type="button" class="btn trash_btn ml10" value="" name="">

@@ -2,7 +2,7 @@
 @section('content')
 
     @if(!empty($people_info))
-        <center><h1>同行者リスト</h1></center>
+        <center><h1>人リスト</h1></center>
         <br>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10">
             <table class="table table-hover">
@@ -33,7 +33,6 @@
                 @endforeach
             </table>
             </div>
-        
     
     @else
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -44,4 +43,7 @@
             </div>
         </div>
     @endif
+    
+    
+    
 @endsection

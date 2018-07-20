@@ -7,6 +7,10 @@
      <caption>
          
      </caption> 
+     
+     <h5><a href="{{ route('calendar') }}">
+     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>カレンダーに戻る</a></h5>
+    　
 </div>
 <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
      
@@ -46,6 +50,7 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+            
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="btn-group" role="group"　class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     @include('user_favo.favo_button')
@@ -57,7 +62,9 @@
                   {!! link_to_route('posts.edit', 'この投稿を編集', ['id' => $post->id], ['class' => 'btn btn-success']) !!}
                 </div>
             </div>
+            
         </div>
+        
     </div>
 </div>
 

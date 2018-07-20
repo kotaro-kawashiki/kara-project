@@ -8,6 +8,11 @@
   <div class="alert alert-success" role="alert">
     <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
   </div>
+  
+  <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細に戻る</a></h5>
+    　
+  
   <br>
   
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
@@ -61,13 +66,12 @@
         </div>
     <h5>※写真を変えない場合でももう一度選びなおしてください</h5>
         
-    
-    <br>
     <br>
         {!! Form::submit('編集', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
+        
+      
+        
 </div>
-
-
 
 @endsection
