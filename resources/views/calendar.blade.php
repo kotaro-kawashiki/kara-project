@@ -11,6 +11,7 @@
         }
         #shiyougaku {
             margin-top: 5%;
+            margin-left: 1%;
         }
 </style>
 </head>
