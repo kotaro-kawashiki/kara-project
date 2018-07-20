@@ -81,7 +81,7 @@ return [
     ],
     'string'               => ':attributeは文字列にしてください。',
     'timezone'             => ':attributeは正しいタイムゾーンをしていしてください。',
-    'unique'               => ':attributeは既に存在します。',
+    'unique'               => 'そのユーザーidは既に存在します。',
     'uploaded'             => ':attributeはアップロードできませんでした。',
     'url'                  => ':attributeを正しい書式にしてください。',
     /*
