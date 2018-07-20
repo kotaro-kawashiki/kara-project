@@ -2,6 +2,7 @@
 
 @section('content')
 <head>
+    
 <style>
         body {background-image: url("/image/shower.jpg"); }
         
@@ -13,10 +14,12 @@
          
      </caption> 
      
+     
      <h5><a href="{{ route('calendar') }}">
      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>カレンダーへ</a></h5>
      <h5><a href="{{ route('posts.store')}}">
      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>投稿一覧へ</a></h5>
+     
      
 </div>
 <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
