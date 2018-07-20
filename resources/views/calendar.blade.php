@@ -2,6 +2,19 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+<style>
+        body {background-image: url("/image/wood.jpg"); }
+        #calendar {
+            margin-top: 0px;
+            background-color: white;
+        }
+        #shiyougaku {
+            margin-top: 5%;
+            margin-left: 1%;
+        }
+</style>
+</head>
     <div class="col-lg-7 col-sm-7 col-md-7 col-xs-12" id="calendar">
     @if($total==0)
         <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal">
