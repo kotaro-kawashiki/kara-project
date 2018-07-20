@@ -98,10 +98,10 @@ class PostsController extends Controller
              'people_name' => $value,
         ]);
         }
-        // $request->user()->posts()->people()->create([
-        //     'people_name' => $request->people_name,
-        // ]);
-
+       
+    //   var_dump($post);
+    //   exit;
+       
         return redirect('/calendar');
     }
 
