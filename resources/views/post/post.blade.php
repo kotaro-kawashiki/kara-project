@@ -56,8 +56,28 @@
            <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
           <br>
           <div class="form-group">
-            {!! Form::label('pic_url', '写真:') !!}
-            {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
+            <!--{!! Form::label('pic_url', '写真:') !!}-->
+            <label name="pic_url">写真:</label>
+            <!--{!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}-->
+            <select name="pic_url" class="form-control">
+              <option value="/image/gohan.jpg">海鮮丼</option>
+              <option value="/image/wa.jpg">和食</option>
+              <option value="/image/pancake.jpg">パンケーキ</option>
+              <option value="/image/coffee.jpg">カフェ１</option>
+              <option value="/image/pizza.jpg">ピザ</option>
+              <option value="/image/carry.jpg">カレー</option>
+              <option value="/image/dish.jpg">ディッシュ</option>
+              <option value="/image/ice-frake.jpg">かき氷</option>
+              <option value="/image/mangoo.jpg">マンゴーかき氷</option>
+              <option value="/image/robstar.jpg">ロブスター</option>
+              <option value="/image/susi1.jpg">寿司１</option>
+              <option value="/image/rounge.jpg">ラウンジ</option>
+              <option value="/image/bar1.jpg">バー１</option>
+              <option value="/image/cafe2.jpg">カフェ２</option>
+              <option value="/image/fishamdtips.jpg">フィッシュアンドチップス</option>
+              <option value="/image/tongue.jpg">牛タン丼</option>
+              <option value="/image/yakitori.jpg">焼き鳥</option>
+            </select>
           </div>
           <h5>※実際にはここで自分で撮った写真を投稿できる予定です;)</h5>
           <br>
