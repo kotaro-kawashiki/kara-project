@@ -38,29 +38,29 @@
         <div class="form-group">
             {!! Form::label('comments', 'コメント:') !!}
             {!! Form::text('comments', null, ['class' => 'form-control']) !!}
-        </div>
-            {!! Form::label('peole_name', '同行者:') !!}<br>
-            同行者につきましてはもう一度ご入力をお願いします<br>
-            現在登録されている人は
-                  @foreach($peoples as $people)
-                       @if($people->post_id==$post->id)
-                            <li style="display:inline-block;">{{$people->people_name}}さん </li>
-                       @endif
-                  @endforeach
-            です
+        <br>
+        
         <div class="parent">
+             @foreach($people as $user_people)
             <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                 <div class="form-group">
                     {!! Form::label('people_name', '同行者:',['class']) !!}
-                    <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control' >
+                   
+                    <input type="text" id="people" name="people_name[]" value="{{$user_people}}" placeholder='例:楽天太郎' class='form-control doukousya' >
                     </input>
+                    
                     <button type="button" class="btn trash_btn ml10" value="" name="">
                             削除
                     </button>
                 </div>
-            </div>
-        </div>
-        <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
+              </div>
+              @endforeach
+         </div>
+    
+    <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
+    
+    <br>
+    
         <div class="form-group">
             {!! Form::label('pic_url', '写真:') !!}
             {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}

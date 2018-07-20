@@ -122,12 +122,11 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $peoples = People::all();
-        
+        $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
         
         if(\Auth::user()->id == $post->user_id){
             
-        return view('post.edit',['post' => $post,'peoples'=>$peoples]);
+        return view('post.edit',['post' => $post,'people'=>$people]);
         }else{
             return redirect('/');
         }
