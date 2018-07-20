@@ -3,11 +3,26 @@
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/shower.jpg"); }
+        body {background-image: url("/image/wood.jpg"); }
+        #hontai {
+            padding: 3% 3% 3% 3%;
+        }
+        #photo {
+            background-color: white;
+            padding-top: 2%;
+            border-radius: 5%;
+        }
+        #list {
+            background-color: white;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            border-radius: 5%;
+        }
         
 </style>
 </head>
-<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+<div id="hontai">
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-1 col-lg-4" id="photo">
      <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
      <caption>
          
@@ -17,7 +32,7 @@
      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>カレンダーに戻る</a></h5>
     　
 </div>
-<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+<div class="col-xs-12 col-sm-7 col-md-7 col-lg-6" id="list">
      
      <div class="panel panel-default">
             <div class="panel-heading">店名</div>
@@ -71,6 +86,7 @@
         </div>
         
     </div>
+</div>
 </div>
 
 

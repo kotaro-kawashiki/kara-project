@@ -4,10 +4,10 @@
 @section('content')
 <head>
 <style>
-        /*body {background-image: url("/image/shower.jpg"); }*/
+        body {background-image: url("/image/wood.jpg"); }
         #calendar {
             margin-top: 0px;
-            /*background-color: white;*/
+            background-color: white;
         }
         #shiyougaku {
             margin-top: 5%;

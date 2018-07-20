@@ -3,7 +3,7 @@
 <head>
 <style>
        body{
-        background-image: url("/image/shower.jpg");
+        background-image: url("/image/wood.jpg");
        }
 </style>
 </head>
@@ -60,7 +60,8 @@
       </div>
     </div>
     <!--ここからPC表示-->
-    <div class="hidden-xs col-sm-5 col-md- col-lg-offset-3 col-lg-6 thumbnail">
+    <div class="col-md-offset-2 col-md-8 col-sm-12 col-lg-offset-3 col-lg-6">
+    <div class="hidden-xs col-sm-5 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 thumbnail">
       <div  id="{{$post->went_at}}">
         <div class='col-lg-6'>
         <caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption>
@@ -74,12 +75,13 @@
           <h2><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}</h2>
           <h2><span class="glyphicon glyphicon-yen"></span>{{$post->cost}}</h2>
               
-            <h2><a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>詳細</a></h2>
-            <h2><a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>編集</a></h2>
+            <h2><a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+            <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></h2>
             
             @include('user_favo.favo_button')
            
           </div>
+      </div>
       </div>
     </div>
   </div>
