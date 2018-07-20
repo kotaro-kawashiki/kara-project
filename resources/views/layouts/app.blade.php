@@ -11,9 +11,12 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+        <!--js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/jquery-3.3.1.js"></script> 
+        
     　　<!--CSS-->
         <link href="/css/style.css" rel="stylesheet" type="text/css">
         
@@ -46,13 +49,10 @@
             		$( this ).parents( '.field' ).remove();
             	} );
             } );
-       
             function myFunction() {
             setTimeout(function(){ document.getElementById("form1").submit();}, 3000);   
             setTimeout(function(){ document.getElementById("form2").submit();}, 6000);   
             }
-            
-            
         </script>
     </body>
 </html>

@@ -24,12 +24,12 @@
     <div class="col-lg-4 col-sm-4 col-sm-4 col-md-4 col-xs-offset-1 col-xs-10" id="shiyougaku">
         <h4>今月の使用額合計:{{$total}}円</h4>
         <div class="table-wrapper-scroll-y">
-            <table class="table table-bordered table-striped">
+            <table class="table">
                 @foreach($posts as $post)
-                <tr>
-                    <th><?php echo substr($post->went_at,8,10)?>日</th>
-                    <td>{{$post->restaurant}}({{$post->cost}}円)</td>
-                </tr>
+                    <tr>
+                        <th><?php echo substr($post->went_at,8,10)?>日</th>
+                        <td>{{$post->restaurant}}({{$post->cost}}円)</td>
+                    </tr>
                 @endforeach
     </div>
     <!--these link scripts are loading js file through http -->

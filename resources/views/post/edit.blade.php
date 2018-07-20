@@ -13,41 +13,44 @@
   <div class="alert alert-success" role="alert">
     <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
   </div>
-  <br>
   
+  <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細に戻る</a></h5>
+  <br>
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
-    <div class="form-group">
-    {!! Form::label('restaurant', '店名*:') !!}
-    {!! Form::text('restaurant', null, ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">        
-
-    {!! Form::label('cost', '値段*:') !!}
-    {!! Form::number('cost', null, ['class' => 'form-control']) !!}
-
-    </div>
-    <div class="form-group">
-    {!! Form::label('went_at', '日にち*:') !!}
-    {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-    {!! Form::label('comments', 'コメント:') !!}
-    {!! Form::text('comments', null, ['class' => 'form-control']) !!}
-    </div>
-    
-    {!! Form::label('peole_name', '同行者:') !!}<br>
-    同行者につきましてはもう一度ご入力をお願いします<br>
-     現在登録されている人は
-          @foreach($peoples as $people)
-               @if($people->post_id==$post->id)
-                    <li style="display:inline-block;">{{$people->people_name}}さん </li>
-               @endif
-          @endforeach
-        です
-        <!--editページのイニエスタも消えるようにしました-->
-    <div class="parent">
-              <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
-                  <div class="form-group">
+        <div class="form-group">
+            <label name="went_at">日付*:</label>
+            <div class='input-group date'>
+                <input type='text' name="went_at" class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">        
+            {!! Form::label('cost', '値段*:') !!}
+            {!! Form::number('cost', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('went_at', '日にち*:') !!}
+            {!! Form::date('went_at', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('comments', 'コメント:') !!}
+            {!! Form::text('comments', null, ['class' => 'form-control']) !!}
+        </div>
+            {!! Form::label('peole_name', '同行者:') !!}<br>
+            同行者につきましてはもう一度ご入力をお願いします<br>
+            現在登録されている人は
+                  @foreach($peoples as $people)
+                       @if($people->post_id==$post->id)
+                            <li style="display:inline-block;">{{$people->people_name}}さん </li>
+                       @endif
+                  @endforeach
+            です
+        <div class="parent">
+            <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
+                <div class="form-group">
                     {!! Form::label('people_name', '同行者:',['class']) !!}
                     <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control' >
                     </input>
@@ -55,24 +58,30 @@
                             削除
                     </button>
                 </div>
-              </div>
-         </div>
-    <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
-    
-    <br>
-    <div class="form-group">
-        {!! Form::label('pic_url', '写真:') !!}
-        {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
+            </div>
         </div>
-    <h5>※写真を変えない場合でももう一度選びなおしてください</h5>
-        
-    
-    <br>
-    <br>
+        <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
+        <div class="form-group">
+            {!! Form::label('pic_url', '写真:') !!}
+            {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
+        </div>
+        <h5>※写真を変えない場合でももう一度選びなおしてください</h5><br><br>
         {!! Form::submit('編集', ['class' => 'btn btn-primary']) !!}
-        {!! Form::close() !!}
+    {!! Form::close() !!}
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/locales/bootstrap-datepicker.ja.min.js"></script>
+<script type="text/javascript">
 
+  var api = $('.date').datepicker({
+  	format : 'yyyy-mm-dd',
+  	language: 'ja'
+  }).data('datepicker');
+  
+  api.widget.on('click','td.day',function(){
+  	api.hide();
+  });
+</script>
 
 @endsection

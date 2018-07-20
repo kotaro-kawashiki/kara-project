@@ -30,19 +30,17 @@ class PostsController extends Controller
             
             if(is_string($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')
-                                      ->where([['restaurant',$query],['user_id',$user->id]])
-                                    //   ->orWhere([['cost',$query],['user_id',$user->id]])
-                                      ->orderBy('went_at','desc')
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments')
+                                      ->where([['restaurant','LIKE',"%$query%"],['user_id',$user->id]])
+                                      ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->paginate(10);
             }                        
             // var_dumps($data);
             // exit;
             if(is_numeric($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                                    //   ->where([['restaurant',$query],['user_id',$user->id]])
-                                      ->orWhere([['cost',$query],['user_id',$user->id]])
-                                      ->orderBy('went_at','desc')
+            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                              
+                                      ->orWhere([['cost',$query],['user_id',$user->id]])                      
                                       ->paginate(10);
             }
             
@@ -100,10 +98,10 @@ class PostsController extends Controller
              'people_name' => $value,
         ]);
         }
-        // $request->user()->posts()->people()->create([
-        //     'people_name' => $request->people_name,
-        // ]);
-
+       
+    //   var_dump($post);
+    //   exit;
+       
         return redirect('/calendar');
     }
 
