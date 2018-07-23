@@ -18,8 +18,12 @@
             <br>
             <br>
             <br>
-            <div class="panel panel-default">
-                <div class="panel-heading">新規登録</div>
+               <div class='panel'>
+                <center><h2>新規登録</h2></center>
+                <br>
+                <br>
+
+                <div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
