@@ -24,13 +24,6 @@
         </button> 
     </div>
     @endif
-    
-    <div class = "howtouse">
-       <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal2">
-        	◎使い方
-       </button>
-    </div>
-    
       <div id="calendarpage">
           <!--©2018 FullCalendar LLC-->
           {!! $calendar_details->calendar() !!}
