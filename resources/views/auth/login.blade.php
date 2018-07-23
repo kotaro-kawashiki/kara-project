@@ -16,11 +16,12 @@
         <div class="col-md-8 col-md-offset-2">
             <br>
             <br>
-            <br>
-            <div class="panel panel-default">
-                <div class="panel-heading">ログイン</div>
+            <div class='panel'>
+                <center><h2>ログイン</h2></center>
+                <br>
+                <br>
 
-                <div class="panel-body">
+                <div>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -71,6 +72,7 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     パスワードを忘れた方はこちら
                                 </a>
+                                <br>
                             </div>
                         </div>
                     </form>
