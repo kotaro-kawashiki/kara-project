@@ -2,15 +2,21 @@
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/shower.jpg"); }
-        
+        body {background-image: url("/image/flower2.jpg"); }
+        #list {
+            background-color: white;
+            border-radius: 2%;
+            filter:alpha(opacity=90);
+            -moz-opacity: 0.9;
+            opacity: 0.9;
+        }
 </style>
 </head>
 
     @if(!empty($people_info))
         <center><h1>人リスト</h1></center>
         <br>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10" id="list">
             <table class="table table-hover">
                 <thead>
                 <tr>

@@ -7,15 +7,19 @@
         body {background-image: url("/image/wood.jpg"); }
         #calendar {
             margin-top: 0px;
-            background-color: white;
+            padding: 0px 0px 0px 0px;
+            background-color: #fffcfc;
+            border-radius: 10%;
         }
         #shiyougaku {
             margin-top: 5%;
             margin-left: 1%;
+            background-color: #fffcfc;
+            border-radius: 5%;
         }
 </style>
 </head>
-    <div class="col-lg-7 col-sm-7 col-md-7 col-xs-12" id="calendar">
+    <div class="col-lg-offset-1 col-lg-6 col-sm-7 col-md-7 col-xs-12" id="calendar">
       <div id="calendarpage">
           <!--©2018 FullCalendar LLC-->
           {!! $calendar_details->calendar() !!}

@@ -2,7 +2,7 @@
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/shower.jpg"); }
+        body {background-image: url("/image/wood.jpg"); }
         
 </style>
 </head>
@@ -10,7 +10,8 @@
         　 
          
     @foreach ($person_infos as $info)
-      <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><!--全体-->
+    
+      <div id="timeline" class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><!--全体-->
       
        <h5><a href="{{ route('people.index') }}">
     　      <span class = "glyphicon glyphicon-arrow-left" aria-hidden="true"></span>人リストに戻る</a></h5>
@@ -42,6 +43,7 @@
           </div>
         </div>
       </div>
+      
          
       @endforeach
 @endsection
