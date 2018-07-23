@@ -58,7 +58,6 @@
     
     {!! $calendar_details->script() !!}
 
- モーダル・ダイアログ 
 <div class="modal fade" id="sampleModal" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -83,41 +82,4 @@
 	</div>
 </div>
 
-<div class="modal fade" id="sampleModal2" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-			<center>
-			<h4 class="modal-title">使い方</h4></h4>
-			</center>
-			</div>
-			<center>
-			<div class="modal-body">
-				『記録をつける』</br>
-				  行ったお店や一緒に行った人、使った金額、お店についてのコメントなどを記録します。その日に撮った写真も一緒に投稿してみましょう！<br><br>
-				『カレンダー』<br>
-				  投稿の詳細ページへ行くことができます。誰と行ったのか、どんなお店だったのかなどの細かい情報まで確認したいときに活用しましょう。<br><br>
-				『投稿一覧』<br>
-				  投稿の一覧をタイムライン形式で確認することができます。行ったお店や使った金額をパッと確認したいときに便利です。検索機能もあるので、特定の投稿を探すことも可能です。<br><br>
-				『お気に入り』<br>
-				  また行きたい！と思ったお店や思い出深い記録はお気に入りして、自分だけの『お気に入りリスト』を作りましょう！<br><br>
-				『人リスト』<br>
-				  誰とどこに何回行ったかを確認することができます。久しぶりのあの人やおなじみのあの人と、素敵なお店に行きましょう！<br><br>
-				『編集機能』<br>
-				  記録内容を間違えてしまっても大丈夫！各投稿は編集できるので、正確な情報を記録していきましょう。<br><br>
-				『外食費管理』<br>
-				  外食で使った金額の月ごとの合計が確認できるので、外食費の管理にも活用できます。<br><br><br>
-				
-				賢く楽しい外食ライフを！
-			</div>
-			</center>
-			
-			<div class="modal-footer">
-				<center><a class="btn btn-primary" href="{{route('posts.create')}}">記録をつける</a> </center>
-			</div>
-			
-		</div>
-	</div>
-</div>
 @endsection
