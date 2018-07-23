@@ -9,8 +9,15 @@
                         めし日和
                     </a>
                     @else
-                    <a class="navbar-brand"onclick="openNav()">
-                        めし日和
+                    <a class="navbar-brand">
+                        <ul id="navbrand">
+                            <li id="navbrand-item">
+                                <span class="glyphicon glyphicon-th-list" onclick="openNav()"></span>
+                            </li>
+                            <li id="navbrand-item">
+                                めし日和
+                            </li>
+                        </ul>
                     </a>
                     @endguest
                 <!--</div>-->

@@ -278,3 +278,14 @@ background-color: transparent;
     margin-right: 0;
   }
 }
+
+#navbrand-item{
+  display: inline-block;
+  width:50;
+  margin-right: 10px;
+}
+
+#navbrand{
+  padding-left: 0;
+}
+
