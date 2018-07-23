@@ -148,7 +148,32 @@ background-color: transparent;
 
 .modoruyo {
     
-    padding-left: 35px
+    padding-left: 35px;
     
 }
+
+.firsttime {
+    
+    padding-left: 70px;
+    
+}
+
+#howtouse {
+    
+    padding-left: 70px;
+    
+}
+
+.modal-header {
+    
+    background: #e0f6ff;
+    
+}
+
+.modal-footer {
+    
+    background: #e0f6ff;
+    
+}
+
 

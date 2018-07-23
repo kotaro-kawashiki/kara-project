@@ -37,7 +37,7 @@
     </div>
   </form>
   </div>
-
+<a class="btn btn-lg btn-primary" href="{{route('posts.create')}}">記録をつける</a>
   <!--posts-->
   
   @foreach ($data as $post)
