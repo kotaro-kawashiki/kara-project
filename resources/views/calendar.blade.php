@@ -33,8 +33,9 @@
           {!! $calendar_details->calendar() !!}
       </div>
     </div>
+
     <div class="col-lg-4 col-sm-4 col-sm-4 col-md-4 col-xs-offset-1 col-xs-10" id="shiyougaku">
-        <h4>今月の使用額合計:</h4><center><h3 style="color:#e25193;">{{$total}}円</h3></center>
+        <h4>今月の使用額合計:</h4><center><h3 style="color:#e65c87;">{{$total}}円</h3></center>
         <div class="table-wrapper-scroll-y">
             <table class="table">
                 @foreach($posts as $post)
@@ -45,6 +46,7 @@
                 @endforeach
         </div>
     </div>
+    
     <!--these link scripts are loading js file through http -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
     

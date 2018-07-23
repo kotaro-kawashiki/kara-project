@@ -19,6 +19,8 @@
             <div class='panel'>
                 <center><h2>ログイン</h2></center>
                 <br>
+                <center><img src="/image/icon.jpg" alt="/image/icon.jpg"></center>
+                <br>
                 <br>
 
                 <div>
@@ -26,10 +28,10 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('userid') ? ' has-error' : '' }}">
-                            <label for="userid" class="col-md-4 control-label">ユーザーid</label>
+                            
 
-                            <div class="col-md-6">
-                                <input id="userid" type="userid" class="form-control" name="userid" value="{{ old('userid') }}" required autofocus>
+                            <div class="col-lg-offset-3 col-lg-6 col-md-6">
+                                <input id="userid" type="userid" class="form-control" name="userid" value="{{ old('userid') }}" placeholder="ユーザーid" required autofocus>
 
                                 @if ($errors->has('userid'))
                                     <span class="help-block">
@@ -40,10 +42,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">パスワード</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            
+                            <div class="col-lg-offset-3 col-lg-6 col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" placeholder="パスワード" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
