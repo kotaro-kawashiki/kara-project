@@ -42,7 +42,7 @@
             	var $content = $( '.field:last-child' );
             	$( '.add_btn' ).on( 'click', function() {
             		$content.clone( true ).appendTo( '.parent' );
-            		$('#people').val("");
+            		$('.doukousya:last').val("");
     
             	} );
             	$( '.parent' ).on( 'click', '.trash_btn', function() {

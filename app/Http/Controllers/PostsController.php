@@ -46,7 +46,7 @@ class PostsController extends Controller
             
         }
         elseif(!empty($query2)){
-            $data = DB::table('people')->where('people_name',$query2)
+            $data = DB::table('people')->where('people_name','LIKE',"%$query2%")
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
@@ -94,9 +94,11 @@ class PostsController extends Controller
         //こんな感じでいけるかも？
         
         foreach($request->people_name as $value){
-        $post->people()->create([
-             'people_name' => $value,
-        ]);
+            if(!is_null($value)){
+                $post->people()->create([
+                     'people_name' => $value,
+                ]);
+            }
         }
        
     //   var_dump($post);
@@ -122,12 +124,11 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $peoples = People::all();
-        
+        $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
         
         if(\Auth::user()->id == $post->user_id){
             
-        return view('post.edit',['post' => $post,'peoples'=>$peoples]);
+        return view('post.edit',['post' => $post,'people'=>$people]);
         }else{
             return redirect('/');
         }

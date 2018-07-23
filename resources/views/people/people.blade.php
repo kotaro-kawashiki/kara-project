@@ -8,6 +8,10 @@
 </head>
     <center><h1>{{ $person_infos[0]->people_name }}</h1></center>
         　 
+    <div class = "modoruyo">
+    <h5><a href="{{ route('people.index') }}">
+    <span class = "glyphicon glyphicon-arrow-left" aria-hidden="true"></span>人リストへ</a></h5>
+    </div>
          
     @foreach ($person_infos as $info)
     
