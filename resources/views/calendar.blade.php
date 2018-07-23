@@ -18,14 +18,17 @@
     <div class="col-lg-7 col-sm-7 col-md-7 col-xs-12" id="calendar">
      
     @if($total==0)
-    <div class = "howtouse">
+    <div class = "firsttime">
         <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal">
         	◎初めての方はこちら
         </button> 
-        <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal2">
-        	◎使い方
-        </button>
+    </div>
     @endif
+    
+    <div class = "howtouse">
+       <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal2">
+        	◎使い方
+       </button>
     </div>
     
       <div id="calendarpage">
@@ -54,7 +57,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang/ja.js"></script>
     {!! $calendar_details->script() !!}
 
-<!-- モーダル・ダイアログ -->
+ モーダル・ダイアログ 
 <div class="modal fade" id="sampleModal" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -85,7 +88,7 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
 			<center>
-			<h4 class="modal-title">使い方</h4>
+			<h4 class="modal-title">使い方</h4></h4>
 			</center>
 			</div>
 			<center>

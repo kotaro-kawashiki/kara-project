@@ -152,9 +152,28 @@ background-color: transparent;
     
 }
 
-.howtouse {
+.firsttime {
     
-    padding-left: 60px;
-    
+    padding-left: 600px;
     
 }
+
+.howtouse {
+    
+    padding-left: 600px;
+    
+}
+
+.modal-header {
+    
+    background: #e0f6ff;
+    
+}
+
+.modal-footer {
+    
+    background: #e0f6ff;
+    
+}
+
+
