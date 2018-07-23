@@ -69,10 +69,33 @@
          </div>
     <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
         <div class="form-group">
-            <br>
-            {!! Form::label('pic_url', '写真:') !!}
-            {!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}
-        </div>
+            <!--{!! Form::label('pic_url', '写真:') !!}-->
+            <label name="pic_url">写真:</label>
+            <!--{!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}-->
+            <select name="pic_url" class="form-control">
+              <option value="/image/susi1.jpg">寿司</option>
+              <option value="/image/gohan.jpg">海鮮丼</option>
+              <option value="/image/tongue.jpg">牛タン丼</option>
+              <option value="/image/wa.jpg">和食</option>
+              <option value="/image/ramen.jpg">ラーメン</option>
+              <option value="/image/okonomi.jpeg">お好み焼き</option>
+              <option value="/image/asia.jpg">エスニック</option>
+              <option value="/image/carry.jpg">カレー</option>
+              <option value="/image/pizza.jpg">ピザ</option>
+              <option value="/image/itarian.jpeg">イタリアン</option>
+              <option value="/image/robstar.jpg">ロブスター</option>
+              <option value="/image/omu.jpeg">オムライス</option>
+              <option value="/image/fishandtips.jpg">フィッシュアンドチップス</option>
+              <option value="/image/niku.jpg">ステーキ</option>
+              <option value="/image/nabe.jpeg">鍋</option>
+              <option value="/image/yakitori.jpg">焼き鳥</option>
+              <option value="/image/pancake.jpg">パンケーキ</option>
+              <option value="/image/ice-frake.jpg">かき氷</option>
+              <option value="/image/coffee.jpg">カフェ１</option>
+              <option value="/image/cafe2.jpg">カフェ２</option>
+              <option value="/image/bar1.jpg">バー</option>
+            </select>
+          </div>
         <h5>※写真を変えない場合でももう一度選びなおしてください</h5><br><br>
         {!! Form::submit('編集', ['class' => 'btn btn-info']) !!}
     {!! Form::close() !!}

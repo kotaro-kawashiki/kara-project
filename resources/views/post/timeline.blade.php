@@ -37,7 +37,7 @@
     </div>
   </form>
   </div>
-
+<a class="btn btn-lg btn-primary" href="{{route('posts.create')}}">記録をつける</a>
   <!--posts-->
   
   @foreach ($data as $post)
@@ -79,7 +79,8 @@
             <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></h2>
             
             @include('user_favo.favo_button')
-           
+            <br>
+            <br>
           </div>
       </div>
       </div>
