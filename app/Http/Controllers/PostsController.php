@@ -124,8 +124,14 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
-        
+        // edit時に同行者が入力されていないとフォームが出ない不具合を修正
+        $people_a = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
+        if(!empty($people)){
+            $people=$people_a;
+        }
+        else{
+            $people=[" "];
+        }
         if(\Auth::user()->id == $post->user_id){
             
         return view('post.edit',['post' => $post,'people'=>$people]);
