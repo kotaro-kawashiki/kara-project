@@ -6,7 +6,7 @@
         
 </style>
 </head>
-
+    
     @if(!empty($people_info))
         <center><h1>人リスト</h1></center>
         <br>
@@ -14,7 +14,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>名前</th>
+                    <th>名前    <h6>名前をクリックして詳細ページへ</h6></th>
                     <th>回数</th>
                     <th>行ったことあるところ</th>
                 </tr>

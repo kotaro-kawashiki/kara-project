@@ -36,6 +36,7 @@
                         <td>{{$post->restaurant}}({{$post->cost}}円)</td>
                     </tr>
                 @endforeach
+        </div>
     </div>
     <!--these link scripts are loading js file through http -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
