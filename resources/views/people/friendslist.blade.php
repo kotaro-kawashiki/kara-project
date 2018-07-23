@@ -20,7 +20,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>名前    <h6>名前をクリックして詳細ページへ</h6></th>
+                    <th>名前    <h6>名前をクリックすると詳しい情報が見られます。</h6></th>
                     <th>回数</th>
                     <th>行ったことあるところ</th>
                 </tr>
@@ -44,7 +44,6 @@
                 </tbody>
                 @endforeach
             </table>
-            ↑人の名前をクリックすると、その人と行ったお店の詳細を見ることができます。
             </div>
     
     @else
