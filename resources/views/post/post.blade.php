@@ -20,6 +20,9 @@
     <div class="col-xs-offset-1 col-xs-10 col-lg-offset-4 col-lg-4" id="hontai">
         <center><h1>記録をつける</h1></center>
       　<br>
+        <div class="alert alert-success" role="alert">
+          <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
+        </div>
         {!! Form::model($post, ['route' => 'posts.store']) !!}
           <div class="form-group">
             <label name="went_at">日付*:</label>
