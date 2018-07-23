@@ -2,30 +2,20 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-<style>
-        body {background-image: url("/image/wood.jpg"); }
-        #calendar {
-            margin-top: 0px;
-            background-color: white;
-        }
-        #shiyougaku {
-            margin-top: 5%;
-            margin-left: 1%;
-        }
-</style>
-</head>
+
     <div class="col-lg-7 col-sm-7 col-md-7 col-xs-12" id="calendar">
     @if($total==0)
         <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal">
         	初めての方はこちら
         </button>
     @endif
+        
       <div id="calendarpage">
           <!--©2018 FullCalendar LLC-->
           {!! $calendar_details->calendar() !!}
       </div>
     </div>
+    
     <div class="col-lg-4 col-sm-4 col-sm-4 col-md-4 col-xs-offset-1 col-xs-10" id="shiyougaku">
         <h4>今月の使用額合計:{{$total}}円</h4>
         <div class="table-wrapper-scroll-y">
@@ -46,6 +36,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang/ja.js"></script>
     {!! $calendar_details->script() !!}
+
+
+
+
 
 <!-- モーダル・ダイアログ -->
 <div class="modal fade" id="sampleModal" tabindex="-1">
