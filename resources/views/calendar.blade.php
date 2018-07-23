@@ -9,10 +9,9 @@
             margin-top: 0px;
             padding: 0px 0px 0px 0px;
             background-color: #fffcfc;
-            border-radius: 10%;
+            border-radius: 5%;
         }
         #shiyougaku {
-            margin-top: 5%;
             margin-left: 1%;
             background-color: #fffcfc;
             border-radius: 5%;
@@ -34,7 +33,8 @@
       </div>
     </div>
 
-    <div class="col-lg-4 col-sm-4 col-sm-4 col-md-4 col-xs-offset-1 col-xs-10" id="shiyougaku">
+    <div class="col-lg-4 col-sm-4 col-sm-4 col-md-4 col-xs-12" id="shiyougaku">
+        <br>
         <h4>今月の使用額合計:</h4><center><h3 style="color:#e65c87;">{{$total}}円</h3></center>
         <div class="table-wrapper-scroll-y">
             <table class="table">

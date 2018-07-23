@@ -5,6 +5,14 @@
        body{
         background-image: url("/image/wood.jpg");
        }
+       
+       #phone{
+                display: none !important; 
+            }
+       @media only screen and (max-width: 750px) {
+                #pc { display: none !important; }
+                #phone{ display: block !important; }
+            }
 </style>
 </head>
   <div class = "grade">
@@ -37,7 +45,9 @@
     </div>
   </form>
   </div>
-<a class="btn btn-lg btn-primary" href="{{route('posts.create')}}">記録をつける</a>
+<div id='phone'><center><a class="btn btn-lg btn-primary" href="{{route('posts.create')}}">記録をつける</a></center></div>
+<div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
+
   <!--posts-->
   
   @foreach ($data as $post)
