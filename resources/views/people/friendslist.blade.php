@@ -31,13 +31,14 @@
                         {{ $person['count'] }}回
                     </td>
                     <td>@foreach($person['restaurants'] as $restaurant)
-                            {{ $restaurant }}
+                            ・{{ $restaurant }}
                         @endforeach
                     </td>
                 </tr>
                 </tbody>
                 @endforeach
             </table>
+            ↑人の名前をクリックすると、その人と行ったお店の詳細を見ることができます。
             </div>
     
     @else
