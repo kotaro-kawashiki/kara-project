@@ -2,8 +2,7 @@
     <div id="sampleScrollSpy">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
-                <div class="navbar-header">
-                    
+                <!--<div class="navbar-header">-->
                     <!-- Branding Image -->
                     @guest
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -14,13 +13,13 @@
                         めし日和
                     </a>
                     @endguest
-                </div>
+                <!--</div>-->
                 <!-- Sidebar -->
                     <div id="sidebar-wrapper">
                         <ul class="sidebar-nav">
                             <li class="sidebar-brand">
                                 <a href="#">
-                                    Start Bootstrap
+                                    Menus
                                 </a>
                             @guest
                                 <li><a href="{{ route('login') }}">ログイン</a></li>
@@ -52,10 +51,12 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                                </li>
                             @endguest
+                                <li>
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </li>
                             </li>
                         </ul>
                     </div>

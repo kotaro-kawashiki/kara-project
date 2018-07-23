@@ -180,7 +180,7 @@ background-color: transparent;
 #sidebar-wrapper {
   z-index: 1050;
   position: fixed;
-  left: 250px;
+  left: 240px;
   top:0;
   width: 0;
   height: 100%;

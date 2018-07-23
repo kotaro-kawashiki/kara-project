@@ -51,7 +51,7 @@
             } );
             
             function openNav() {
-                document.getElementById("sidebar-wrapper").style.width = "50%";
+                document.getElementById("sidebar-wrapper").style.width = "70%";
             }
             function closeNav() {
                 document.getElementById("sidebar-wrapper").style.width = "0";
