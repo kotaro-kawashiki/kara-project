@@ -61,7 +61,7 @@
                                 
                             <li>
                             <button class="btn btn-link btn-sm" data-toggle="modal" data-target="#sampleModal2">
-        	                <h4> <span class ="howtouse glyphicon glyphicon-question-sign"></span> </h4>
+        	                <h4><span class ="howtouse glyphicon glyphicon-question-sign"></span></h4>
                             </button>
                             </li>
                                 
