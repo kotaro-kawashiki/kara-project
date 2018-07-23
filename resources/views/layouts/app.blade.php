@@ -62,6 +62,9 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
+                        <li>
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        </li>
                     @endguest
                     </li>
                 </ul>
@@ -90,16 +93,12 @@
             	} );
             } );
             
-            function myFunction() {
-            setTimeout(function(){ document.getElementById("form1").submit();}, 3000);   
-            setTimeout(function(){ document.getElementById("form2").submit();}, 6000);   
+            function openNav() {
+                document.getElementById("sidebar-wrapper").style.width = "50%";
             }
-            
-            
-            $("#menu-toggle").click(function(e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
+            function closeNav() {
+                document.getElementById("sidebar-wrapper").style.width = "0";
+            }
         </script>
     </body>
 </html>

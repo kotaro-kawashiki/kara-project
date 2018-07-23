@@ -12,12 +12,13 @@
                     </button>
                     <!-- Branding Image -->
                     @guest
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        めし日和
+                    <a class="navbar-brand" href="#menu-toggle" id="menu-toggle">
+                        ≡
                     </a>
                     @else
-                    <a class="navbar-brand" href="{{ url('/calendar') }}">
-                        めし日和
+                    <!--<a class="navbar-brand" href="#menu-toggle" id="menu-toggle">-->
+                        <!--≡-->
+                        <span class="glyphicon glyphicon-th-list" onclick="openNav()"></span>
                     </a>
                     @endguest
                 </div>
@@ -25,7 +26,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                         <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+                         <!--<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>-->
                     </ul>
                     <!-- Right Side Of Navbar -->
                     
