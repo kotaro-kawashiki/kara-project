@@ -49,9 +49,12 @@
             		$( this ).parents( '.field' ).remove();
             	} );
             } );
-            function myFunction() {
-            setTimeout(function(){ document.getElementById("form1").submit();}, 3000);   
-            setTimeout(function(){ document.getElementById("form2").submit();}, 6000);   
+            
+            function openNav() {
+                document.getElementById("sidebar-wrapper").style.width = "50%";
+            }
+            function closeNav() {
+                document.getElementById("sidebar-wrapper").style.width = "0";
             }
         </script>
     </body>
