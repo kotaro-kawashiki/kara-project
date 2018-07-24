@@ -32,8 +32,10 @@
         <div class="form-group">
             <label name="category">カテゴリ:</label>
             <select name="category" class="form-control">
-                  <option value="red">会社</option>
-                  <option value="blue">友達</option>
+              <option value="#aae">会社</option>
+              <option value="#bea">友達</option>
+              <option value="#aee">家族</option>
+              <option value="#eaa">そのほか</option>
             </select>
         </div>
         <div class="form-group">
