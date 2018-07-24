@@ -59,14 +59,14 @@
                     <input type="text" id="people" name="people_name[]" value="{{$user_people}}" placeholder='例:楽天太郎' class='form-control doukousya' >
                     </input>
                     
-                    <button type="button" class="btn trash_btn ml10" value="" name="">
+                    <button type="button" class="btn btn-default" class="btn trash_btn ml10" value="" name="">
                             削除
                     </button>
                 </div>
               </div>
               @endforeach
          </div>
-    <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
+    <button type="button" class="btn btn-default" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
         <div class="form-group">
             <label name="pic_url">写真:</label>
             <select name="pic_url" class="form-control">
