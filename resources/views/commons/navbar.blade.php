@@ -5,20 +5,27 @@
                 <!--<div class="navbar-header">-->
                     <!-- Branding Image -->
                     @guest
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        めし日和
-                    </a>
-                    @else
-                    <a class="navbar-brand">
+                    <div class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
                                 <span class="glyphicon glyphicon-th-list" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                めし日和
+                                <a href="{{'/'}}">めし日和</a>
                             </li>
                         </ul>
-                    </a>
+                    </div>
+                    @else
+                    <div class="navbar-brand">
+                        <ul id="navbrand">
+                            <li id="navbrand-item">
+                                <span class="glyphicon glyphicon-th-list" onclick="openNav()"></span>
+                            </li>
+                            <li id="navbrand-item">
+                                <a href="{{'/calendar'}}">めし日和</a>
+                            </li>
+                        </ul>
+                    </div>
                     @endguest
                 <!--</div>-->
                 <!-- Sidebar -->
