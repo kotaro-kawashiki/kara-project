@@ -89,10 +89,8 @@ class PeopleController extends Controller
         foreach($person_infos as $person_info){
             array_push($pic_url,$person_info->pic_url);
         }  
-        
         // var_dump($name);
         // exit;
-        
         $data = [
             'restaurants' => $restaurants,
             'name' => $name,
@@ -100,10 +98,8 @@ class PeopleController extends Controller
             'person_infos' => $person_infos,
             
             ];
-            
         // var_dump($data);
         // exit;
-                                     
         return view('people.people',$data);
     }
 

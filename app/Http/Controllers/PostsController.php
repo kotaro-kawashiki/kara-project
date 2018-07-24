@@ -23,13 +23,13 @@ class PostsController extends Controller
         //検索ボックスに入力された値
         $query = request()->s;  
         $query2 = request()->h;
+        $message = 1;
         
         $user = Auth::user();
         if(!empty($query)){
-            
             if(is_string($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments')
+                $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments')
                                       ->where([['restaurant','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->paginate(10);
@@ -38,11 +38,10 @@ class PostsController extends Controller
             // exit;
             if(is_numeric($query))
             {
-            $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                              
+                $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                              
                                       ->orWhere([['cost',$query],['user_id',$user->id]])                      
                                       ->paginate(10);
             }
-            
         }
         elseif(!empty($query2)){
             $data = DB::table('people')->where('people_name','LIKE',"%$query2%")
@@ -55,19 +54,20 @@ class PostsController extends Controller
         }
         else{
             $data = DB::table('posts')->where('user_id',"$user->id")->orderBy('went_at','desc')->paginate(20);
+            if(count($data)==0){
+                $message = 0;
+            }
         }
         
-        return view('post.timeline',['data' => $data,'query' => $query,'query2'=>$query2]);
+        return view('post.timeline',['data' => $data,'query' => $query,'query2'=>$query2,'message'=>$message]);
     }
 
 //   post.post
     public function create()
     {
-
         $post = new Post;
         $people = new People;
         return view('post.post',['post' => $post,'people'=>$people]);
-        
     }
     
     public function store(Request $request)
@@ -127,7 +127,7 @@ class PostsController extends Controller
         $post = Post::find($id);
         // 違う不具合が出るので元に戻しました
         $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
-hg    
+  
         if(\Auth::user()->id == $post->user_id){
             return view('post.edit',['post' => $post,'people'=>$people]);
         }
