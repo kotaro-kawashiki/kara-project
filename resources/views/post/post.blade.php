@@ -11,6 +11,7 @@
         {!! Form::model($post, ['route' => 'posts.store']) !!}
           
           <div class="form-group">
+            <label name="category">カテゴリ:</label>
             <select name="category" class="form-control">
               <option value="red">会社</option>
               <option value="blue">友達</option>
