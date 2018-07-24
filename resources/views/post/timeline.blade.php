@@ -45,7 +45,7 @@
     </div>
   </form>
   </div>
-<div id='phone'><center><a class="btn btn-lg btn-primary" href="{{route('posts.create')}}">記録をつける</a></center></div>
+<div id='phone'><center><a class="btn btn-lg btn-primary hidden-xs" href="{{route('posts.create')}}">記録をつける</a></center></div>
 <div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
 
   <!--posts-->
