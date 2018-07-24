@@ -155,10 +155,12 @@ class PostsController extends Controller
             
             
             $post->people()->delete();
-            foreach($request->people_name as $value){
-            $post->people()->create([
-                 'people_name' => $value,
-            ]);
+            if(!is_null($post->people_name)){
+                foreach($request->people_name as $value){
+                $post->people()->create([
+                     'people_name' => $value,
+                ]);
+                }
             }
             
             return redirect('/calendar');

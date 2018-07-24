@@ -49,15 +49,14 @@
                 <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                     <div class="form-group">
                       {!! Form::label('people_name', '同行者:',['class']) !!}
-                      <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control doukousya' >
-                      </input>
-                      <button type="input" class="btn btn-default" class="btn trash_btn ml10" value="" name="">
+                      <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control doukousya' ></input>
+                      <button type="button" class="btn btn-default trash_btn ml10" value="" name="">
                               削除
                       </button>
                   </div>
                 </div>
            </div>
-           <button type="input" class="btn btn-default" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
+           <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
           <br>
           <div class="form-group">
             <label name="pic_url">写真:</label>
