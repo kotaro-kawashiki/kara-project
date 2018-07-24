@@ -14,9 +14,12 @@
 </head>
     
     @if(!empty($people_info))
-        <center><h1>人リスト</h1></center>
+    
         <br>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10" id="list">
+        
+            <center><h1>同行者リスト</h1></center>
+              
             <table class="table table-hover">
                 <thead>
                 <tr>
