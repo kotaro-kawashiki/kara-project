@@ -5,7 +5,7 @@
     
 <style>
         body {background-image: url("/image/wood.jpg"); }
-        #hontai {
+        #hontai-detail {
             padding: 3% 3% 3% 3%;
         }
         #photo {
@@ -22,7 +22,7 @@
         
 </style>
 </head>
-<div id="hontai">
+<div id="hontai-detail">
 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-offset-1 col-lg-4" id="photo">
      <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
      <caption>
@@ -52,7 +52,10 @@
                <div class="panel-body">
                @foreach($peoples as $people)
                     @if($people->post_id==$post->id)
-                         {{$people->people_name}},
+                        <a href="{{ route( 'people.show',[ 'name'=>$people->people_name ] ) }}">
+                            {{ $people->people_name }}
+                        </a>
+                         <!--{{$people->people_name}},-->
                     @endif
                @endforeach
             </div>

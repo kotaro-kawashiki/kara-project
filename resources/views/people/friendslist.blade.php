@@ -12,17 +12,17 @@
         }
 </style>
 </head>
-    
     @if(!empty($people_info))
-        <center><h1>人リスト</h1></center>
         <br>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10" id="list">
+            <center><h1>同行者リスト</h1></center>
+            <h6>名前をクリックすると詳しい情報が見られます。</h6>
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>名前    <h6>名前をクリックすると詳しい情報が見られます。</h6></th>
-                    <th>回数</th>
-                    <th>行ったことあるところ</th>
+                    <th class="col-xs-3">名前</th>
+                    <th class="col-xs-2">回数</th>
+                    <th class="col-xs-7">行ったことあるところ</th>
                 </tr>
                 </thead>
                 <tbody>

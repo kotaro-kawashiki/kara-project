@@ -5,17 +5,25 @@
                 <!--<div class="navbar-header">-->
                     <!-- Branding Image -->
                     @guest
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{Form::image('image/logo4.png')}}
-                    </a>
+                    <div class="navbar-brand">
+                        <ul id="navbrand">
+                            <li id="navbrand-item">
+                                <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
+                            </li>
+                            <li id="navbrand-item">
+                                <a href="{{'/'}}">{{Form::image('image/logo4.png')}}</a>
+                            </li>
+                        </ul>
+                    </div>
                     @else
                     <a class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
-                                <span class="glyphicon glyphicon-th-list" onclick="openNav()"></span>
+
+                                <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                めし日和
+                                {{Form::image('image/logo4.png')}}
                             </li>
                         </ul>
                     </a>
@@ -46,7 +54,7 @@
                                     <a href="{{route('users.favos',['id' => Auth::user()->id])}}"><span class="glyphicon glyphicon-star-empty"></span> お気に入り</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 人リスト</a>
+                                    <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 同行者リスト</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}"
@@ -68,7 +76,41 @@
                         </ul>
                     </div>
                     <!-- /#sidebar-wrapper -->
-                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2">
+
+                    <ul class="nav navbar-nav navbar-right visible-lg">
+                            <!-- Authentication Links -->
+                            @guest
+                                <li><a href="{{ route('login') }}">ログイン</a></li>
+                                <li><a href="{{ route('register') }}">新規登録</a></li>
+                            @else
+                                <li>
+                                    <a href="{{route('posts.create')}}"><span class="glyphicon glyphicon-pencil"></span> 記録をつける</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('/calendar')}}"><span class="glyphicon glyphicon-calendar"></span> カレンダー</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('posts.index')}}"><span class="glyphicon glyphicon-list-alt"></span> 投稿一覧 & 検索</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('users.favos',['id' => Auth::user()->id])}}"><span class="glyphicon glyphicon-star-empty"></span> お気に入り</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 同行者リスト</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        <span class="glyphicon glyphicon-log-out"></span> ログアウト
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            @endguest
+                        </ul>
+                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2" id="help-button">
     	                <h4><span class ="howtouse glyphicon glyphicon-question-sign"></span></h4>
                         </button>
                     </ul>
@@ -90,19 +132,24 @@
 			<center>
 			<div class="modal-body">
 				『記録をつける』</br>
-				  行ったお店や一緒に行った人、使った金額、お店についてのコメントなどを記録します。その日に撮った写真も一緒に投稿してみましょう！<br><br>
+				  行ったお店や一緒に行った人、使った金額、お店についてのコメントなどを記録します。その日に撮った写真も一緒に投稿してみましょう！<br><hr>
 				『カレンダー』<br>
-				  投稿の詳細ページへ行くことができます。誰と行ったのか、どんなお店だったのかなどの細かい情報まで確認したいときに活用しましょう。<br><br>
-				『投稿一覧』<br>
-				  投稿の一覧をタイムライン形式で確認することができます。行ったお店や使った金額をパッと確認したいときに便利です。検索機能もあるので、特定の投稿を探すことも可能です。<br><br>
+				  投稿の詳細ページへ行くことができます。誰と行ったのか、どんなお店だったのかなどの細かい情報まで確認したいときに活用しましょう。<br>
+				  また、外食で使った金額の月ごとの合計が確認できるので、外食費の管理もできます。<br><hr>
+				『投稿一覧 & 検索機能』<br>
+				  投稿の一覧をタイムライン形式で確認することができます。行ったお店や使った金額をパッと確認したいときに便利です。<br>
+				  検索機能もあるので、特定の投稿を探すことも可能です。<br><hr>
 				『お気に入り』<br>
-				  また行きたい！と思ったお店や思い出深い記録はお気に入りして、自分だけの『お気に入りリスト』を作りましょう！<br><br>
+				  また行きたい！と思ったお店や思い出深い記録はお気に入りして、<br>
+				  自分だけの『お気に入りリスト』を作りましょう。<br><hr>
 				『人リスト』<br>
-				  誰とどこに何回行ったかを確認することができます。久しぶりのあの人やおなじみのあの人と、素敵なお店に行きましょう！<br><br>
+				  誰とどこに何回行ったかを確認することができます。<br>
+				  久しぶりのあの人やおなじみのあの人と、素敵なお店に行きましょう！<br><hr>
 				『編集機能』<br>
-				  記録内容を間違えてしまっても大丈夫！各投稿は編集できるので、正確な情報を記録していきましょう。<br><br>
-				『外食費管理』<br>
-				  外食で使った金額の月ごとの合計が確認できるので、外食費の管理にも活用できます。<br><br><br>
+				  記録内容を間違えてしまっても大丈夫。<br>
+				  各投稿は編集できるので、正確な情報を記録していきましょう。
+			
+				 <br><br><hr>
 				
 				賢く楽しい外食ライフを！
 			</div>

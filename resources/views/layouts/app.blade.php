@@ -22,8 +22,6 @@
         
     </head>
     <body>
-       
-        <div id="app">
             @include('commons.navbar')
             @auth
                 @include('commons.error_messages')
@@ -33,8 +31,6 @@
             <br>
             <br>
              @yield('content')
-        </div>
-        
         <!--this script is written in js/jquery and this is the function that add columns of friends on the post and edit pages-->
         <script>
             $( function() {
@@ -58,4 +54,6 @@
             }
         </script>
     </body>
+    
+    
 </html>

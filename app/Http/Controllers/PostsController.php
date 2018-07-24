@@ -17,7 +17,6 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
     
-    
 //   post.timeline
     public function index()
     {
@@ -77,7 +76,6 @@ class PostsController extends Controller
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
             'went_at' => 'required',
-            'people_name' => 'required|max:191',
             'pic_url' => 'required|max:191',
             
             ]);
@@ -126,11 +124,15 @@ class PostsController extends Controller
         $post = Post::find($id);
         // 違う不具合が出るので元に戻しました
         $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
+        // var_dump($people);
+        // print_r(count($people));
+        // var_dump(is_null($));
+        // exit;
     
         if(\Auth::user()->id == $post->user_id){
-            
-        return view('post.edit',['post' => $post,'people'=>$people]);
-        }else{
+            return view('post.edit',['post' => $post,'people'=>$people]);
+        }
+        else {
             return redirect('/');
         }
     }
@@ -142,7 +144,6 @@ class PostsController extends Controller
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
             'went_at' => 'required',
-            'people_name' => 'required|max:191',
             'pic_url' => 'required|max:191',
             
             ]);
@@ -158,10 +159,12 @@ class PostsController extends Controller
             
             
             $post->people()->delete();
-            foreach($request->people_name as $value){
-            $post->people()->create([
-                 'people_name' => $value,
-            ]);
+            if(!is_null($request->people_name)){
+                foreach($request->people_name as $value){
+                $post->people()->create([
+                     'people_name' => $value,
+                ]);
+                }
             }
             
             return redirect('/calendar');
