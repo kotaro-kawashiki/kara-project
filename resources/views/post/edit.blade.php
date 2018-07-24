@@ -3,7 +3,9 @@
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/flower2.jpg"); }
+        body {
+            background-image: url("/image/flower2.jpg"); 
+        }
         #hontai {
             background-color: white;
             filter:alpha(opacity=90);
@@ -12,7 +14,6 @@
             padding-bottom: 3%;
             border-radius: 5%;
         }
-        
 </style>
 </head>
 <div class="col-xs-12 col-lg-offset-4 col-lg-4" id="hontai">
@@ -22,13 +23,10 @@
   <div class="alert alert-success" role="alert">
     <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
   </div>
-
     <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細へ</a></h5>
-     
      <h5><a href="{{ route('posts.store') }}">
      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>投稿一覧へ</a></h5>
-
   <br>
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
         <div class="form-group">
@@ -70,9 +68,7 @@
          </div>
     <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
         <div class="form-group">
-            <!--{!! Form::label('pic_url', '写真:') !!}-->
             <label name="pic_url">写真:</label>
-            <!--{!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}-->
             <select name="pic_url" class="form-control">
               <option value="/image/susi1.jpg">寿司</option>
               <option value="/image/gohan.jpg">海鮮丼</option>

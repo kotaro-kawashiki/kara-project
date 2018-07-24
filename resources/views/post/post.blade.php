@@ -60,9 +60,7 @@
            <button type="button" class="btn bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
           <br>
           <div class="form-group">
-            <!--{!! Form::label('pic_url', '写真:') !!}-->
             <label name="pic_url">写真:</label>
-            <!--{!! Form::select('pic_url',['/image/gohan.jpg' => '海鮮丼', '/image/wa.jpg' => '和食','/image/pancake.jpg' => 'パンケーキ','/image/coffee.jpg' => 'カフェ','/image/pizza.jpg' => 'ピザ'], ['class' => 'form-control']) !!}-->
             <select name="pic_url" class="form-control">
               <option value="/image/susi1.jpg">寿司</option>
               <option value="/image/gohan.jpg">海鮮丼</option>
@@ -87,7 +85,6 @@
               <option value="/image/bar1.jpg">バー</option>
             </select>
           </div>
-          <h5>※実際にはここで自分で撮った写真を投稿できる予定です;)</h5>
           <br>
           {!! Form::submit('投稿', ['class' => 'btn btn-info']) !!}
         {!! Form::close() !!}

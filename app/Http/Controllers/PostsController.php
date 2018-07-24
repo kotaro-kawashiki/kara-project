@@ -17,7 +17,6 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
     
-    
 //   post.timeline
     public function index()
     {
@@ -77,7 +76,6 @@ class PostsController extends Controller
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
             'went_at' => 'required',
-            'people_name' => 'required|max:191',
             'pic_url' => 'required|max:191',
             
             ]);
@@ -142,7 +140,6 @@ class PostsController extends Controller
             'restaurant' => 'required|max:191',
             'cost' => 'required|max:7',
             'went_at' => 'required',
-            'people_name' => 'required|max:191',
             'pic_url' => 'required|max:191',
             
             ]);
