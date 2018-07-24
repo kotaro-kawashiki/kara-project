@@ -57,5 +57,7 @@
                 document.getElementById("sidebar-wrapper").style.width = "0";
             }
         </script>
+        
     </body>
+    
 </html>

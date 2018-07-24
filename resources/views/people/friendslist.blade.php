@@ -22,8 +22,9 @@
               
             <table class="table table-hover">
                 <thead>
+                    <h6>名前をクリックすると詳しい情報が見られます。</h6>
                 <tr>
-                    <th>名前    <h6>名前をクリックすると詳しい情報が見られます。</h6></th>
+                    <th>名前</th>
                     <th>回数</th>
                     <th>行ったことあるところ</th>
                 </tr>
