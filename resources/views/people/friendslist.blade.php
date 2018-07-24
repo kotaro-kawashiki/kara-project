@@ -19,6 +19,7 @@
             <h6>名前をクリックすると詳しい情報が見られます。</h6>
             <table class="table table-hover">
                 <thead>
+                    <h6>名前をクリックすると詳しい情報が見られます。</h6>
                 <tr>
                     <th class="col-xs-3">名前</th>
                     <th class="col-xs-2">回数</th>
