@@ -30,6 +30,12 @@
   <br>
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
         <div class="form-group">
+            <select name="category" class="form-control">
+                  <option value="red">会社</option>
+                  <option value="blue">友達</option>
+            </select>
+        </div>
+        <div class="form-group">
             {!! Form::label('restaurant', '店名*:') !!}
             {!! Form::text('restaurant', null, ['class' => 'form-control','placeholder'=>'例：鳥貴族']) !!}
         </div>

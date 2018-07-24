@@ -5,9 +5,7 @@
 <style>
         body {
             background-image: url("/image/wood.jpg"); 
-            
         }
-        
 </style>
 </head>
     <div class="col-lg-offset-1 col-lg-6 col-sm-7 col-md-7 col-xs-12" id="calendar">

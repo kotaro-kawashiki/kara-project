@@ -75,7 +75,6 @@
                         </ul>
                     </div>
                     <!-- /#sidebar-wrapper -->
-
                     <ul class="nav navbar-nav navbar-right visible-lg">
                             <!-- Authentication Links -->
                             @guest

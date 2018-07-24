@@ -11,6 +11,12 @@
         {!! Form::model($post, ['route' => 'posts.store']) !!}
           
           <div class="form-group">
+            <select name="category" class="form-control">
+              <option value="red">会社</option>
+              <option value="blue">友達</option>
+            </select>
+          </div>
+          <div class="form-group">
             {!! Form::label('restaurant', '店名*:') !!}
             {!! Form::text('restaurant', null, ['class' => 'form-control','placeholder'=>'例：鳥貴族']) !!}
           </div>
@@ -34,9 +40,9 @@
           <div class="parent">
                 <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                     <div class="form-group">
-                      {!! Form::label('people_name', '同行者:',['class']) !!}
+                      <label name="people_name">同行者:</label>
                       <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control doukousya' ></input>
-                      <button type="button" class="btn btn-default trash_btn ml10" value="" name="">
+                      <button type="button" class="btn btn-default trash_btn ml10">
                               削除
                       </button>
                   </div>

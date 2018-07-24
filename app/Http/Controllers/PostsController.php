@@ -77,6 +77,7 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'went_at' => 'required',
             'pic_url' => 'required|max:191',
+            'category' => 'required'
             
             ]);
             
@@ -87,6 +88,7 @@ class PostsController extends Controller
             'end_at' => $request->went_at,
             'comments' => $request->comments,
             'pic_url' => $request->pic_url,
+            'category' => $request->category,
             ]);
         
         //こんな感じでいけるかも？
@@ -110,6 +112,7 @@ class PostsController extends Controller
     {
         if(Post::find($id)){
             $post = Post::find($id);
+            
             $people = People::all();
             return view('post.detail',['post'=>$post, 'people'=>$people]);
         }else{
@@ -145,6 +148,7 @@ class PostsController extends Controller
             'cost' => 'required|max:7',
             'went_at' => 'required',
             'pic_url' => 'required|max:191',
+            'category' => 'required',
             
             ]);
             
@@ -155,6 +159,7 @@ class PostsController extends Controller
             $post->end_at = $request->went_at;
             $post->comments = $request->comments;
             $post->pic_url = $request->pic_url;
+            $post->category = $request->category;
             $post->save();
             
             
