@@ -79,13 +79,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                        <center><div class="form-group">
+                            <div class="col-md-6 col-md-offset-4 col-lg-offset-5 col-lg-2">
                                 <button type="submit" class="btn btn-info">
                                     登録
                                 </button>
                             </div>
-                        </div>
+                        </div></center>
                     </form>
                 </div>
             </div>
