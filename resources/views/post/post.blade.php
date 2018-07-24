@@ -60,22 +60,23 @@
           <br>
           <div class="form-group">
             <label name="pic_url">写真:</label>
+            <!--jpg jpegの違いに気を付けて-->
             <select name="pic_url" class="form-control">
               <option value="/image/susi1.jpg">寿司</option>
               <option value="/image/gohan.jpg">海鮮丼</option>
               <option value="/image/tongue.jpg">牛タン丼</option>
               <option value="/image/wa.jpg">和食</option>
               <option value="/image/ramen.jpg">ラーメン</option>
-              <option value="/image/okonomi.jpg">お好み焼き</option>
+              <option value="/image/okonomi.jpeg">お好み焼き</option>
               <option value="/image/asia.jpg">エスニック</option>
               <option value="/image/carry.jpg">カレー</option>
               <option value="/image/pizza.jpg">ピザ</option>
-              <option value="/image/itarian.jpg">イタリアン</option>
+              <option value="/image/itarian.jpeg">イタリアン</option>
               <option value="/image/robstar.jpg">ロブスター</option>
-              <option value="/image/omu.jpg">オムライス</option>
+              <option value="/image/omu.jpeg">オムライス</option>
               <option value="/image/fishandtips.jpg">フィッシュアンドチップス</option>
               <option value="/image/niku.jpg">ステーキ</option>
-              <option value="/image/nabe.jpg">鍋</option>
+              <option value="/image/nabe.jpeg">鍋</option>
               <option value="/image/yakitori.jpg">焼き鳥</option>
               <option value="/image/pancake.jpg">パンケーキ</option>
               <option value="/image/ice-frake.jpg">かき氷</option>

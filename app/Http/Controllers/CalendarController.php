@@ -44,7 +44,7 @@ class CalendarController extends Controller
     	$calendar_details = Calendar::addEvents($post_list); 
         // this shows the total amount of each month
         $month = date("m");
-        $posts = $user->posts()->whereMonth('went_at','=',$month)->paginate(10000);
+        $posts = $user->posts()->whereMonth('went_at','=',$month)->orderBy('went_at','asc')->paginate(10000);
         $total = 0;
                     foreach($posts as $post){
                     $total += $post->cost;

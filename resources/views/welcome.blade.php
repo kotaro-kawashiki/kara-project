@@ -70,5 +70,6 @@
             <center><a href="{{ route('register') }}">{{Form::image('image/buton6.png')}}</a></center>
             <center><a href="{{ route('login') }}">{{Form::image('image/buton7.png')}}</a></center>
         </div>
+        <footer><center>©kara-age</center></footer>
     </body>
 </html>
