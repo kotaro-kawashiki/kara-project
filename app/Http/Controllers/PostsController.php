@@ -112,9 +112,20 @@ class PostsController extends Controller
     {
         if(Post::find($id)){
             $post = Post::find($id);
-            
+            if($post->category=="#aae"){
+                $category="会社";
+            }
+            elseif($post->category=="#bea"){
+                $category="友達";
+            }
+            elseif($post->category=="#aee"){
+                $category="家族";
+            }
+            else{
+                $category="そのほか";
+            }
             $people = People::all();
-            return view('post.detail',['post'=>$post, 'people'=>$people]);
+            return view('post.detail',['post'=>$post, 'people'=>$people, 'category'=>$category]);
         }else{
             return redirect('post.timeline');
         }

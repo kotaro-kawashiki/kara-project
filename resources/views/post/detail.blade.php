@@ -5,6 +5,7 @@
 <style>
         body {background-image: url("/image/wood.jpg"); }
         #hontai-detail {
+            margin-top: 0%;
             padding: 3% 3% 3% 3%;
         }
         #photo {
@@ -30,6 +31,10 @@
     </div>
     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-6" id="list">
         <div class="panel panel-default">
+            <div class="panel-heading">カテゴリ</div>
+            <div class="panel-body">
+                {{$category}}
+            </div>
             <div class="panel-heading">店名</div>
             <div class="panel-body">
                 <h4>{{$post->restaurant}}</h4>

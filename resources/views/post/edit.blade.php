@@ -32,7 +32,7 @@
         <div class="form-group">
             <select name="category" class="form-control">
               <option value="#aae">会社</option>
-              <option value="#ead">友達</option>
+              <option value="#bea">友達</option>
               <option value="#aee">家族</option>
               <option value="#eaa">そのほか</option>
             </select>
