@@ -289,3 +289,8 @@ background-color: transparent;
   padding-left: 0;
 }
 
+#help-button
+{
+  position: fixed;
+  right: 10%;
+}

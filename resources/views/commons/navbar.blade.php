@@ -68,7 +68,7 @@
                         </ul>
                     </div>
                     <!-- /#sidebar-wrapper -->
-                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2">
+                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2" id="help-button">
     	                <h4><span class ="howtouse glyphicon glyphicon-question-sign"></span></h4>
                         </button>
                     </ul>
