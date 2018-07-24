@@ -186,12 +186,11 @@ background-color: transparent;
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #f8f8ff;
+  background: #000;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  opacity: 0.95;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -289,6 +288,7 @@ background-color: transparent;
 #navbrand{
   padding-left: 0;
 }
+
 
 #help-button
 {

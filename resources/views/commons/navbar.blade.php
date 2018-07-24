@@ -11,21 +11,22 @@
                                 <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                <a href="{{'/'}}">めし日和</a>
+                                <a href="{{'/'}}">{{Form::image('image/logo4.png')}}</a>
                             </li>
                         </ul>
                     </div>
                     @else
-                    <div class="navbar-brand">
+                    <a class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
+
                                 <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                <a href="{{'/calendar'}}">めし日和</a>
+                                {{Form::image('image/logo4.png')}}
                             </li>
                         </ul>
-                    </div>
+                    </a>
                     @endguest
                 <!--</div>-->
                 <!-- Sidebar -->
@@ -75,6 +76,7 @@
                         </ul>
                     </div>
                     <!-- /#sidebar-wrapper -->
+
                     <ul class="nav navbar-nav navbar-right visible-lg">
                             <!-- Authentication Links -->
                             @guest
