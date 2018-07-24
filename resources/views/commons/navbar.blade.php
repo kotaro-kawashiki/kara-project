@@ -5,27 +5,20 @@
                 <!--<div class="navbar-header">-->
                     <!-- Branding Image -->
                     @guest
-                    <div class="navbar-brand">
-                        <ul id="navbrand">
-                            <li id="navbrand-item">
-                                <span class="glyphicon glyphicon-th-list visible-xs" onclick="openNav()"></span>
-                            </li>
-                            <li id="navbrand-item">
-                                <a href="{{'/'}}">めし日和</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{Form::image('image/logo4.png')}}
+                    </a>
                     @else
-                    <div class="navbar-brand">
+                    <a class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
-                                <span class="glyphicon glyphicon-th-list visible-xs" onclick="openNav()"></span>
+                                <span class="glyphicon glyphicon-th-list" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                <a href="{{'/calendar'}}">めし日和</a>
+                                めし日和
                             </li>
                         </ul>
-                    </div>
+                    </a>
                     @endguest
                 <!--</div>-->
                 <!-- Sidebar -->
@@ -75,40 +68,7 @@
                         </ul>
                     </div>
                     <!-- /#sidebar-wrapper -->
-                    <ul class="nav navbar-nav navbar-right hidden-xs">
-                            <!-- Authentication Links -->
-                            @guest
-                                <li><a href="{{ route('login') }}">ログイン</a></li>
-                                <li><a href="{{ route('register') }}">新規登録</a></li>
-                            @else
-                                <li>
-                                    <a href="{{route('posts.create')}}"><span class="glyphicon glyphicon-pencil"></span> 記録をつける</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('/calendar')}}"><span class="glyphicon glyphicon-calendar"></span> カレンダー</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('posts.index')}}"><span class="glyphicon glyphicon-list-alt"></span> 投稿一覧 & 検索</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('users.favos',['id' => Auth::user()->id])}}"><span class="glyphicon glyphicon-star-empty"></span> お気に入り</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('people.index')}}"><span class="glyphicon glyphicon-user"></span> 同行者リスト</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        <span class="glyphicon glyphicon-log-out"></span> ログアウト
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            @endguest
-                        </ul>
-                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2" id="help-button">
+                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2">
     	                <h4><span class ="howtouse glyphicon glyphicon-question-sign"></span></h4>
                         </button>
                     </ul>
