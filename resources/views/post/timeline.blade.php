@@ -49,11 +49,12 @@
 <div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
 
   <!--posts-->
+  
   @foreach ($data as $post)
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     <div class="col-xs-12 hidden-sm hidden-md hidden-lg" style="background-color:{{$post->category}};"><!--card-->
       <div class="thumbnail" id="{{$post->went_at}}">
-        <center><caption style="text-align:right;"><h3>{{$post->went_at}}</h3></caption></center> <!--いった日付-->
+        <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
         <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
         <div class="caption">
           <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}</center> 
@@ -74,6 +75,8 @@
       <div  id="{{$post->went_at}}">
         <div class='col-lg-6'>
         <caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption>
+        
+        
         <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
         </div>
           <br>
@@ -81,34 +84,20 @@
           <div class="caption-pc col-lg-6">
           <h2><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}</h2>
           <h2><span class="glyphicon glyphicon-yen"></span>{{$post->cost}}</h2>
+              
             <h2><a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
             <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></h2>
+            
             @include('user_favo.favo_button')
             <br>
             <br>
-            <div class="caption-pc col-lg-6">
-            <h2><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}</h2>
-            <h2><span class="glyphicon glyphicon-yen"></span>{{$post->cost}}</h2>
-              <h2><a href="{{ route('posts.show',['id' => $post->id]) }}"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
-              <a href="{{ route('posts.edit',['id' => $post->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></h2>
-              @include('user_favo.favo_button')
-              <br>
-              <br>
-            </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    @endforeach
-    @if($message==0)
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="alert alert-warning" role="alert">
-              <h4 class="alert-heading">外食の履歴がありません！</h4>
-              <hr>
-              <p><a href="{{route('posts.create')}}">記録をつける</a>を押していつどこにいったかを記録してみましょう！</p>
           </div>
       </div>
-    @endif
+      </div>
+    </div>
+  </div>
+  @endforeach
   
+
 @endsection
 
