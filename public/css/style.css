@@ -191,7 +191,7 @@ background-color: transparent;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  opacity: 0.90;
+  opacity: 0.95;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -293,5 +293,5 @@ background-color: transparent;
 #help-button
 {
   position: fixed;
-  right: 10%;
+  right: 8%;
 }
