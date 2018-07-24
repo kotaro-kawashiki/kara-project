@@ -1,21 +1,13 @@
-        <!--Once you log in, you will be this page-->
+<!--©2018 FullCalendar LLC-->
 @extends('layouts.app')
-
 @section('content')
 <head>
 <style>
-        body {background-image: url("/image/wood.jpg"); }
-        #calendar {
-            margin-top: 0px;
-            padding: 0px 0px 0px 0px;
-            background-color: #fffcfc;
-            border-radius: 5%;
+        body {
+            background-image: url("/image/wood.jpg"); 
+            
         }
-        #shiyougaku {
-            margin-left: 1%;
-            background-color: #fffcfc;
-            border-radius: 5%;
-        }
+        
 </style>
 </head>
     <div class="col-lg-offset-1 col-lg-6 col-sm-7 col-md-7 col-xs-12" id="calendar">
@@ -28,7 +20,6 @@
     </div>
     @endif
       <div id="calendarpage">
-          <!--©2018 FullCalendar LLC-->
           {!! $calendar_details->calendar() !!}
       </div>
     </div>
@@ -49,15 +40,12 @@
     
     <!--these link scripts are loading js file through http -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
-    
     <!-- Scripts -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/lang/ja.js"></script>
-    
     {!! $calendar_details->script() !!}
-
 <div class="modal fade" id="sampleModal" tabindex="-1">
 	<div class="modal-dialog">
 		<div class="modal-content">

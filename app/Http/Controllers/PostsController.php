@@ -155,7 +155,7 @@ class PostsController extends Controller
             
             
             $post->people()->delete();
-            if(!is_null($post->people_name)){
+            if(!is_null($request->people_name)){
                 foreach($request->people_name as $value){
                 $post->people()->create([
                      'people_name' => $value,

@@ -1,22 +1,7 @@
 @extends('layouts.app') 
 
 @section('content')
-  <head>
-    <style>
-        body {
-            background-image: url("/image/flower2.jpg"); 
-        }
-        #hontai {
-            background-color: white;
-            filter:alpha(opacity=90);
-            -moz-opacity: 0.9;
-            opacity: 0.9;
-            padding-bottom: 3%;
-            border-radius: 5%;
-        }
-    </style>
-  </head>
-  <body>
+  <body id="post-page">
     <div class="col-xs-offset-1 col-xs-10 col-lg-offset-4 col-lg-4" id="hontai">
         <center><h1>記録をつける</h1></center>
       　<br>
