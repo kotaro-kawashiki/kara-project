@@ -11,22 +11,21 @@
                                 <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                <a href="{{'/'}}">{{Form::image('image/logo4.png')}}</a>
+                                <a href="{{'/'}}"><img src="/image/logo4.png"></a>
                             </li>
                         </ul>
                     </div>
                     @else
-                    <a class="navbar-brand">
+                    <div class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
-
                                 <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
-                                {{Form::image('image/logo4.png')}}
+                                <a href="{{'/calendar'}}"><img src="/image/logo4.png"></a>
                             </li>
                         </ul>
-                    </a>
+                    </div>
                     @endguest
                 <!--</div>-->
                 <!-- Sidebar -->
