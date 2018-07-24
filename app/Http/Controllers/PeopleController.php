@@ -21,7 +21,6 @@ class PeopleController extends Controller
                                      ->get();
                     // var_dump($people);
                     // exit;
-                    
         $names = [];
         foreach($people as $person){
             if(!is_null($person->people_name)){
@@ -30,17 +29,13 @@ class PeopleController extends Controller
         }
         // var_dump($names);
         // exit;
-        
         $names = array_unique($names);
-        
         $people_info = [];
         foreach($names as $name){
             $restaurants = [];
             $person_info = [ 'name' => $name,];
-                    
             foreach($people as $person)
                 if($person_info['name'] == $person->people_name){
-                    
                     $restaurants[] = $person->restaurant;
                 }
                 
@@ -81,13 +76,10 @@ class PeopleController extends Controller
                                      ->get();
         // var_dump($person_infos);
         // exit;
-        
         $name = [];
         foreach($person_infos as $person_info){
             array_push($name,$person_info->people_name);
         }
-        
-        
         $restaurants = [];
         foreach($person_infos as $person_info){
             array_push($restaurants,$person_info->restaurant);

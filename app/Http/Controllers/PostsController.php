@@ -110,8 +110,8 @@ class PostsController extends Controller
     {
         if(Post::find($id)){
             $post = Post::find($id);
-            $peoples=People::all();
-            return view('post.detail',['post'=>$post, 'peoples'=>$peoples]);
+            $people = People::all();
+            return view('post.detail',['post'=>$post, 'people'=>$people]);
         }else{
             return redirect('post.timeline');
         }
