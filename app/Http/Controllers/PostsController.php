@@ -127,10 +127,6 @@ class PostsController extends Controller
         $post = Post::find($id);
         // 違う不具合が出るので元に戻しました
         $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
-        // var_dump($people);
-        // print_r(count($people));
-        // var_dump(is_null($));
-        // exit;
     
         if(\Auth::user()->id == $post->user_id){
             return view('post.edit',['post' => $post,'people'=>$people]);

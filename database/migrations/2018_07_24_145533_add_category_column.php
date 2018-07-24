@@ -14,7 +14,7 @@ class AddCategoryColumn extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('category');
+            $table->string('category')->after('comments');
             
         });
     }
