@@ -8,7 +8,7 @@
                     <div class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
-                                <span class="glyphicon glyphicon-th-list visible-xs" onclick="openNav()"></span>
+                                <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
                                 <a href="{{'/'}}">めし日和</a>
@@ -19,7 +19,7 @@
                     <div class="navbar-brand">
                         <ul id="navbrand">
                             <li id="navbrand-item">
-                                <span class="glyphicon glyphicon-th-list visible-xs" onclick="openNav()"></span>
+                                <span class="glyphicon glyphicon-th-list hidden-lg" onclick="openNav()"></span>
                             </li>
                             <li id="navbrand-item">
                                 <a href="{{'/calendar'}}">めし日和</a>
@@ -75,7 +75,7 @@
                         </ul>
                     </div>
                     <!-- /#sidebar-wrapper -->
-                    <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <ul class="nav navbar-nav navbar-right visible-lg">
                             <!-- Authentication Links -->
                             @guest
                                 <li><a href="{{ route('login') }}">ログイン</a></li>

@@ -31,7 +31,6 @@
             <br>
             <br>
              @yield('content')
-        
         <!--this script is written in js/jquery and this is the function that add columns of friends on the post and edit pages-->
         <script>
             $( function() {

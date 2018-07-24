@@ -51,22 +51,31 @@
             {!! Form::text('comments', null, ['class' => 'form-control']) !!}
         </div>
         <div class="parent">
-             @foreach($people as $user_people)
-            <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
-                <div class="form-group">
-                    {!! Form::label('people_name', '同行者:',['class']) !!}
-                   
-                    <input type="text" id="people" name="people_name[]" value="{{$user_people}}" placeholder='例:楽天太郎' class='form-control doukousya' >
-                    </input>
-                    
-                    <button type="button" class="btn btn-default trash_btn ml10" value="" name="">
-                            削除
-                    </button>
+            @if(count($people)>0)
+                @foreach($people as $user_people)
+                    <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
+                        <div class="form-group">
+                            {!! Form::label('people_name', '同行者:',['class']) !!}
+                            <input type="text" id="people" name="people_name[]" value="{{$user_people}}" placeholder='例:楽天太郎' class='form-control doukousya' ></input>
+                            <button type="button" class="btn btn-default trash_btn ml10" value="" name="">
+                                削除
+                            </button>
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
+                    <div class="form-group">
+                      {!! Form::label('people_name', '同行者:',['class']) !!}
+                      <input type="text" id="people" name="people_name[]" value="" placeholder='例:楽天太郎' class='form-control doukousya' ></input>
+                      <button type="button" class="btn btn-default trash_btn ml10" value="" name="">
+                              削除
+                      </button>
+                  </div>
                 </div>
-              </div>
-              @endforeach
+            @endif
          </div>
-    <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
+        <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
         <div class="form-group">
             <label name="pic_url">写真:</label>
             <select name="pic_url" class="form-control">
