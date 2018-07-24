@@ -9,6 +9,15 @@
           <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
         </div>
         {!! Form::model($post, ['route' => 'posts.store']) !!}
+          
+          <div class="form-group">
+            {!! Form::label('restaurant', '店名*:') !!}
+            {!! Form::text('restaurant', null, ['class' => 'form-control','placeholder'=>'例：鳥貴族']) !!}
+          </div>
+          <div class="form-group">        
+            {!! Form::label('cost', '値段*:') !!}
+            {!! Form::number('cost', null, ['class' => 'form-control','placeholder'=>'例：2000']) !!}
+          </div>
           <div class="form-group">
             <label name="went_at">日付*:</label>
             <div class='input-group date'>
@@ -17,14 +26,6 @@
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
-          </div>
-          <div class="form-group">
-            {!! Form::label('restaurant', '店名*:') !!}
-            {!! Form::text('restaurant', null, ['class' => 'form-control','placeholder'=>'例：鳥貴族']) !!}
-          </div>
-          <div class="form-group">        
-            {!! Form::label('cost', '値段*:') !!}
-            {!! Form::number('cost', null, ['class' => 'form-control','placeholder'=>'例：2000']) !!}
           </div>
           <div class="form-group">
             {!! Form::label('comments', 'コメント:') !!}
