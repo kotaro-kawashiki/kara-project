@@ -104,7 +104,6 @@
               <option value="/image/bar1.jpg">バー</option>
             </select>
           </div>
-        <h5>※写真を変えない場合でももう一度選びなおしてください</h5><br><br>
         {!! Form::submit('編集', ['class' => 'btn btn-info']) !!}
     {!! Form::close() !!}
 </div>

@@ -128,7 +128,7 @@ class PostsController extends Controller
             $people = People::all();
             return view('post.detail',['post'=>$post, 'people'=>$people, 'category'=>$category]);
         }else{
-            return redirect('post.timeline');
+            return redirect('/calendar');
         }
         
     }
@@ -141,7 +141,6 @@ class PostsController extends Controller
         $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
   
         if(\Auth::user()->id == $post->user_id){
-            
             return view('post.edit',['post' => $post,'people'=>$people]);
         }
         else {
