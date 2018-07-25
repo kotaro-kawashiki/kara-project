@@ -53,7 +53,7 @@
                         </div>
                     </form>
                     <center>
-                        <a data-toggle="modal" data-target="#exampleModal">モバイル版はこちら</a>
+                        <a data-toggle="modal" data-target="#exampleModal" class="visible-lg">モバイル版はこちら</a>
                     </center>
                 </div>
             </div>
