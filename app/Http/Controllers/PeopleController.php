@@ -68,39 +68,46 @@ class PeopleController extends Controller
     public function show($name)
     {
         
-        $user_id = Auth::user()->id;
-        $person_infos = DB::table('people')->where('people_name',$name)
-                                     ->join('posts','people.post_id','=','posts.id')
-                                     ->where('posts.user_id',$user_id)
-                                     ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id','posts.pic_url')
-                                     ->get();
-        // var_dump($person_infos);
-        // exit;
-        $name = [];
-        foreach($person_infos as $person_info){
-            array_push($name,$person_info->people_name);
-        }
-        $restaurants = [];
-        foreach($person_infos as $person_info){
-            array_push($restaurants,$person_info->restaurant);
-        }  
-        
-        $pic_url = [];
-        foreach($person_infos as $person_info){
-            array_push($pic_url,$person_info->pic_url);
-        }  
-        // var_dump($name);
-        // exit;
-        $data = [
-            'restaurants' => $restaurants,
-            'name' => $name,
-            'pic_url' => $pic_url,
-            'person_infos' => $person_infos,
+            $user_id = Auth::user()->id;
+            $person_infos = DB::table('people')->where('people_name',$name)
+                                         ->join('posts','people.post_id','=','posts.id')
+                                         ->where('posts.user_id',$user_id)
+                                         ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id','posts.pic_url')
+                                         ->get();
+            // var_dump($person_infos);
+            // print_r(count($person_infos));
+            // exit;
             
-            ];
-        // var_dump($data);
-        // exit;
-        return view('people.people',$data);
+            if(count($person_infos)>0){
+                $name = [];
+                
+                foreach($person_infos as $person_info){
+                    array_push($name,$person_info->people_name);
+                }
+                $restaurants = [];
+                foreach($person_infos as $person_info){
+                    array_push($restaurants,$person_info->restaurant);
+                }  
+                
+                $pic_url = [];
+                foreach($person_infos as $person_info){
+                    array_push($pic_url,$person_info->pic_url);
+                }  
+                // var_dump($name);
+                // exit;
+                $data = [
+                    'restaurants' => $restaurants,
+                    'name' => $name,
+                    'pic_url' => $pic_url,
+                    'person_infos' => $person_infos,
+                    
+                    ];
+                // var_dump($data);
+                // exit;
+                return view('people.people',$data);
+        }else{
+            return redirect('/calendar');
+        }
     }
 
     /**
