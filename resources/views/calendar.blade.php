@@ -19,6 +19,7 @@
     @endif
       <div id="calendarpage">
           {!! $calendar_details->calendar() !!}
+          <h4>カテゴリ分け：<a style="color:black; background: linear-gradient(transparent 30%, #aae 30%);">会社</a><a> , </a><a style="color:black; background: linear-gradient(transparent 30%, #bea 30%);">友達</a><a> , </a><a style="color:black; background: linear-gradient(transparent 30%, #aee 30%);">家族</a><a> , </a><a style="color:black; background: linear-gradient(transparent 30%, #eaa 30%);">そのほか</a></h4>
       </div>
     </div>
 
