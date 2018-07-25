@@ -26,6 +26,9 @@
             #phonebutton {
                 display: none !important; 
             }
+            #phonebutton2 {
+                display: none !important; 
+            }
             #phonetitle {
                 display: none !important; 
             }
@@ -34,6 +37,7 @@
                 #button { display: none !important; }
                 #pctitle { display: none !important; }
                 #phonebutton{ display: block !important; }
+                #phonebutton2{ display: block !important; }
                 #phonetitle{ display: block !important; }
             }
         </style>
@@ -54,6 +58,10 @@
                 <center><img class="title" src="/image/title5.png" alt="/image/title5.png"></center>
             </div>
         </div>
+        <div id="phonebutton2">
+                <center><a href="{{ route('register') }}">{{Form::image('image/buton8.png')}}
+                <a href="{{ route('login') }}">{{Form::image('image/buton9.png')}}</a></center>
+            </div>
         <div id="pctitle" class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
             <center><img class="title" src="/image/setsumei1.png" alt="/image/setsumei1.png"></center>
             <center><img class="title" src="/image/setsumei2.png" alt="/image/setsumei2.png"></center>
