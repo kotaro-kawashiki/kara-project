@@ -30,7 +30,8 @@
                 @foreach($posts as $post)
                     <tr>
                         <th><?php echo substr($post->went_at,8,10)?>日</th>
-                        <td>{{$post->restaurant}}({{$post->cost}}円)</td>
+                        <td>{{$post->restaurant}}</td>
+                        <td>{{$post->cost}}円</td>
                     </tr>
                 @endforeach
         </div>
