@@ -17,8 +17,8 @@
             <center><caption style="text-align:right;"><h2>{{$info->went_at}}</h2></caption></center> <!--いった日付-->
             <img src="{{$info->pic_url}}" class="img-responsive" alt="{{$info->pic_url}}">
             <div class="caption">
-              <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$info->restaurant}}　  
-                  <span class="glyphicon glyphicon-yen"></span>{{$info->cost}}</center></h2>
+              <h2><center><span class="glyphicon glyphicon-cutlery"></span>{{$info->restaurant}}</center>　  
+                  <center><span class="glyphicon glyphicon-yen"></span>{{$info->cost}}</center></h2>
                 <center>  
                 <h2><a href="{{ route('posts.show',['id' => $info->id]) }}"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></a>
                 <a href="{{ route('posts.edit',['id' => $info->id]) }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
