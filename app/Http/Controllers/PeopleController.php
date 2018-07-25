@@ -73,6 +73,7 @@ class PeopleController extends Controller
                                          ->join('posts','people.post_id','=','posts.id')
                                          ->where('posts.user_id',$user_id)
                                          ->select('people.people_name','posts.restaurant','posts.went_at','posts.cost','posts.id','posts.pic_url')
+                                         ->orderBy('people_name','desc')
                                          ->get();
             // var_dump($person_infos);
             // print_r(count($person_infos));

@@ -32,15 +32,17 @@ class PostsController extends Controller
                 $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments','category')
                                       ->where([['restaurant','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
-                                      ->paginate(10);
+                                      ->orderBy('posts.went_at','desc')
+                                      ->paginate(100);
             }                        
             // var_dumps($data);
             // exit;
             if(is_numeric($query))
             {
                 $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','category','comments')                              
-                                      ->orWhere([['cost','<=',$query+500],['cost','>=',$query-500],['user_id',$user->id]])                      
-                                      ->paginate(10);
+                                      ->orWhere([['cost','<=',$query+500],['cost','>=',$query-500],['user_id',$user->id]])   
+                                      ->orderBy('posts.went_at','desc')
+                                      ->paginate(100);
             }
         }
         elseif(!empty($query2)){
@@ -48,7 +50,7 @@ class PostsController extends Controller
                                        ->join('posts','people.post_id','=','posts.id')
                                        ->where('posts.user_id',"$user->id")
                                        ->orderBy('posts.went_at','desc')
-                                       ->paginate(10);
+                                       ->paginate(100);
                                     // var_dump($data);
                                     // exit;
         }
