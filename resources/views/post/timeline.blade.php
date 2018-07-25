@@ -56,8 +56,8 @@
   <!--posts-->
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     @foreach ($data as $post)
-      <div class="col-xs-12 visible-xs" style="background-color:{{$post->category}};"><!--card-->
-        <div class="thumbnail" id="{{$post->went_at}}">
+      <div class="col-xs-12 visible-xs" ><!--card-->
+        <div class="thumbnail" id="{{$post->went_at}}" style="border-top: 5px solid {{$post->category}};">
           <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
           <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
           <div class="caption">
