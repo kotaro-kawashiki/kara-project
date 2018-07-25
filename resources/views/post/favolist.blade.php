@@ -14,7 +14,7 @@
     @foreach ($posts as $post)
       <div class="col-xs-12 col-sm-5 col-md-5 visible-xs"><!--card-->
         <div class="thumbnail" id="{{$post->went_at}}" style="border-top: 5px solid {{$post->category}};">
-          <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
+          <center><caption style="text-align:right;"><h3>{{$post->went_at}}</h3></caption></center> <!--いった日付-->
           <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
           <div class="caption">
             <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}　</center>  
@@ -34,7 +34,7 @@
       <div class="hidden-xs col-sm-8 col-sm-offset-2 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 thumbnail" style="border-left:5px solid {{$post->category}}; background-color:#fff9fc;">
         <div  id="{{$post->went_at}}">
           <div class='col-lg-6'>
-            <caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption>
+            <caption style="text-align:right;"><h3>{{$post->went_at}}</h3></caption>
             <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
           </div>
               <br>
