@@ -7,17 +7,12 @@
 </style>
 </head>
     <center><h1>{{ $person_infos[0]->people_name }}</h1></center>
-        　 
     <div class = "modoruyo">
-    <h5><a href="{{ route('people.index') }}">
-    <span class = "glyphicon glyphicon-arrow-left" aria-hidden="true"></span>同行者リストへ</a></h5>
+      <h5><a href="{{ route('people.index') }}"><span class = "glyphicon glyphicon-arrow-left" aria-hidden="true"></span>同行者リストへ</a></h5>
     </div>
-         
-    @foreach ($person_infos as $info)
-    
-      <div id="timeline" class="col-xs-12 col-sm-12 col-md-4 col-lg-4"><!--全体-->
-    
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-12"><!--card-->
+    <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
+      @foreach ($person_infos as $info)
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4"><!--card-->
           <div class="thumbnail" id="">
             <center><caption style="text-align:right;"><h2>{{$info->went_at}}</h2></caption></center> <!--いった日付-->
             <img src="{{$info->pic_url}}" class="img-responsive" alt="{{$info->pic_url}}">
@@ -43,8 +38,6 @@
             </div>
           </div>
         </div>
-      </div>
-      
-         
       @endforeach
+    </div>
 @endsection

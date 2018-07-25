@@ -56,9 +56,9 @@
   <!--posts-->
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     @foreach ($data as $post)
-      <div class="col-xs-12 visible-xs" style="background-color:{{$post->category}};"><!--card-->
-        <div class="thumbnail" id="{{$post->went_at}}">
-          <center><caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption></center> <!--いった日付-->
+      <div class="col-xs-12 visible-xs" ><!--card-->
+        <div class="thumbnail" id="{{$post->went_at}}" style="border-top: 5px solid {{$post->category}};">
+          <center><caption style="text-align:right;"><h3>{{$post->went_at}}</h3></caption></center> <!--いった日付-->
           <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
           <div class="caption">
             <h2><center><span class="glyphicon glyphicon-cutlery"></span> {{$post->restaurant}}</center> 
@@ -78,7 +78,7 @@
       <div class="hidden-xs col-sm-8 col-sm-offset-2 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 thumbnail" style="border-left:5px solid {{$post->category}};">
         <div  id="{{$post->went_at}}">
           <div class='col-lg-6'>
-          <caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption>
+          <caption style="text-align:right;"><h3>{{$post->went_at}}</h3></caption>
           <img src="{{$post->pic_url}}" class="img-responsive" alt="{{$post->pic_url}}">
           </div>
             <br>

@@ -98,13 +98,10 @@ background-color: transparent;
 }
 
 #howtouse {
-    
     padding-left: 70px;
-    
 }
 
 .modal-header {
-    
     background: #e0f6ff;
     
 }
@@ -259,8 +256,14 @@ background-color: transparent;
   border-radius: 5%;
 }
 #shiyougaku {
-  margin-left: 1%;
+  
   background-color: #fffcfc;
   border-radius: 5%;
+}
+
+@media(min-width:1200px){
+  #shiyougaku{
+    margin-left: 1%;
+  }
 }
 

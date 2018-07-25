@@ -57,27 +57,27 @@
             <div class="panel-body">
               {{$post->went_at}}
             </div>
-            <div class="panel-heading">メモ</div>
+            <div class="panel-heading">コメント</div>
             <div class="panel-body">
               {{$post->comments}}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="btn-toolbar" role="toolbar">
-                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     @if (Auth::user()->id == $post->user_id)
                         {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                             {!! Form::submit('なかった事にする', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     @endif
                 </div>
-                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="btn-group" role="group"　class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                         @include('user_favo.favo_button')
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                    <div class="btn-group" role="group" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="btn-group" role="group" class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
                       {!! link_to_route('posts.edit', 'この投稿を編集', ['id' => $post->id], ['class' => 'btn btn-success']) !!}
                     </div>
                 </div>

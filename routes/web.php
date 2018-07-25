@@ -13,9 +13,7 @@
 
 
 Auth::routes();
-
 Route::get('/', 'WelcomeController@index');
-
 Route::group(['middleware' => 'auth'], function () {
     
     Route::resource('users', 'UsersController');

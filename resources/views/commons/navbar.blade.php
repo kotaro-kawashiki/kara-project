@@ -106,9 +106,14 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
+                                <li>
+                                    <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2" id="help-button-lg">
+                    	                <h4><span class ="howtouse glyphicon glyphicon-question-sign"></span></h4>
+                                    </button>
+                                </li>
                             @endguest
                         </ul>
-                        <button class="btn btn-link btn-sm navbar-right"  data-toggle="modal" data-target="#sampleModal2" id="help-button">
+                        <button class="btn btn-link btn-sm navbar-right hidden-lg"  data-toggle="modal" data-target="#sampleModal2" id="help-button">
     	                <h4><span class ="howtouse glyphicon glyphicon-question-sign"></span></h4>
                         </button>
                     </ul>
@@ -137,7 +142,7 @@
 				  ✔ 外食で使った金額の月ごとの合計が確認できるので、外食費の管理もできます。<br><hr>
 				『投稿一覧 & 検索機能』<br>
 				  ✔ 投稿の一覧をタイムライン形式で確認することができます。行ったお店や使った金額をパッと確認したいときに便利です。<br>
-				  ✔ 検索機能もあるので、店の名前や同行者、値段などで検索して特定の投稿を探すことも可能です。<br><hr>
+				  ✔ 検索機能もあるので、店の名前や同行者、大まかな費用などで検索して特定の投稿を探すことも可能です。<br><hr>
 				『お気に入り』<br>
 				  ✔ また行きたい！と思ったお店や思い出深い記録はお気に入りして、<br>
 				  自分だけの『お気に入りリスト』を作りましょう。<br><hr>

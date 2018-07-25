@@ -17,25 +17,18 @@
 </style>
 </head>
 <div class="col-xs-12 col-lg-offset-4 col-lg-4" id="hontai">
-     <h1>投稿の編集</h1>
-     <br>
+    <h1>投稿の編集</h1><br>
     <!--足しました-->
-  <div class="alert alert-success" role="alert">
-    <strong>Notice</strong> 製品版では画像投稿が可能です。こうご期待！
-  </div>
-    <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}">
-     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細へ</a></h5>
-     <h5><a href="{{ route('posts.store') }}">
-     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>投稿一覧へ</a></h5>
-  <br>
+    <h5><a href="{{ route('posts.show', ['id' => $post->id]) }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>詳細へ</a></h5>
+    <h5><a href="{{ route('posts.store') }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>投稿一覧へ</a></h5><br>
     {!! Form::model($post, ['route' => ['posts.update',$post->id],'method'=>'put']) !!}
         <div class="form-group">
             <label name="category">カテゴリ:</label>
             <select name="category" class="form-control">
-              <option value="#aae">会社</option>
-              <option value="#bea">友達</option>
-              <option value="#aee">家族</option>
-              <option value="#eaa">そのほか</option>
+              <option value="#aae"<?php if($post->category=="#aae"){echo "selected"; }?>>会社</option>
+              <option value="#bea"<?php if($post->category=="#bea"){echo "selected"; }?>>友達</option>
+              <option value="#aee"<?php if($post->category=="#aee"){echo "selected"; }?>>家族</option>
+              <option value="#eaa"<?php if($post->category=="#eaa"){echo "selected"; }?>>そのほか</option>
             </select>
         </div>
         <div class="form-group">
@@ -88,7 +81,7 @@
         <div class="form-group">
             <label name="pic_url">写真:</label>
             <select name="pic_url" class="form-control">
-              <option value="/image/susi1.jpg">寿司</option>
+              <option value="/image/susi1.jpg"<?php if($post->pic_url=="/image/susi1.jpg"){echo "selected"; }?>>寿司</option>
               <option value="/image/gohan.jpg">海鮮丼</option>
               <option value="/image/tongue.jpg">牛タン丼</option>
               <option value="/image/wa.jpg">和食</option>
@@ -106,7 +99,7 @@
               <option value="/image/yakitori.jpg">焼き鳥</option>
               <option value="/image/pancake.jpg">パンケーキ</option>
               <option value="/image/ice-frake.jpg">かき氷</option>
-              <option value="/image/coffee.jpg">カフェ１</option>
+              <option value="/image/coffee.jpg"<?php if($post->pic_url=="/image/coffee.jpg"){echo "selected"; }?>>カフェ１</option>
               <option value="/image/cafe2.jpg">カフェ２</option>
               <option value="/image/bar1.jpg">バー</option>
             </select>
