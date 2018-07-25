@@ -28,6 +28,7 @@ class PostsController extends Controller
         
         $user = Auth::user();
         if(!empty($query)){
+            
             if(is_string($query))
             {
                 $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments','category')
@@ -35,6 +36,9 @@ class PostsController extends Controller
                                       ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->orderBy('posts.went_at','desc')
                                       ->paginate(100);
+                if(count($data)==0){
+                    $message = 2;
+                }
             }                        
             // var_dumps($data);
             // exit;

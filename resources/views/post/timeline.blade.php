@@ -60,6 +60,14 @@
             <p><a href="{{route('posts.create')}}">記録をつける</a>を押して、日々の外食の記録をつけてみましょう！</p>
         </div>
     </div>
+  @elseif($message==2)
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">検索結果はありません</h4>
+            <hr>
+            <p>レストランの名前やその日のコメント、おおよその費用などいろいろな方法で検索できます。一緒に行った人の名前でも検索できるので、思い出を探してみましょう！</p>
+        </div>
+    </div>
   @endif
   <!--posts-->
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
