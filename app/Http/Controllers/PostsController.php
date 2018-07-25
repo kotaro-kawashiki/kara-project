@@ -39,7 +39,7 @@ class PostsController extends Controller
             if(is_numeric($query))
             {
                 $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','category','comments')                              
-                                      ->orWhere([['cost',$query],['user_id',$user->id]])                      
+                                      ->orWhere([['cost','<=',$query+500],['cost','>=',$query-500],['user_id',$user->id]])                      
                                       ->paginate(10);
             }
         }
