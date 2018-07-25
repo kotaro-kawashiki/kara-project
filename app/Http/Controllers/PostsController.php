@@ -23,6 +23,7 @@ class PostsController extends Controller
         //検索ボックスに入力された値
         $query = request()->s;  
         $query2 = request()->h;
+        
         $message = 1;
         
         $user = Auth::user();
@@ -39,10 +40,17 @@ class PostsController extends Controller
             // exit;
             if(is_numeric($query))
             {
+               
+                if($query>=8){
+                    return redirect()->back();
+                }
                 $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','category','comments')                              
                                       ->orWhere([['cost','<=',$query+500],['cost','>=',$query-500],['user_id',$user->id]])   
                                       ->orderBy('posts.went_at','desc')
                                       ->paginate(100);
+                if(count($data)==0){
+                    $message = 2;
+                }
             }
         }
         elseif(!empty($query2)){
@@ -53,6 +61,10 @@ class PostsController extends Controller
                                        ->paginate(100);
                                     // var_dump($data);
                                     // exit;
+                if(count($data)==0)
+                {
+                    $message = 2;
+                }
         }
         else{
             $data = DB::table('posts')->where('user_id',"$user->id")->orderBy('went_at','desc')->paginate(1000);

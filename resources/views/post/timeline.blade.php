@@ -27,11 +27,11 @@
     </div>
     <!--search form-->
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-3 col-lg-6" id = "search">
-  <form method="GET" class="form-inline">
+  <form method="GET" class="form-inline" name="form">
     <div class="form-group">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px;">
         <div class="input-group">
-          <input type="text" class="form-control" name="s" placeholder="レストランや費用で検索">
+          <input type="text" class="form-control" name="s" placeholder="レストランや費用で検索" id="text1">
           <span class="input-group-btn">
         		<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
         	</span>
@@ -51,8 +51,14 @@
     </div>
   </form>
   </div>
-<div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
-
+  <div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
+  @if($message==2)
+    <div>
+      <p>
+        検索結果はありません
+      </p>
+    </div>
+  @endif
   <!--posts-->
   <div id="timeline" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><!--全体-->
     @foreach ($data as $post)
@@ -97,7 +103,6 @@
       </div>
     @endforeach
   </div>
-  
 
 @endsection
 
