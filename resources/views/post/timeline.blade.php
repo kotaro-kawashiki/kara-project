@@ -55,17 +55,22 @@
   @if($message==0)
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">外食の記録がありません！</h4>
+            <center><h4 class="alert-heading">外食の記録がありません！</h4></center>
             <hr>
-            <p><a href="{{route('posts.create')}}">記録をつける</a>を押して、日々の外食の記録をつけてみましょう！</p>
+            <center><p><a href="{{route('posts.create')}}">記録をつける</a>を押して、日々の外食の記録をつけてみましょう！</p></center>
         </div>
     </div>
   @elseif($message==2)
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">検索結果はありません</h4>
+            <center><h4 class="alert-heading">検索結果はありません</h4></center>
             <hr>
-            <p>レストランの名前やその日のコメント、おおよその費用などいろいろな方法で検索できます。一緒に行った人の名前でも検索できるので、思い出を探してみましょう！</p>
+            <center>
+              <p>レストランの名前やその日のコメント、おおよその費用などいろいろな方法で検索できます。<br>
+                 一緒に行った人の名前でも検索できるので、思い出を探してみましょう！
+              </p>
+            </center>
+            
         </div>
     </div>
   @endif

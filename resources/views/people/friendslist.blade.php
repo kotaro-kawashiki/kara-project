@@ -49,9 +49,12 @@
     @else
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="alert alert-warning" role="alert">
-                <h4 class="alert-heading">同行者の履歴がありません！</h4>
+                <center><h4 class="alert-heading">同行者の履歴がありません！</h4></center>
                 <hr>
-                <p><a href="{{route('posts.create')}}">記録をつける</a>際に同行者を入力すると、誰とどこに、何回食事をしたことがあるかを見ることができます</p>
+                <center>
+                    <p><a href="{{route('posts.create')}}">記録をつける</a>際に同行者を入力すると、誰とどこに、何回食事をしたことがあるかを見ることができます</p>
+                </center>
+                
             </div>
         </div>
     @endif
