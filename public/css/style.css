@@ -131,6 +131,7 @@ background-color: transparent;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0.90;
+  box-shadow: 2px 2px 4px gray;
 }
 
 #wrapper.toggled #sidebar-wrapper {
