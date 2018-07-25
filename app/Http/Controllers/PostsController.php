@@ -29,7 +29,7 @@ class PostsController extends Controller
         if(!empty($query)){
             if(is_string($query))
             {
-                $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments')
+                $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','comments','category')
                                       ->where([['restaurant','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->paginate(10);
@@ -38,7 +38,7 @@ class PostsController extends Controller
             // exit;
             if(is_numeric($query))
             {
-                $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url')                              
+                $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','category','comments')                              
                                       ->orWhere([['cost',$query],['user_id',$user->id]])                      
                                       ->paginate(10);
             }
@@ -53,7 +53,7 @@ class PostsController extends Controller
                                     // exit;
         }
         else{
-            $data = DB::table('posts')->where('user_id',"$user->id")->orderBy('went_at','desc')->paginate(20);
+            $data = DB::table('posts')->where('user_id',"$user->id")->orderBy('went_at','desc')->paginate(1000);
             if(count($data)==0){
                 $message = 0;
             }
