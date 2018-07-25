@@ -25,10 +25,10 @@
         <div class="form-group">
             <label name="category">カテゴリ:</label>
             <select name="category" class="form-control">
-              <option value="#aae">会社</option>
-              <option value="#bea">友達</option>
-              <option value="#aee">家族</option>
-              <option value="#eaa">そのほか</option>
+              <option value="#aae"<?php if($post->category=="#aae"){echo "selected"; }?>>会社</option>
+              <option value="#bea"<?php if($post->category=="#bea"){echo "selected"; }?>>友達</option>
+              <option value="#aee"<?php if($post->category=="#aee"){echo "selected"; }?>>家族</option>
+              <option value="#eaa"<?php if($post->category=="#eaa"){echo "selected"; }?>>そのほか</option>
             </select>
         </div>
         <div class="form-group">

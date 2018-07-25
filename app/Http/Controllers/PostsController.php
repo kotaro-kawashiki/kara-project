@@ -110,7 +110,8 @@ class PostsController extends Controller
 // post.show as detail
     public function show($id)
     {
-        if(Post::find($id)){
+        if(Post::find($id))
+        {
             $post = Post::find($id);
             if($post->category=="#aae"){
                 $category="会社";
@@ -140,6 +141,7 @@ class PostsController extends Controller
         $people = DB::table('people')->where('post_id',$post->id)->pluck('people_name');
   
         if(\Auth::user()->id == $post->user_id){
+            
             return view('post.edit',['post' => $post,'people'=>$people]);
         }
         else {
