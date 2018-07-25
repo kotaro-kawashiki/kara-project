@@ -57,7 +57,7 @@
             <div class="panel-body">
               {{$post->went_at}}
             </div>
-            <div class="panel-heading">メモ</div>
+            <div class="panel-heading">コメント</div>
             <div class="panel-body">
               {{$post->comments}}
             </div>

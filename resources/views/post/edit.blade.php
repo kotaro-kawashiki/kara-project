@@ -81,7 +81,7 @@
         <div class="form-group">
             <label name="pic_url">写真:</label>
             <select name="pic_url" class="form-control">
-              <option value="/image/susi1.jpg">寿司</option>
+              <option value="/image/susi1.jpg"<?php if($post->pic_url=="/image/susi1.jpg"){echo "selected"; }?>>寿司</option>
               <option value="/image/gohan.jpg">海鮮丼</option>
               <option value="/image/tongue.jpg">牛タン丼</option>
               <option value="/image/wa.jpg">和食</option>
@@ -99,7 +99,7 @@
               <option value="/image/yakitori.jpg">焼き鳥</option>
               <option value="/image/pancake.jpg">パンケーキ</option>
               <option value="/image/ice-frake.jpg">かき氷</option>
-              <option value="/image/coffee.jpg">カフェ１</option>
+              <option value="/image/coffee.jpg"<?php if($post->pic_url=="/image/coffee.jpg"){echo "selected"; }?>>カフェ１</option>
               <option value="/image/cafe2.jpg">カフェ２</option>
               <option value="/image/bar1.jpg">バー</option>
             </select>
