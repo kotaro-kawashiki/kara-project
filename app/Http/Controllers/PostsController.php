@@ -41,7 +41,7 @@ class PostsController extends Controller
             if(is_numeric($query))
             {
                
-                if($query>=8){
+                if(strlen($query)>=8){
                     return redirect()->back();
                 }
                 $data = DB::table('posts')->select('id','user_id','restaurant','cost','went_at','pic_url','category','comments')                              

@@ -52,11 +52,13 @@
   </form>
   </div>
   <div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
-  @if($message==2)
-    <div>
-      <p>
-        検索結果はありません
-      </p>
+  @if($message==0)
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">外食の記録がありません！</h4>
+            <hr>
+            <p><a href="{{route('posts.create')}}">記録をつける</a>を押して、日々の外食の記録をつけてみましょう！</p>
+        </div>
     </div>
   @endif
   <!--posts-->
