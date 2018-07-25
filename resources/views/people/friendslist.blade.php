@@ -16,7 +16,6 @@
         <br>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-1 col-lg-10" id="list">
             <center><h1>同行者リスト</h1></center>
-            <h6>名前をクリックすると詳しい情報が見られます。</h6>
             <table class="table table-hover">
                 <thead>
                     <h6>名前をクリックすると詳しい情報が見られます。</h6>
