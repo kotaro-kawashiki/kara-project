@@ -77,34 +77,34 @@
                 </div>
             @endif
          </div>
-        <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button>
-        <br><br>
+        <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br><br>
         <div class="form-group">
             <label name="pic_url">写真:</label>
             <select name="pic_url" class="form-control">
               <option value="/image/susi1.jpg"<?php if($post->pic_url=="/image/susi1.jpg"){echo "selected"; }?>>寿司</option>
-              <option value="/image/gohan.jpg">海鮮丼</option>
-              <option value="/image/tongue.jpg">牛タン丼</option>
-              <option value="/image/wa.jpg">和食</option>
-              <option value="/image/ramen.jpg">ラーメン</option>
-              <option value="/image/okonomi.jpeg">お好み焼き</option>
-              <option value="/image/asia.jpg">エスニック</option>
-              <option value="/image/carry.jpg">カレー</option>
-              <option value="/image/pizza.jpg">ピザ</option>
-              <option value="/image/itarian.jpeg">イタリアン</option>
-              <option value="/image/robstar.jpg">ロブスター</option>
-              <option value="/image/omu.jpeg">オムライス</option>
-              <option value="/image/fishandtips.jpg">フィッシュアンドチップス</option>
-              <option value="/image/niku.jpg">ステーキ</option>
-              <option value="/image/nabe.jpeg">鍋</option>
-              <option value="/image/yakitori.jpg">焼き鳥</option>
-              <option value="/image/pancake.jpg">パンケーキ</option>
-              <option value="/image/ice-frake.jpg">かき氷</option>
+              <option value="/image/gohan.jpg"<?php if($post->pic_url=="/image/gohan.jpg"){echo "selected"; }?>>海鮮丼</option>
+              <option value="/image/tongue.jpg"<?php if($post->pic_url=="/image/tongue.jpg"){echo "selected"; }?>>牛タン丼</option>
+              <option value="/image/wa.jpg"<?php if($post->pic_url=="/image/wa.jpg"){echo "selected"; }?>>和食</option>
+              <option value="/image/ramen.jpg"<?php if($post->pic_url=="/image/ramen.jpg"){echo "selected"; }?>>ラーメン</option>
+              <option value="/image/okonomi.jpeg"<?php if($post->pic_url=="/image/okonomi.jpeg"){echo "selected"; }?>>お好み焼き</option>
+              <option value="/image/asia.jpg"<?php if($post->pic_url=="/image/asia.jpg"){echo "selected"; }?>>エスニック</option>
+              <option value="/image/carry.jpg"<?php if($post->pic_url=="/image/carry.jpg"){echo "selected"; }?>>カレー</option>
+              <option value="/image/pizza.jpg"<?php if($post->pic_url=="/image/pizza.jpg"){echo "selected"; }?>>ピザ</option>
+              <option value="/image/itarian.jpeg"<?php if($post->pic_url=="/image/itarian.jpeg"){echo "selected"; }?>>イタリアン</option>
+              <option value="/image/robstar.jpg"<?php if($post->pic_url=="/image/robstar.jpg"){echo "selected"; }?>>ロブスター</option>
+              <option value="/image/omu.jpeg"<?php if($post->pic_url=="/image/omu.jpeg"){echo "selected"; }?>>オムライス</option>
+              <option value="/image/fishandtips.jpg"<?php if($post->pic_url=="/image/fishandtips.jpg"){echo "selected"; }?>>フィッシュアンドチップス</option>
+              <option value="/image/niku.jpg"<?php if($post->pic_url=="/image/niku.jpg"){echo "selected"; }?>>ステーキ</option>
+              <option value="/image/nabe.jpeg"<?php if($post->pic_url=="/image/nabe.jpeg"){echo "selected"; }?>>鍋</option>
+              <option value="/image/yakitori.jpg"<?php if($post->pic_url=="/image/yakitori.jpg"){echo "selected"; }?>>焼き鳥</option>
+              <option value="/image/pancake.jpg"<?php if($post->pic_url=="/image/pancake.jpg"){echo "selected"; }?>>パンケーキ</option>
+              <option value="/image/ice-frake.jpg"<?php if($post->pic_url=="/image/ice-frake.jpg"){echo "selected"; }?>>かき氷</option>
               <option value="/image/coffee.jpg"<?php if($post->pic_url=="/image/coffee.jpg"){echo "selected"; }?>>カフェ１</option>
-              <option value="/image/cafe2.jpg">カフェ２</option>
-              <option value="/image/bar1.jpg">バー</option>
+              <option value="/image/cafe2.jpg"<?php if($post->pic_url=="/image/cafe2.jpg"){echo "selected"; }?>>カフェ２</option>
+              <option value="/image/bar1.jpg"<?php if($post->pic_url=="/image/bar1.jpg"){echo "selected"; }?>>バー</option>
             </select>
           </div>
+        <br>
         {!! Form::submit('編集', ['class' => 'btn btn-info']) !!}
     {!! Form::close() !!}
 </div>
