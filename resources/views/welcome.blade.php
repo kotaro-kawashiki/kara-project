@@ -21,7 +21,7 @@
             }
             img {
 
-                width: 91%;
+                width: 80%;
             }
             #phonebutton {
                 display: none !important; 
