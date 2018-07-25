@@ -13,6 +13,7 @@
          position:fixed;
          right:3%;
          bottom:1%;
+         z-index: 1040;
        }
        @media only screen and (max-width: 768px) {
                 #pc { display: none !important; }
@@ -50,7 +51,6 @@
     </div>
   </form>
   </div>
-<div id='phone'><center><a class="btn btn-lg btn-primary hidden-xs" href="{{route('posts.create')}}">記録をつける</a></center></div>
 <div id='pc'><a href="{{route('posts.create')}}">{{Form::image('image/tag.png')}}</a></div>
 
   <!--posts-->
@@ -75,7 +75,7 @@
       </div>
       <!--ここからPC表示-->
       <div class="col-md-offset-2 col-md-8 col-sm-12 col-lg-offset-3 col-lg-6">
-      <div class="hidden-xs col-sm-8 col-sm-offset-1 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 thumbnail" style="border-left:5px solid {{$post->category}};">
+      <div class="hidden-xs col-sm-8 col-sm-offset-2 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 thumbnail" style="border-left:5px solid {{$post->category}};">
         <div  id="{{$post->went_at}}">
           <div class='col-lg-6'>
           <caption style="text-align:right;"><h2>{{$post->went_at}}</h2></caption>
