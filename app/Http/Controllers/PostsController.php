@@ -36,9 +36,7 @@ class PostsController extends Controller
                                       ->orWhere([['comments','LIKE',"%$query%"],['user_id',$user->id]])
                                       ->orderBy('posts.went_at','desc')
                                       ->paginate(100);
-                if(count($data)==0){
-                    $message = 2;
-                }
+               
             }                        
             // var_dumps($data);
             // exit;
@@ -52,9 +50,6 @@ class PostsController extends Controller
                                       ->orWhere([['cost','<=',$query+500],['cost','>=',$query-500],['user_id',$user->id]])   
                                       ->orderBy('posts.went_at','desc')
                                       ->paginate(100);
-                if(count($data)==0){
-                    $message = 2;
-                }
             }
         }
         elseif(!empty($query2)){
@@ -65,10 +60,6 @@ class PostsController extends Controller
                                        ->paginate(100);
                                     // var_dump($data);
                                     // exit;
-                if(count($data)==0)
-                {
-                    $message = 2;
-                }
         }
         else{
             $data = DB::table('posts')->where('user_id',"$user->id")->orderBy('went_at','desc')->paginate(1000);
