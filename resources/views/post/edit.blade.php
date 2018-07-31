@@ -52,6 +52,9 @@
             {!! Form::label('comments', 'コメント:') !!}
             {!! Form::text('comments', null, ['class' => 'form-control']) !!}
         </div>
+        <!--上につけました-->
+        <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br><br>
+        <div class="form-group">
         <div class="parent">
             @if(count($people)>0)
                 @foreach($people as $user_people)
@@ -77,8 +80,7 @@
                 </div>
             @endif
          </div>
-        <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br><br>
-        <div class="form-group">
+        
             <label name="pic_url">写真:</label>
             <select name="pic_url" class="form-control">
               <option value="/image/susi1.jpg"<?php if($post->pic_url=="/image/susi1.jpg"){echo "selected"; }?>>寿司</option>

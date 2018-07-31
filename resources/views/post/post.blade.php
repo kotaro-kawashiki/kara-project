@@ -40,6 +40,8 @@
             {!! Form::label('comments', 'コメント:') !!}
             {!! Form::text('comments', null, ['class' => 'form-control','placeholder'=>'例:混んでたので大人数の際は要予約！']) !!}
           </div>
+          <!--上につけました-->
+          <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br><br>
           <div class="parent">
                 <div class="field form-inline" style="padding-bottom:4px; margin-bottom:10px;">
                     <div class="form-group">
@@ -51,7 +53,7 @@
                   </div>
                 </div>
            </div>
-           <button type="button" class="btn btn-default bg-white mt10 miw100 add_btn" value="" name="">同行者を追加</button><br>
+  
           <br>
           <div class="form-group">
             <label name="pic_url">写真:</label>
